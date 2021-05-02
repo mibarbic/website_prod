@@ -89,7 +89,7 @@
   @media (max-width: 900px) {
     .w-100{
       margin-top: 30%;
-      font-size: small!important;
+      font-size: medium!important;
     }
   }
   @media (max-width: 900px) {
@@ -115,7 +115,7 @@
   }
   @media (max-height: 900px) {
     h1,h2,h3,h4,h5,h6{
-      font-size: x-small!important;
+      font-size: medium!important;
     }
   }
   
