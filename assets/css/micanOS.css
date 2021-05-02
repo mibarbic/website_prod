@@ -86,6 +86,39 @@
     font-family: 'purista-web';
     color: rgb(0,0,0);
   }
+  @media (max-width: 900px) {
+    .w-100{
+      margin-top: 30%;
+      font-size: small!important;
+    }
+  }
+  @media (max-width: 900px) {
+    p{
+      font-size: x-small!important;
+    }
+  }
+  @media (max-width: 900px) {
+    h1,h2,h3,h4,h5,h6{
+      font-size: medium!important;
+    }
+  }
+  @media (max-height: 900px) {
+    .w-100{
+      margin-top: 30%;
+      font-size: small!important;
+    }
+  }
+  @media (max-height: 900px) {
+    p{
+      font-size: x-small!important;
+    }
+  }
+  @media (max-height: 900px) {
+    h1,h2,h3,h4,h5,h6{
+      font-size: x-small!important;
+    }
+  }
+  
   
   .intro {
   }
@@ -473,6 +506,7 @@
     min-height: 25rem;
     width: 100%;
     overflow: hidden;
+    pointer-events:auto;
   }
   
   .video-background-holder-b {
@@ -482,6 +516,7 @@
     min-height: 25rem;
     width: 100%;
     overflow: hidden;
+    pointer-events:auto;
   }
   
   .video-background-holder video {
@@ -497,9 +532,11 @@
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
+    pointer-events:auto;
   }
   
   .video-background-holder-b video {
+    pointer-events:auto;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -517,6 +554,7 @@
   .video-background-content {
     position: relative;
     z-index: 2;
+    pointer-events:auto;
   }
   
   .video-background-overlay {
@@ -528,6 +566,7 @@
     background-color: black;
     opacity: 0.6;
     z-index: 1;
+    pointer-events:auto;
   }
   
   .video-background-overlay-b {
@@ -539,6 +578,7 @@
     background-color: black;
     opacity: 0.5;
     z-index: 1;
+    pointer-events:auto;
   }
 
   
