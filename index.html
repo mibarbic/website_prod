@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@micanbar</title>
   <meta name="description" content="motion designer, video designer, curiosity driven individual.">
   <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png"/>
@@ -41,20 +41,17 @@
 
     <!-- pageable div-->
     <div data-anchor="Page 1">
-      
       <header class="text-center text-white masthead" style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
         <div class="video-background-holder">
           <div class="video-background-content micansCONE-TANNER h-100">
-            
             <div class="d-flex h-100 text-center align-items-center">
               <div class="w-100 text-pink">
                 <h1 class="display-4">MAKING DREAMS, REALITY.</h1>
                 <div class="btn-sect">
-                  <a href="https://player.vimeo.com/video/419007072?title=0&byline=0&portrait=0" class="btn btn-outline-light iframe-lightbox-link" role="button" style="z-index: 9999!important;">View Reel</a>
+                  <a href="https://player.vimeo.com/video/419007072?title=0&byline=0&portrait=0" class="btn btn-outline-light iframe-lightbox-link" role="button">View Reel</a>
                 </div>
               </div>
             </div>
-            
           </div>
           <div class="video-background-overlay"></div>
           <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
@@ -65,11 +62,9 @@
       </header>
     </div>
     <!-- pageable div-->
-    
     <div data-anchor="Page 2" style="overflow-y: hidden;">
       <div class="swiper-container">
       <div class="swiper-wrapper">
-        
         <!-- pageable div-->
         <div class="swiper-slide">
           <header class="text-center text-white masthead" style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
@@ -297,7 +292,7 @@
     events: {
     wheel: true, // enable / disable mousewheel scrolling
     mouse: true, // enable / disable mouse drag scrolling
-    touch: false, // enable / disable touch / swipe scrolling
+    touch: true, // enable / disable touch / swipe scrolling
     keydown: true, // enable / disable keyboard navigation
     },
     easing: function(currentTime, startPos, endPos, interval) {
