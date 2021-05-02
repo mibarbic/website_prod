@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/iye6tnl.css">
   <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
   <link rel="stylesheet" href="assets/css/swiper-bundle.css" />
+  <link rel="stylesheet" href="assets/css/iframe-lightbox.css" />
   <link rel="stylesheet" href="assets/css/micanOS.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/brands.css" />
 </head>
@@ -276,6 +277,28 @@ Feel free to connect with me:
     },
     });
   </script>
+   <script type="text/javascript" src="assets/js/iframe-lightbox.js"></script>
+   <script>
+     [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
+   el.lightbox = new IframeLightbox(el);
+ });
+ document.getElementsByClassName("iframe-lightbox-link"), function (el) {
+    el.lightbox = new IframeLightbox(el, {
+      onLoaded: function (iframe) {
+       // on loaded
+      },
+      onCreated: function (instance) {
+       // on created
+      },
+      onOpened: function (instance) {
+       // on opened
+      },
+      onClosed: function (instance) {
+       // on closed
+      }
+    });
+ }
+   </script>
   <script>
     Array.from(document.querySelectorAll('.myLink')).forEach((el) => {
       el.addEventListener('touchend', () => {

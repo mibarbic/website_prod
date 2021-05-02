@@ -86,7 +86,7 @@
     font-family: 'purista-web';
     color: rgb(0,0,0);
   }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     .w-100{
       margin-top: 20%;
       margin-left: 15%;
@@ -96,8 +96,11 @@
     p{
       font-size: small!important;
     }
-    h1,h2,h3,h4,h5,h6{
+    h2,h3,h4,h5,h6{
       font-size: medium!important;
+    }
+    .display-4 {
+      font-size: 26px;
     }
   }
   

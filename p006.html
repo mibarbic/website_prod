@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>@micanbar</title>
-  <meta name="description" content="motion designer, video designer, curiosity driven individual.">
-  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png"/>
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.typekit.net/iye6tnl.css">
-  <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-  <link rel="stylesheet" href="assets/css/swiper-bundle.css" />
-  <link rel="stylesheet" href="assets/css/micanOS.css" />
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@micanbar</title>
+    <meta name="description" content="motion designer, video designer, curiosity driven individual.">
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/iye6tnl.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="assets/css/iframe-lightbox.css" />
+    <link rel="stylesheet" href="assets/css/micanOS.css" />
+  
+  </head>
 
 <body>
   <!-- navbar -->
@@ -267,6 +269,28 @@
     },
     });
   </script>
+    <script type="text/javascript" src="assets/js/iframe-lightbox.js"></script>
+    <script>
+      [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
+    el.lightbox = new IframeLightbox(el);
+  });
+  document.getElementsByClassName("iframe-lightbox-link"), function (el) {
+     el.lightbox = new IframeLightbox(el, {
+       onLoaded: function (iframe) {
+        // on loaded
+       },
+       onCreated: function (instance) {
+        // on created
+       },
+       onOpened: function (instance) {
+        // on opened
+       },
+       onClosed: function (instance) {
+        // on closed
+       }
+     });
+  }
+    </script>
     <script>
       Array.from(document.querySelectorAll('.myLink')).forEach((el) => {
         el.addEventListener('touchend', () => {
