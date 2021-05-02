@@ -69,9 +69,9 @@
                           </h6> 
                           
                           <div class="btn-sect">
-                            <a class="btn btn-outline-light" href="mailto:hello@micanbar.com" role="button">e-mail</a>
-                            <a class="btn btn-outline-light" href="tel:6507613378" role="button">phone</a>
-                            <a class="btn btn-outline-light" onclick="window.open('assets/dist/mbar_res_rc21.pdf')">resume</a>
+                            <a class="btn btn-outline-light myLink" href="mailto:hello@micanbar.com" role="button">e-mail</a>
+                            <a class="btn btn-outline-light myLink" href="tel:6507613378" role="button">phone</a>
+                            <a class="btn btn-outline-light myLink" onclick="window.open('assets/dist/mbar_res_rc21.pdf')">resume</a>
                           </div>
                           
                   </div>
@@ -178,11 +178,11 @@ The name @micanbar was conceived during an early 2000's existential crisis when 
 Feel free to connect with me:
 <br>
 
-<a href="https://www.instagram.com/micanbar" style="color:white;"><i class="fab fa-instagram share"></i></a>
-<a href="https://www.twitter.com/micanbar" style="color:white;"><i class="fab fa-twitter share"></i></a>
-<a href="https://steamcommunity.com/id/pturtle64/" style="color:white;"><i class="fab fa-steam share"></i></a>
-<a href="https://soundcloud.com/micanbar" style="color:white;"><i class="fab fa-soundcloud share"></i></a>
-<a href="https://www.linkedin.com/in/micanbar/" style="color:white;"><i class="fab fa-linkedin share"></i></a>
+<a class="myLink" href="https://www.instagram.com/micanbar" style="color:white;"><i class="fab fa-instagram share"></i></a>
+<a class="myLink" href="https://www.twitter.com/micanbar" style="color:white;"><i class="fab fa-twitter share"></i></a>
+<a class="myLink" href="https://steamcommunity.com/id/pturtle64/" style="color:white;"><i class="fab fa-steam share"></i></a>
+<a class="myLink"  href="https://soundcloud.com/micanbar" style="color:white;"><i class="fab fa-soundcloud share"></i></a>
+<a class="myLink" href="https://www.linkedin.com/in/micanbar/" style="color:white;"><i class="fab fa-linkedin share"></i></a>
 
                   </div>
                 </div>
@@ -276,6 +276,13 @@ Feel free to connect with me:
     },
     });
   </script>
+  <script>
+    Array.from(document.querySelectorAll('.myLink')).forEach((el) => {
+      el.addEventListener('touchend', () => {
+        window.location.href = el.href;
+      });
+    });
+    </script>
 </body>
 
 </html>

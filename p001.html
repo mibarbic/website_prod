@@ -155,7 +155,7 @@
                     <p style="text-align: center">
 
                     </p>
-                    <a class="btn btn-outline-light" href="#page-2" role="button">Want to see some more?</a>
+                    <a class="btn btn-outline-light myLink" href="../index.html" role="button">Want to see some more?</a>
                   </div>
                 </div>
               </div>
@@ -182,17 +182,18 @@
   <script>
     new Pageable(".container", {
     childSelector: "[data-anchor]", // CSS3 selector string for the pages
-    anchors: [6], // define the page anchors
+    anchors: [2], // define the page anchors
     pips: true, // display the pips
-    animation: 300, // the duration in ms of the scroll animation
+    animation: 500, // the duration in ms of the scroll animation
     delay: 0, // the delay in ms before the scroll animation starts
     throttle: 50, // the interval in ms that the resize callback is fired
     orientation: "vertical", // or horizontal
-    swipeThreshold: 50, // swipe / mouse drag distance (px) before firing the page change event
+    swipeThreshold: 100, // swipe / mouse drag distance (px) before firing the page change event
     freeScroll: false, // allow manual scrolling when dragging instead of automatically moving to next page
     navPrevEl: false, // define an element to use to scroll to the previous page (CSS3 selector string or Element reference)
     navNextEl: false, // define an element to use to scroll to the next page (CSS3 selector string or Element reference)
     infinite: false, // enable infinite scrolling (from 0.4.0)
+    
 
     events: {
     wheel: true, // enable / disable mousewheel scrolling
@@ -223,6 +224,36 @@
     // do something when scrolling ends
     },
     });
+
+    Pageable.prototype._start = function(e) {
+      var evt = this._getEvent(e);
+
+      if (this.scrolling || this.dragging) {
+        return false;
+      }
+
+      if (e.type === 'touchstart') {
+        if (!this.events.touch) {
+          if (!evt.target.closest('a')) {
+/* this._preventDefault(e); */
+          }
+          return false;
+        }
+      }
+
+      if (e.type === 'mousedown') {
+        if (!this.events.mouse || e.button !==0) {
+          return false;
+        }
+    } //
+    if (!evt.target.closet(this.config.childSelector)) {
+      return false;
+    }
+
+    /* this._preventDefault(e); */
+
+    this.dragging = this.config.freeScroll;
+  }
   </script>
   <script type="text/javascript" src="assets/js/swiper-bundle.js"></script>
   <script>
@@ -248,6 +279,13 @@
     },
     });
   </script>
+    <script>
+      Array.from(document.querySelectorAll('.myLink')).forEach((el) => {
+        el.addEventListener('touchend', () => {
+          window.location.href = el.href;
+        });
+      });
+      </script>
 </body>
 
 </html>

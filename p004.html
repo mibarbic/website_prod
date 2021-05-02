@@ -150,7 +150,7 @@
                     <p style="text-align: center">
 
                     </p>
-                    <a class="btn btn-outline-light" href="#page-2" role="button">Want to see some more?</a>
+                    <a class="btn btn-outline-light myLink" href="../index.html" role="button">Want to see some more?</a>
                   </div>
                 </div>
               </div>
@@ -243,6 +243,13 @@
     },
     });
   </script>
+    <script>
+      Array.from(document.querySelectorAll('.myLink')).forEach((el) => {
+        el.addEventListener('touchend', () => {
+          window.location.href = el.href;
+        });
+      });
+      </script>
 </body>
 
 </html>
