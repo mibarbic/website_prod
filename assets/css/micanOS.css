@@ -82,16 +82,31 @@
     color: #ffffff;
   }
   
+  .dflex {
+    pointer-events: all;
+  }
+  .pg-wrapper {
+    pointer-events: all;
+  }
   h3 {
     font-family: 'purista-web';
     color: rgb(0,0,0);
   }
   @media (max-width: 900px) {
-    .w-100{
+    .w-100x{
       margin-top: 30%;
       font-size: medium!important;
     }
   }
+  @media (max-width: 500px) {
+    .w-100{
+      margin-left: 10%;
+      margin-right: 10%;
+      font-size: medium!important;
+    }
+  }
+
+
   @media (max-width: 900px) {
     p{
       font-size: x-small!important;
@@ -105,6 +120,12 @@
   @media (max-height: 900px) {
     .w-100{
       margin-top: 30%;
+      font-size: small!important;
+    }
+  }
+  @media (max-height: 400px) {
+    .w-100{
+      margin-top: 10%;
       font-size: small!important;
     }
   }
@@ -493,7 +514,9 @@
 
 
 
-
+  .masthead-content {
+    pointer-events: all;
+  }
 
 
 
@@ -506,7 +529,7 @@
     min-height: 25rem;
     width: 100%;
     overflow: hidden;
-    pointer-events:auto;
+    pointer-events:all;
   }
   
   .video-background-holder-b {
@@ -516,7 +539,7 @@
     min-height: 25rem;
     width: 100%;
     overflow: hidden;
-    pointer-events:auto;
+    pointer-events:all;
   }
   
   .video-background-holder video {
@@ -532,11 +555,11 @@
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    pointer-events:auto;
+    pointer-events:all;
   }
   
   .video-background-holder-b video {
-    pointer-events:auto;
+    pointer-events:all;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -554,7 +577,7 @@
   .video-background-content {
     position: relative;
     z-index: 2;
-    pointer-events:auto;
+    pointer-events:all;
   }
   
   .video-background-overlay {
@@ -566,7 +589,7 @@
     background-color: black;
     opacity: 0.6;
     z-index: 1;
-    pointer-events:auto;
+    pointer-events:all;
   }
   
   .video-background-overlay-b {
@@ -578,7 +601,7 @@
     background-color: black;
     opacity: 0.5;
     z-index: 1;
-    pointer-events:auto;
+    pointer-events:all;
   }
 
   
