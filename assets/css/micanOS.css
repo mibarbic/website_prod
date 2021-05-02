@@ -86,34 +86,31 @@
     font-family: 'purista-web';
     color: rgb(0,0,0);
   }
-  @media (max-width: 900px) {
+  @media (max-width: 500px) {
     .w-100{
-      margin-top: 30%;
+      margin-top: 20%;
+      margin-left: 15%;
+      margin-right: 15%;
       font-size: medium!important;
     }
-  }
-  @media (max-width: 900px) {
     p{
-      font-size: x-small!important;
+      font-size: small!important;
     }
-  }
-  @media (max-width: 900px) {
     h1,h2,h3,h4,h5,h6{
       font-size: medium!important;
     }
   }
-  @media (max-height: 900px) {
-    .w-100{
-      margin-top: 30%;
-      font-size: small!important;
-    }
+  
   }
   @media (max-height: 900px) {
+    .w-100{
+      margin-top: 20%;
+      font-size: small!important;
+    }
     p{
       font-size: x-small!important;
     }
-  }
-  @media (max-height: 900px) {
+
     h1,h2,h3,h4,h5,h6{
       font-size: medium!important;
     }
@@ -129,15 +126,13 @@
     }
   }
   
-  @media (min-width: 300px) {
-    .flex-grow-1 {
-      height: 200px;
-    }
-  }
-  
+   
   @media (min-width: 300px) {
     .small {
       font-size: 14px;
+    }
+    .flex-grow-1 {
+      height: 200px;
     }
   }
   
@@ -459,15 +454,24 @@
     opacity: 1;
   }
   
-.swiper-pagination-bullet {
-    animation: animateBar 1s linear infinite;
-    background-image: linear-gradient(0deg,#5cc1cf,#c14aae,#5cc1cf);
-    background-size: 100% 1100%;
-    border-radius: 0px;
-    width: 10%;
-    height: 2px;
-}
-
+  .swiper-pagination-bullet {
+      animation: animateBar 1s linear infinite;
+      background-image: linear-gradient(0deg,#5cc1cf,#c14aae,#5cc1cf);
+      background-size: 100% 1100%;
+      border-radius: 0px;
+      width: 10%;
+      height: 2px;
+  }
+  
+  .swiper-pagination-bullet {
+      animation: animateBar 1s linear infinite;
+      background-image: linear-gradient(0deg,#5cc1cf,#c14aae,#5cc1cf);
+      background-size: 100% 1100%;
+      border-radius: 0px;
+      width: 10%;
+      height: 2px;
+  }
+  
 
 
   .swiper-container {
@@ -482,7 +486,12 @@
   }
   
 
+  @media (max-width:400px) {
+    .swiper-pagination {
+      margin-bottom: 25px;
 
+    }
+  }
 
 
 
