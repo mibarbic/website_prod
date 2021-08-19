@@ -53,37 +53,7 @@
         <div data-anchor="Page 1">
           <div class="video-background-content micansCONE-TANNER h-100">
             <div class="d-flex h-100 text-center align-items-center">
-              <div class="w-100 text-pink">
-                <h1 class="display-4">BP-06: 12 Principles of Animation</h1>
-
-                <br><b>Format:</b>
-                <br>
-                <h6>
-                  Digital Video | 0:50 | 1080P
-                </h6>
-                <br><b>Awards:</b>
-                <h6>
-                  Graphis Platinum for New Talent Annual ‘21
-                </h6>
-                <br>
-                <h6>
-                  Self-Study
-                </h6>
-                <br>
-                <b>Role:</b>
-                <h6>
-                  <br> Creative Director,
-                  <br>3D Modeler,
-                  <br>Look Developer,
-                  <br>Sound Designer,
-                  <br>Post Producer,
-                  <br>Video Editor
-                </h6>
-                <br>
-                <p style="text-align: center;">scroll for more</p>
-
-                <p class="lead mb-0"></p>
-              </div>
+            
             </div>
           </div>
         </div>
@@ -279,25 +249,20 @@
   <script type="text/javascript" src="assets/js/swiper-bundle.js"></script>
   <script>
     const swiper = new Swiper('.swiper-container', {
-      // Optional parameters
-      direction: 'horizontal',
-      loop: true,
-
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-      },
-
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
+      effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
     });
   </script>
   <script type="text/javascript" src="assets/js/iframe-lightbox.js"></script>

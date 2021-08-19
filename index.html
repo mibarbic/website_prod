@@ -72,6 +72,28 @@
             <div class="video-background-holder">
               <div class="video-background-overlay"></div>
               <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              </video>
+              <div class="video-background-content micansCONE-TANNER h-100">
+                <div class="d-flex h-100 text-center align-items-center">
+                  <div class="w-100 text-pink">
+                    <h1 class="display-6">MOTION DESIGN</h1>
+                      <div class="btn-sect">
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="starP"></div>
+            <div class="masthead-content"></div>
+          </header>
+        </div>
+        <!-- pageable div-->
+        <div class="swiper-slide">
+          <header class="text-center text-white masthead" style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+            <div class="video-background-holder">
+              <div class="video-background-overlay"></div>
+              <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
                 <source src="assets/vid/p002.mp4" type="video/mp4">
               </video>
               <div class="video-background-content micansCONE-TANNER h-100">
@@ -144,6 +166,30 @@
             <div class="masthead-content"></div>
           </header>
         </div>
+
+        <div class="swiper-slide">
+          <header class="text-center text-white masthead" style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+            <div class="video-background-holder">
+              <div class="video-background-overlay"></div>
+              <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              </video>
+              <div class="video-background-content micansCONE-TANNER h-100">
+                <div class="d-flex h-100 text-center align-items-center">
+                  <div class="w-100 text-pink">
+                    <h1 class="display-6">VIDEO PRODUCTION</h1>
+                      <div class="btn-sect">
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="starP"></div>
+            <div class="masthead-content"></div>
+          </header>
+        </div>
+
+
         <!-- pageable div-->
         <!-- pageable div-->
         <div class="swiper-slide">
@@ -411,29 +457,20 @@
   <script type="text/javascript" src="assets/js/swiper-bundle.js"></script>
   <script>
     const swiper = new Swiper('.swiper-container', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    observer: true,
-            observeParents: true,
-            parallax:true,
-
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-
-    // Navigation arrows
-    navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-    el: '.swiper-scrollbar',
-    },
+    effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "3",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
     });
   </script>
   <script type="text/javascript" src="assets/js/iframe-lightbox.js"></script>
