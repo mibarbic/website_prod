@@ -59,9 +59,7 @@
     font-weight: 800!important;
   }
   
-  .h1, h1 {
-    /*font-size: 5px;*/
-  }
+
   
   article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
@@ -88,7 +86,7 @@
   }
   @media (max-width: 600px) {
     .w-100{
-      margin-top: 20%;
+      margin-top: 0%;
       margin-left: 15%;
       margin-right: 15%;
       font-size: medium!important;
@@ -100,7 +98,10 @@
       font-size: medium!important;
     }
     .display-4 {
-      font-size: 26px;
+      font-size: 20px;
+    }
+    .display-6 {
+      margin-top: 0%;
     }
   }
   
@@ -475,6 +476,7 @@
     opacity: 1;
   }
   
+<<<<<<< Updated upstream
   @media (max-width:720px) {
   .swiper-pagination-bullet {
       animation: animateBar 1s linear infinite;
@@ -492,9 +494,26 @@
       border-radius: 0px;
       width: 8%;
       height: 2px;
+=======
+  .swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+>>>>>>> Stashed changes
   }
   
 
+<<<<<<< Updated upstream
+=======
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: auto;
+    height: 100vh;
+
+  }
+>>>>>>> Stashed changes
 
   .swiper-container {
     width: 100%;
@@ -506,6 +525,38 @@
   .swiper-button-prev{
       color:#ffffff;
   }
+<<<<<<< Updated upstream
+=======
+
+    
+  @media (max-width:720px) {
+    .swiper-pagination-bullet {
+        animation: animateBar 1s linear infinite;
+        background-image: linear-gradient(0deg,#5cc1cf,#c14aae,#5cc1cf);
+        background-size: 100% 1100%;
+        border-radius: 0px;
+        width: 3%!important;
+        height: 20px;
+        z-index: 9999;
+    }}
+    
+    .swiper-pagination-bullet {
+        animation: animateBar 1s linear infinite;
+        background-image: linear-gradient(0deg,#5cc1cf,#c14aae,#5cc1cf);
+        background-size: 100% 1100%;
+        border-radius: 0px;
+        width: 8%;
+        height: 2px;
+        z-index: 9999;
+    }
+
+    .swiper-button-next{
+        color:#ffffff;
+    }
+    .swiper-button-prev{
+        color:#ffffff;
+    }
+>>>>>>> Stashed changes
   
 
 
@@ -608,10 +659,6 @@
 
 
 
-
-
-
-
   .article-clean {
     color: #56585b;
     background-color: #fff;
@@ -695,5 +742,3 @@
     margin-bottom: 12px;
     max-width: 100%;
   }
-  
-  
