@@ -279,7 +279,9 @@
     .nav-link {
     transition: 1s;
   }
-  
+  .navbar{
+    z-index: 9999;
+  }
   .navbar-brand {
     transition: 1s;
   }
