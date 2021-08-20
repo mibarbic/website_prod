@@ -476,36 +476,14 @@
     opacity: 1;
   }
   
-<<<<<<< Updated upstream
-  @media (max-width:720px) {
-  .swiper-pagination-bullet {
-      animation: animateBar 1s linear infinite;
-      background-image: linear-gradient(0deg,#5cc1cf,#c14aae,#5cc1cf);
-      background-size: 100% 1100%;
-      border-radius: 0px;
-      width: 3%!important;
-      height: 2px;
-  }}
-  
-  .swiper-pagination-bullet {
-      animation: animateBar 1s linear infinite;
-      background-image: linear-gradient(0deg,#5cc1cf,#c14aae,#5cc1cf);
-      background-size: 100% 1100%;
-      border-radius: 0px;
-      width: 8%;
-      height: 2px;
-=======
   .swiper-container {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
 
->>>>>>> Stashed changes
   }
   
 
-<<<<<<< Updated upstream
-=======
   .swiper-slide {
     background-position: center;
     background-size: cover;
@@ -513,7 +491,6 @@
     height: 100vh;
 
   }
->>>>>>> Stashed changes
 
   .swiper-container {
     width: 100%;
@@ -525,8 +502,6 @@
   .swiper-button-prev{
       color:#ffffff;
   }
-<<<<<<< Updated upstream
-=======
 
     
   @media (max-width:720px) {
@@ -556,7 +531,6 @@
     .swiper-button-prev{
         color:#ffffff;
     }
->>>>>>> Stashed changes
   
 
 
