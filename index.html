@@ -28,7 +28,7 @@
           class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="#motiondesign">motion</a></li>
+          <li class="nav-item"><a class="nav-link" id="demo" href="#motiondesign">motion</a></li>
           <li class="nav-item"><a class="nav-link" href="#productdesign">ui/ux</a></li>
           <li class="nav-item"><a class="nav-link" href="#videoproduction">video</a></li>
 
@@ -42,10 +42,35 @@
   <!-- navbar end -->
 
   <!-- pageable -->
+
   <!-- pageable div-->
   <div class="swiper-container" style="height:100vh; z-index: 1">
     <div class="swiper-wrapper">
       <!-- pageable div-->
+      <div data-hash="motiondesign" class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                
+                <div class="w-100 text-pink">
+                  <i class="fas fa-info-circle"></i>
+                  <p style="text-align:center;">swipe, scroll, drag, or use arrow keys to navigate!</p>
+
+                  <div class="btn-sect">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="masthead-content"></div>
+        </header>
+      </div>
       <div data-hash="motiondesign" class="swiper-slide">
         <header class="text-center text-white masthead"
           style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
@@ -370,7 +395,7 @@
 
 
     </div>
-  </div><!-- wrapper -->
+  <!-- wrapper -->
 
   <!-- If we need pagination -->
   <div class="swiper-pagination"></div>
@@ -445,7 +470,13 @@
   <script type="text/javascript" src="assets/js/swiper-bundle.js"></script>
   <script>
     const swiper = new Swiper('.swiper-container', {
+      mousewheel: true,
       direction: 'horizontal',
+      autoplay: {
+   delay: 3000,
+   pauseOnMouseEnter: true,
+   disableOnInteraction: true,
+ },
     loop: false,
     observer: true,
             observeParents: true,
@@ -517,6 +548,7 @@
     });
   </script>
   <script type="text/javascript" src="assets/js/iframe-lightbox.js"></script>
+
   <script>
     [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function (el) {
       el.lightbox = new IframeLightbox(el);
