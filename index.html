@@ -19,9 +19,9 @@
 
 <body>
   <!-- navbar -->
-  <div class="bar" style="height: 100px;"></div>
+  <div class="bar" style="height: 0px;"></div>
   <nav class="navbar navbar-dark navbar-expand-lg fixed-top navbar-custom"
-    style="color: rgb(0,0,0);background:rgb(0, 0, 0);border-bottom: 3px;padding-bottom: 23px;--border-width: 3px;">
+    style="color: rgb(0,0,0);background:rgba(0, 0, 0, 0);border-bottom: 3px;padding-bottom: 23px;--border-width: 3px;">
     <div class="micansCONE-TANNER"><a class="navbar-brand" href="index.html"
         style="background: url(&quot;assets/img/micanbar_white_pink_heavy.png&quot;);background-size: cover;width: 116.3281px;height: 66px;"></a><button
         data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span
@@ -44,7 +44,7 @@
   <!-- pageable -->
 
   <!-- pageable div-->
-  <div class="swiper-container" style="height:100vh; z-index: 1">
+  <div class="swiper-container" style="padding-top:12vh; height:100vh; z-index: 1; border-radius:15px; overflow: hidden;">
     <div class="swiper-wrapper">
       <!-- pageable div-->
       <!--<div data-hash="motiondesign" class="swiper-slide">
@@ -540,7 +540,7 @@
       slidesPerView: "3",
       loop:true,
       coverflowEffect: {
-        rotate: 30,
+        rotate: 0,
         stretch: 0,
         depth: 350,
         modifier: 1,
