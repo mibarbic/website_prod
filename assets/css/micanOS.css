@@ -48,7 +48,7 @@
     font-family: 'purista-web';
     font-size: 1.5rem;
     color: #000000;
-    background-color: #000000;
+    background-image: linear-gradient(rgb(21, 21, 21),rgb(34, 34, 34), black);
   }
   
   .text-center {

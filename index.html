@@ -21,7 +21,7 @@
   <!-- navbar -->
   <div class="bar" style="height: 100px;"></div>
   <nav class="navbar navbar-dark navbar-expand-lg fixed-top navbar-custom"
-    style="color: rgb(0,0,0);background: rgb(0,0,0);border-bottom: 3px;padding-bottom: 23px;--border-width: 3px;">
+    style="color: rgb(0,0,0);background:rgb(0, 0, 0);border-bottom: 3px;padding-bottom: 23px;--border-width: 3px;">
     <div class="micansCONE-TANNER"><a class="navbar-brand" href="index.html"
         style="background: url(&quot;assets/img/micanbar_white_pink_heavy.png&quot;);background-size: cover;width: 116.3281px;height: 66px;"></a><button
         data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span
@@ -47,7 +47,7 @@
   <div class="swiper-container" style="height:100vh; z-index: 1">
     <div class="swiper-wrapper">
       <!-- pageable div-->
-      <div data-hash="motiondesign" class="swiper-slide">
+      <!--<div data-hash="motiondesign" class="swiper-slide">
         <header class="text-center text-white masthead"
           style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
           <div class="video-background-holder">
@@ -70,7 +70,7 @@
           </div>
           <div class="masthead-content"></div>
         </header>
-      </div>
+      </div> -->
       <div data-hash="motiondesign" class="swiper-slide">
         <header class="text-center text-white masthead"
           style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
@@ -89,6 +89,36 @@
               </div>
             </div>
           </div>
+          <div class="masthead-content"></div>
+        </header>
+      </div>
+      <!-- pageable div-->
+      <div class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              <source src="assets/vid/contact.mp4" type="video/mp4">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-pink">
+                  <h1 class="display-4">
+                    <h1 class="display-4">Demo Reel 2021</h1>
+                    <p class="lead mb-0">Culmination of all recent projects.</p>
+                    <div class="btn-sect">
+                      <a href="https://player.vimeo.com/video/419007072?title=0&byline=0&portrait=0"
+                        javascript:void(0);" class="btn btn-outline-light myLink iframe-lightbox-link" ,
+                        data-src="https://player.vimeo.com/video/419007072?title=0&byline=0&portrait=0"
+                        role="button">Watch</a>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div id="starP"></div>
           <div class="masthead-content"></div>
         </header>
       </div>
@@ -124,7 +154,6 @@
           <div class="masthead-content"></div>
         </header>
       </div>
-      <!-- pageable div-->
       <!-- pageable div-->
       <div class="swiper-slide">
         <header class="text-center text-white masthead"
@@ -391,23 +420,7 @@
           <div class="masthead-content"></div>
         </header>
       </div>
-      <div class="swiper-slide">
-        <header class="text-center text-white masthead"
-          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
-          <div class="video-background-holder">
-            <div class="video-background-overlay"></div>
-            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
 
-            </video>
-            <div class="video-background-content micansCONE-TANNER h-100">
-              <div class="d-flex h-100 text-center align-items-center">
-                <div class="w-100 text-pink">
-<br></br>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
           <div id="starP"></div>
           <div class="masthead-content"></div>
         </header>
@@ -554,11 +567,11 @@
           spaceBetween: 20,
         },
         "@1.00": {
-          slidesPerView: 3,
+          slidesPerView: 2,
           spaceBetween: 40,
         },
         "@1.50": {
-          slidesPerView: 3,
+          slidesPerView: 2,
           spaceBetween: 50,
         },
         navigation: {
