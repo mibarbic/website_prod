@@ -13,15 +13,48 @@
   <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
   <link rel="stylesheet" href="assets/css/swiper-bundle.css" />
   <link rel="stylesheet" href="assets/css/iframe-lightbox.css" />
+<<<<<<< Updated upstream
   <link rel="stylesheet" href="assets/css/micanOS_r2.css" />
 
+=======
+  <link rel="stylesheet" href="assets/css/micanOS.css" />
+  <style>
+    body {
+      background-color: black;
+    }
+    .bar {
+    height: 90px;
+    filter: blur(2px);
+    }
+    .navbar-custom {
+    color: black;
+    background-color: black;
+    padding-bottom: 15px;
+    }
+    /* isotope */
+    .grid-item { width: 25%; }
+    .grid-item--width2 { width: 50%; }
+    .grid {
+    padding-top: 110px;
+    background-color: white;
+    }
+    .thumb169 {
+    width: 30vw;
+    }
+  </style>
+>>>>>>> Stashed changes
 </head>
 
 <body>
   <!-- navbar -->
+<<<<<<< Updated upstream
   <div class="bar" style="height: 100px;"></div>
   <nav class="navbar navbar-dark navbar-expand-lg fixed-top navbar-custom"
     style="color: rgb(0,0,0);background: rgb(0,0,0);border-bottom: 3px;padding-bottom: 23px;--border-width: 3px;">
+=======
+  <div class="bar"></div>
+  <nav class="navbar navbar-dark navbar-expand-lg fixed-top navbar-custom">
+>>>>>>> Stashed changes
     <div class="micansCONE-TANNER"><a class="navbar-brand" href="index.html"
         style="background: url(&quot;assets/img/micanbar_white_pink_heavy.png&quot;);background-size: cover;width: 116.3281px;height: 66px;"></a><button
         data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span
@@ -36,6 +69,7 @@
     </div>
   </nav>
   <!-- navbar end -->
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 
   <!-- pageable -->
@@ -260,34 +294,59 @@
 >>>>>>> Stashed changes
   </script>
   <script type="text/javascript" src="assets/js/iframe-lightbox.js"></script>
-  <script>
-    [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function (el) {
-      el.lightbox = new IframeLightbox(el);
-    });
-    document.getElementsByClassName("iframe-lightbox-link"),
-      function (el) {
-        el.lightbox = new IframeLightbox(el, {
-          onLoaded: function (iframe) {
-            // on loaded
-          },
-          onCreated: function (instance) {
-            // on created
-          },
-          onOpened: function (instance) {
-            // on opened
-          },
-          onClosed: function (instance) {
-            // on closed
-          }
-        });
-      }
+=======
+  <div class="content">
+  
+    <div class="grid">
+
+      <button data-filter="numberGreaterThan50">number > 50</button>
+      <button data-filter="ium">name ends with -ium</button>
+    
+      <div class="grid-item red"><img src="assets/img/bp06__0001.png" class="thumb169" alt="bp-06 thumbnail"></div>
+      <div class="grid-item yellow">chunk2</div>
+      <div class="grid-item">chunk3</div>
+
+    </div>
+    </div>
+  </div>
+  
+
+  
+
+  <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
   </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
+>>>>>>> Stashed changes
   <script>
-    Array.from(document.querySelectorAll('.myLink')).forEach((el) => {
-      el.addEventListener('touchend', () => {
-        window.location.href = el.href;
-      });
-    });
+// jQuery
+// hash of functions that match data-filter values
+var filterFns = {
+  // show if number is greater than 50
+  numberGreaterThan50: function() {
+    // use $(this) to get item element
+    var number = $(this).find('.number').text();
+    return parseInt( number, 10 ) > 50;
+  },
+  // show if name ends with -ium
+  ium: function() {
+    var name = $(this).find('.name').text();
+    return name.match( /ium$/ );
+  }
+};
+
+// filter items on button click
+$('.filter-button-group').on( 'click', 'button', function() {
+  var filterValue = $(this).attr('data-filter');
+  // use filter function if value matches
+  filterValue = filterFns[ filterValue ] || filterValue;
+  $grid.isotope({ filter: filterValue });
+});
   </script>
 </body>
 
