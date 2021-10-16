@@ -478,7 +478,14 @@
   .article-list .item .action:hover {
     opacity: 1;
   }
+  
+  .swiper-container {
+    width: 100%;
+    padding-top: 10vh;
+    padding-bottom: 200px;
 
+  }
+  
 
   .swiper-slide {
     background-position: center;
