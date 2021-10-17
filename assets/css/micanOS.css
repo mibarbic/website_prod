@@ -49,6 +49,7 @@
     font-size: 1.5rem;
     color: #000000;
     background-image: linear-gradient(rgb(10, 10, 10), black);
+    overflow-x: hidden;
   }
   
   .text-center {
@@ -732,3 +733,7 @@
     margin-bottom: 12px;
     max-width: 100%;
   }
+
+.navbar-custom {
+filter: blur(60);
+}
