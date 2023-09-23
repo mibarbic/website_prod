@@ -2,569 +2,366 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mica</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mica</title>
 
-    <!-- Add Bootstrap CSS (replace with your own Bootstrap CSS link) -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.typekit.net/iye6tnl.css">
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.typekit.net/iye6tnl.css">
 
-    <!-- Add Swiper CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- Add Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
-    <style>
-        .content-container {
-transform: scale(0.8);
-transition: all 1s ease-in-out;
-padding-top: 20%;
-padding-bottom: 5% !important;
-        }
+  <!-- Add Context Cursor CSS -->
+  <link rel="stylesheet" href="pointerstyle.css">
 
-        .content-container:hover {
-            transform:scale(0.85);
-        }
-        /* Style for the panels with 16:9 aspect ratio */
-        .panel {
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            border-radius: 10px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .s1 {
-            background-image: url(/assets/img/bp06__0001.png);
-            background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-size: cover;            
-height: 70vh;
-            width:100vw;
-        }
-        .s2 {
-            background-image: url(/assets/img/cametek.png);
-            background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-size: cover;            
-height: 70vh;
-            width:100vw;
-        }
-        .s3 {
-            background-image: url(/assets/img/cppenv.png);
-            background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-size: cover;            
-height: 70vh;
-            width:100vw;
-        }
-        .s4 {
-            background-image: url(/assets/img/EahLIniUMAAObvC.jpg);
-            background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-size: cover;            
-height: 70vh;
-            width:100vw;
-        }
-
-
-        .s1t {
-            background-image: url(/assets/img/bp06__0001.png);
-            background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-size: cover;            
-height: 70vh;
-            width:100vw;
-        }
-        .s2t {
-            background-image: url(/assets/img/cametek.png);
-            background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-size: cover;            
-height: 70vh;
-            width:100vw;
-        }
-        .s3t {
-            background-image: url(/assets/img/cppenv.png);
-            background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-size: cover;            
-height: 70vh;
-            width:100vw;
-        }
-        .s4t {
-            background-image: url(/assets/img/EahLIniUMAAObvC.jpg);
-            background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-background-size: cover;            
-height: 70vh;
-            width:100vw;
-        }
-
-        .panel {
-            width: 100vw;
-            height: 100%;
-            object-fit: cover;
-            /* Maintain image aspect ratio and cover the entire space */
-            display: block;
-            margin: 0 auto;
-            /* Center horizontally */
-            transition: transform 0.2s;
-            border-radius: 10px;
-            /* Round the corners */
-        }
-
-        /* Text description */
-        .description {
-            background-color: rgba(0, 0, 0, 0.4);
-            color: #fff;
-            padding: 10px;
-            font-family: 'purista-web', Arial, Helvetica, sans-serif;
-            font-size: x-large;
-            text-align: center;
-            padding-top: 60%;
-            padding-bottom: auto;
-height: 100vh;        }
-
-        /* Title text */
-        .title {
-            font-family: 'rigid-square', Arial, Helvetica, sans-serif;
-            font-size: xx-large;
-            color: #fff;
-            text-align: center;
-        }
-        .hello-text {
-            font-family: 'sui-generis', Arial, Helvetica, sans-serif;
-            color: #fff;
-            text-align: center;
-            margin-top: 5%;
-
-        }
-
-        /* Frosted Glass Background */
-        body {
-background-color: black;            /* Replace with your blurred background image URL */
-            background-size: cover;
-            background-attachment: fixed;
-            /* Prevent background from scrolling */
-            background-position: center center;
-            /* Center the background image */
-            position: relative;
-            z-index: 0;
-            overflow: hidden;
-            /* Prevent vertical scrolling */
-        }
-
-        /* Dark Tint Overlay */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            backdrop-filter: blur(100px);
-            /* Adjust the blur intensity */
-            background: rgba(0, 0, 0, 0.3);
-            /* Adjust the opacity for the tint effect */
-            z-index: -1;
-        }
-
-        /* Noise Overlay */
-        body::after {
-            content: "";
-            pointer-events: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/tactile-noise-light.png');
-            /* Noise image URL */
-            opacity: 0.2;
-            /* Adjust the opacity for the noise effect */
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            background-color: rgba(255, 255, 255, 0);
-            /* Adjust the background opacity */
-            backdrop-filter: blur(10px) !important;
-            /* Adjust the blur intensity */
-            font-family: 'sui-generis', Arial, Helvetica, sans-serif;
-            position: fixed;
-            /* Fixed navbar */
-            width: 100%;
-            /* Full-width navbar */
-            top: 0;
-            /* Position at the top */
-            z-index: 999;
-            /* Place navbar above content */
-            padding-left: 10%;
-            padding-right: 16%;
-            padding-top: 2%;
-
-        }
-
-        .navbar-dark .navbar-brand img {
-            max-width: 100px;
-            /* Ensure the image fits within the brand area */
-        }
-
-        .navbar-dark .navbar-nav .nav-link {
-            color: #bcbcbc;
-            /* Change the link color to white */
-            padding-left: 2%;
-        }
-
-        .nav-item {
-            padding: 5%;
-            transform: scale(1);
-        }
-
-        .nav-link:hover {
-            color: white !important;
-            transition: 1s;
-transform: scale(1.1)
-;
-        }
-
-        /* Swiper content */
-        .swiper {
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            left: 0px;
-            bottom: 0px;
-            height: 70vh;
-            width: 100vw;
-
-        }
-
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .swiper {
-            width: 100%;
-            height: 300px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .swiper-slide {
-            background-size: cover;
-            background-position: center;
-        }
-
-        .mySwiper2 {
-            height: 80%;
-            width: 100%;
-        }
-
-        .mySwiper {
-            height: 15vh;
-            box-sizing: border-box;
-            padding: 10px 0;
-            
-        }
-
-        .mySwiper .swiper-slide {
-            width: 25%;
-            height: 100%;
-            opacity: 0.4;
-            border-radius: 10px;
-            
-        }
-
-        .mySwiper .swiper-slide-thumb-active {
-            opacity: 1;
-        }
-
-        .swiper-slide img {
-            display:flex;
-            width: 100vw;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-
-            
-        }
-        /* Add styles to hide the menu initially */
-.menu-container {
-    display: none;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-}
-
-.menu-list {
-    list-style: none;
-    padding: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.menu-list li {
-    margin: 10px;
-}
-
-/* Style the menu overlay */
-.menu-overlay {
-    display: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-}
-
-/* Add a class to show the menu */
-.menu-open .menu-container {
-    display: block;
-}
-
-.menu-open .menu-overlay {
-    display: block;
-}
-
-    </style>
-</head>
-
-<body style="opacity: 0; transition: opacity 3s;">
-       <!-- Add a button to toggle the menu -->
-<button class="navbar-toggler navba" type="button" data-toggle="collapse" data-target="#navbarNav"
-aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-expanded="false" id="menuToggle">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<!-- Add a menu overlay -->
-<div class="menu-overlay" id="menuOverlay"></div>
-
-<!-- Add a menu container to hold the menu items -->
-<div class="menu-container" id="menuContainer">
-<ul class="menu-list">
-<li class="nav-item">
-    <a class="nav-link" href="#">Home</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="#">About</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="#">Services</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="#">Contact</a>
-</li>
-</ul>
-</div>
-
-
-    <div class="hello-text" style="position: fixed; top: 50%; left: 47%; transform: translate(-50%, -50%); opacity: 0;">
-        <h1>ヾ(*ﾟ▽ﾟ)ﾉ Hello♪</h1>
-    </div>
-
-    <div class="content-container" style="transform: scale(0.8); opacity: 0;">
-
-        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide panel">
-                    <div class="s1">
-                        <div class="description">
-                            <h2 class="title">Slide 1</h2>
-                            <p>This is the 1st slide description.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide panel">
-                    <div class="s2">
-                        <div class="description">
-                            <h2 class="title">Slide 2</h2>
-                            <p>This is the 2nd slide description.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide panel">
-                    <div class="s3">
-                        <div class="description">
-                            <h2 class="title">Slide 3</h2>
-                            <p>This is the 3rd slide description.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide panel">
-                    <div class="s4">
-                        <div class="description">
-                            <h2 class="title">Slide 4</h2>
-                            <p>This is the 4th slide description.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-    <div thumbsSlider="" class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide panel">
-                <div class="s1t">
-                </div>
-            </div>
-            <div class="swiper-slide panel">
-                <div class="s2t">
-                </div>
-            </div>
-            <div class="swiper-slide panel">
-                <div class="s3t">
-                </div>
-            </div>
-            <div class="swiper-slide panel">
-                <div class="s4t">
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            loop: true,
-            spaceBetween: 10,
-            slidesPerView: 4,
-            freeMode: true,
-            watchSlidesProgress: true,
-            autoplay: true,
-        });
-        var swiper2 = new Swiper(".mySwiper2", {
-            loop: true,
-            spaceBetween: 10,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            thumbs: {
-                swiper: swiper,
-            },
-        });
-    </script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-<script>
-    // Function to animate "hello" text and content-container
-    function animateElements() {
-        // Animate the "hello" text fade in
-        anime({
-            targets: '.hello-text',
-            opacity: [0, 1], // Fade in
-            duration: 1000, // Animation duration in milliseconds
-            easing: 'easeInOutQuad', // Easing function for smooth animation
-            complete: function () {
-                // After the "hello" text animation is complete, wait for a moment and then fade it out
-                setTimeout(function() {
-                    anime({
-                        targets: '.hello-text',
-                        opacity: [1, 0], // Fade out
-                        duration: 1000, // Animation duration in milliseconds
-                        easing: 'easeInOutQuad', // Easing function for smooth animation
-                        complete: function () {
-                            // Hide the "hello" text after fading out
-                            document.querySelector('.hello-text').style.display = 'none';
-
-                            // After fading out the "hello" text, animate the content-container
-                            anime({
-                                targets: '.content-container',
-                                scaleX: [0, 1], // Scale to 1
-                                scaleY: [0, 1], // Scale to 1
-                                opacity: [0, 1], // Fade in
-                                duration: 1000, // Animation duration in milliseconds
-                                easing: 'easeOutExpo', // Easing function for smooth animation
-                            });
-                        }
-                    });
-                }, 1000); // Wait for 1 second before fading out the "hello" text
-            }
-        });
+  <style>
+    body,
+    button,
+    a,
+    input,
+    textarea {
+      cursor: none;
     }
 
-    // Call the animation function when the page loads
-    window.addEventListener('load', function () {
-        // Animate the opacity of the body to make it fade in from black
-        document.body.style.opacity = '1';
+    .nav-item,
+    .navbar-brand {
+      border-radius: 10px !important;
+      margin-right: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
 
-        // Start the other animations after a delay (adjust as needed)
-        setTimeout(animateElements, 1000);
-    });
-</script>
+    .navbar-brand {
+      margin-top: 5px;
+      height: 70px;
+    }
+
+    .bt-pad {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .btn-primary {
+      background-color: black;
+    }
+
+    body {
+      font-family: "sui-generis", Arial, Helvetica, sans-serif;
+      font-weight: 500;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      background: url('your_background_image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      perspective: 1000px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+
+    .content-wrapper {
+      max-width: calc(100vh * 16 / 9);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .content-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      /* Center children horizontally */
+      align-items: center;
+      /* Center children vertically */
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+    }
 
-<script>
+    @keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.content-container.initial-state {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInScale 0.7s forwards;
+  /* 0.7s is the duration of the animation, adjust as needed */
+}
+
+    .navbar {
+      font-family: "sui-generis", Arial, Helvetica, sans-serif;
+      font-weight: 500;
+      position: relative;
+      z-index: 1001;
+      background: transparent;
+      margin: 0 auto;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .navbar::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200%;
+      /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
+      filter: blur(10px); */
+      z-index: -1;
+    }
+
+    .centered-panel {
+      width: 90%;
+      max-width: calc(50vh * 16 / 9);
+      height: 70vh;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 5px;
+      backdrop-filter: blur(10px);
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      position: relative;
+    transform: translateY(50px);
+    }
+
+    #cursor-glow {
+      position: fixed;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.6);
+      pointer-events: none;
+      mix-blend-mode: overlay;
+      filter: blur(8px);
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+
+    .inner-panel {
+      width: 98%;
+      height: 50vh;
+      /* Subtracting the top margin from the height */
+      margin: 2% auto 5% auto;
+      /* 2% top margin, 5% bottom margin, auto for horizontal centering */
+      position: relative;
+      /* To position the image */
+      border-radius: 10px;
+
+    }
+
+
+    .inner-image {
+      width: 100%;
+      height: 100%;
+      /*background: url('./assets/img/bp06__0001.png') no-repeat center center;*/
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+      .main-content {
+  display: none; /* Initially hidden */
+  opacity: 0;
+      justify-content: center;
+      align-items: center;
+    }
+    #loading-text {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  /* This makes sure it's centered on the screen */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999; /* Ensures it's on top */
+}
+
+.content-container {
+  opacity: 0;  /* Initially hidden */
+}
+
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+
+
+</head>
+
+<body>
+  <!-- Add this right after the opening <body> tag -->
+
+<div id="loading-text">
+  <span>L</span>
+  <span>o</span>
+  <span>a</span>
+  <span>d</span>
+  <span>i</span>
+  <span>n</span>
+  <span>g</span>
+  <span>...</span>
+</div>
+
+  <div class="content-wrapper">
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <img data-ccursor="lift" class="navbar-brand bt-pad" src="/assets/img/micanbar_white_pink_heavy.png">
+      <button data-ccursor="lift" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto text-center">
+          <li data-ccursor="lift" class="nav-item">
+            <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li data-ccursor="lift" class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="main-content">
+      <div class="content-container">
+        <div class="centered-panel">
+          <div class="inner-panel">
+            <!-- Placeholder for the image -->
+            <div class="inner-image">
+              <h2 class="text-center" style="padding-top: 50%;">(×_×;)</h2>
+            </div>
+          </div>
+          <!-- Text and Button beneath the inner-panel -->
+          <div class="text-container text-center">
+            <h2>Oopsie!</h2>
+                    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
     // Initialize Vanta.js with 100vh coverage
     VANTA.CLOUDS({
-        el: "body",
-        mouseControls: false,
-        gyroControls: false,
-        minHeight: window.innerHeight,
-        minWidth: window.innerWidth,
-        skyColor: 0x616161,
-        cloudColor: 0xffffff,
-        sunColor: 0x2e5a9b,
-        sunGlareColor: 0x1e177d,
-        sunlightColor: 0x16c2cd,
-        speed: 0.80
+      el: "body",
+      mouseControls: false,
+      gyroControls: false,
+      minHeight: window.innerHeight,
+      minWidth: window.innerWidth,
+      skyColor: 0x616161,
+      cloudColor: 0xffffff,
+      sunColor: 0x2e5a9b,
+      sunGlareColor: 0x1e177d,
+      sunlightColor: 0x16c2cd,
+      speed: 0.80
     });
-</script>
-<script>
-    // Add a click event listener to the menu toggler
-document.getElementById('menuToggle').addEventListener('click', function () {
-    // Toggle the 'menu-open' class on the body to show/hide the menu
-    document.body.classList.toggle('menu-open');
+  </script>
+
+  <!-- Add Bootstrap JS and Popper.js for Navbar functionality -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Add Context Cursor JS -->
+  <script src="/cursor.js"></script>
+
+  <script>
+    const panel = document.querySelector('.content-container');
+
+    panel.addEventListener('mousemove', (e) => {
+      const width = panel.offsetWidth;
+      const height = panel.offsetHeight;
+
+      // Calculate the center of the panel
+      const centerX = width / 2;
+      const centerY = height / 2;
+
+      // Calculate the tilt angles
+      const tiltX = 1.5 * (e.clientY - centerY) / centerY;
+      const tiltY = -1.5 * (e.clientX - centerX) / centerX;
+
+      // Apply the tilt as a CSS transform
+      panel.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    });
+
+    // Reset the tilt when the mouse leaves the panel
+    panel.addEventListener('mouseleave', () => {
+      panel.style.transform = 'rotateX(0) rotateY(0)';
+    });
+
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const contentContainer = document.querySelector('.content-container');
+  contentContainer.classList.add('initial-state');
+  delay(2000);
+  // After a tiny delay, remove the class to allow other interactions
+  setTimeout(() => {
+    contentContainer.classList.remove('initial-state');
+  }, 1500);  // This delay should match the animation duration
+});
+  </script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const letters = document.querySelectorAll('#loading-text span');
+  
+  anime.timeline({
+    loop: 1,
+    complete: function() {
+      anime({
+        targets: '#loading-text',
+        opacity: 0,
+        duration: 1000,
+        easing: 'easeInOutSine',
+        complete: function() {
+          document.getElementById('loading-text').style.display = 'none';
+          // Once the loading text has disappeared, we'll show the main-content
+          const mainContent = document.querySelector('.main-content');
+          mainContent.style.display = 'flex'; // or 'block', depending on your layout
+          anime({
+            targets: mainContent,
+            opacity: [0, 1],  // This will make it fade in
+            translateY: [-50, 0],
+            scale: [0, 1.0],
+            duration: 700,
+            easing: 'easeInOutSine'
+          });
+        }
+      });
+    }
+  })
+  .add({
+    targets: letters,
+    translateY: [-10,0],
+    duration: 500,
+    delay: anime.stagger(100, {start: 500})
+  })
+  .add({
+    targets: letters,
+    translateY: [0, -10],
+    duration: 500,
+    delay: anime.stagger(100, {start: 500})
+  });
 });
 
-</script>
+
+
+  </script>
 
 </body>
 
