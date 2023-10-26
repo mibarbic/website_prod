@@ -3,244 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-<<<<<<< HEAD
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mica</title>
-
-  <!-- Add Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.typekit.net/iye6tnl.css">
-
-  <!-- Add Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
-  <!-- Add Context Cursor CSS -->
-  <link rel="stylesheet" href="pointerstyle.css">
-
-  <style>
-    body,
-    button,
-    a,
-    input,
-    textarea {
-      cursor: none;
-    }
-
-    .nav-item,
-    .navbar-brand {
-      border-radius: 10px !important;
-      margin-right: 10px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-
-    .navbar-brand {
-      margin-top: 5px;
-      height: 70px;
-    }
-
-    .bt-pad {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    .btn-primary {
-      background-color: black;
-    }
-
-    body {
-      font-family: "sui-generis", Arial, Helvetica, sans-serif;
-      font-weight: 500;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      margin: 0;
-      background: url('your_background_image.jpg') no-repeat center center fixed;
-      background-size: cover;
-      perspective: 1000px;
-      overflow-x: hidden;
-      overflow-y: hidden;
-    }
-
-    .content-wrapper {
-      max-width: calc(100vh * 16 / 9);
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .content-container {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      /* Center children horizontally */
-      align-items: center;
-      /* Center children vertically */
-
-
-    }
-
-    @keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.content-container.initial-state {
-  opacity: 0;
-  transform: scale(0.95);
-  animation: fadeInScale 0.7s forwards;
-  /* 0.7s is the duration of the animation, adjust as needed */
-}
-
-    .navbar {
-      font-family: "sui-generis", Arial, Helvetica, sans-serif;
-      font-weight: 500;
-      position: relative;
-      z-index: 1001;
-      background: transparent;
-      margin: 0 auto;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-    .navbar::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 200%;
-      /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
-      filter: blur(10px); */
-      z-index: -1;
-    }
-
-    .centered-panel {
-      width: 90%;
-      max-width: calc(50vh * 16 / 9);
-      height: 70vh;
-      background: rgba(0, 0, 0, 0.8);
-      border-radius: 5px;
-      backdrop-filter: blur(10px);
-      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      position: relative;
-    transform: translateY(50px);
-    }
-
-    #cursor-glow {
-      position: fixed;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.6);
-      pointer-events: none;
-      mix-blend-mode: overlay;
-      filter: blur(8px);
-      transform: translate(-50%, -50%);
-      display: none;
-    }
-
-    .inner-panel {
-      width: 98%;
-      height: 50vh;
-      /* Subtracting the top margin from the height */
-      margin: 2% auto 5% auto;
-      /* 2% top margin, 5% bottom margin, auto for horizontal centering */
-      position: relative;
-      /* To position the image */
-      border-radius: 10px;
-
-    }
-
-
-    .inner-image {
-      width: 100%;
-      height: 100%;
-      /*background: url('./assets/img/bp06__0001.png') no-repeat center center;*/
-      background-size: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-      .main-content {
-  display: none; /* Initially hidden */
-  opacity: 0;
-      justify-content: center;
-      align-items: center;
-    }
-    #loading-text {
-  font-size: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;  /* This makes sure it's centered on the screen */
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999; /* Ensures it's on top */
-}
-
-.content-container {
-  opacity: 0;  /* Initially hidden */
-}
-
-<<<<<<< HEAD
-    .swiper {
-      width: 100%;
-      height: 100%;
-      background-color: #00000000 !important;
-    }
-
-    .swiper-slide-previous {
-      border-radius: 20px;
-    }
-
-    .swiper-slide-active {
-      border-radius: 20px;
-      backdrop-filter: blur(10px) !important;
-
-    }
-
-    .swiper-pagination-bullet {}
-
-    .swiper-pagination-bullet-active {
-      opacity: var(--swiper-pagination-bullet-opacity, 1);
-      background: white;
-    }
-
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #00000038;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      backdrop-filter: blur(20px);
-    }
-
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .swiper-v {
-      background: #00000032;
-
-    }
-=======
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <title>@micanbar</title>
@@ -253,190 +15,609 @@
   <link rel="stylesheet" href="assets/css/iframe-lightbox.css" />
   <link rel="stylesheet" href="assets/css/micanOS.css" />
   <style>
-     @media (max-width:500px) {
-    .article-clean .text p {
-      font-size: 16px;
-    }
-  
-    .display-6{
-      margin-top: -60%;
-        }
-        .display-4{
-      margin-top: -75%;
-        }}
->>>>>>> parent of 9817e6b (deblur)
-=======
->>>>>>> parent of 84edc3d (revamped shell)
+
   </style>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-
 
 </head>
 
 <body>
-  <!-- Add this right after the opening <body> tag -->
+  <!-- navbar -->
+  <div class="bar" style="height: 0px;"></div>
+  <nav class="navbar navbar-dark navbar-expand-lg fixed-top navbar-custom"
+    style="color: rgb(0,0,0);background:rgba(0, 0, 0, 0);border-bottom: 3px;padding-bottom: 23px;--border-width: 3px;">
+    <div class="micansCONE-TANNER"><a class="navbar-brand" href="index.html"
+        style="background: url(&quot;assets/img/micanbar_white_pink_heavy.png&quot;);background-size: cover;width: 116.3281px;height: 66px;"></a><button
+        data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" id="demo" href="#motiondesign">motion</a></li>
+          <li class="nav-item"><a class="nav-link" href="#productdesign">ui/ux</a></li>
+          <li class="nav-item"><a class="nav-link" href="#videoproduction">video</a></li>
 
-<div id="loading-text">
-  <span>L</span>
-  <span>o</span>
-  <span>a</span>
-  <span>d</span>
-  <span>i</span>
-  <span>n</span>
-  <span>g</span>
-  <span>...</span>
-</div>
+         <!-- <li class="nav-item"><a class="nav-link" href="sandbox.html">sandbox</a></li> -->
 
-  <div class="content-wrapper">
-    <!-- Bootstrap Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <img data-ccursor="lift" class="navbar-brand bt-pad" src="/assets/img/micanbar_white_pink_heavy.png">
-      <button data-ccursor="lift" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto text-center">
-          <li data-ccursor="lift" class="nav-item">
-            <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li data-ccursor="lift" class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">contact</a></li>
         </ul>
       </div>
-    </nav>
-    <div class="main-content">
-      <div class="content-container">
-        <div class="centered-panel">
-          <div class="inner-panel">
-            <!-- Placeholder for the image -->
-            <div class="inner-image">
-              <h2 class="text-center" style="padding-top: 50%;">(×_×;)</h2>
+    </div>
+  </nav>
+  <!-- navbar end -->
+
+  <!-- pageable -->
+
+  <!-- pageable div-->
+  <div class="swiper-container" style="padding-top:12vh; height:100vh; z-index: 1; border-radius:15px; overflow: hidden;">
+    <div class="swiper-wrapper">
+      <!-- pageable div-->
+      <!--<div data-hash="motiondesign" class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                
+                <div class="w-100 text-pink">
+                  <i class="fas fa-info-circle"></i>
+                  <p style="text-align:center;">swipe, scroll, drag, or use arrow keys to navigate!</p>
+
+                  <div class="btn-sect">
+
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- Text and Button beneath the inner-panel -->
-          <div class="text-container text-center">
-            <h2>Oopsie!</h2>
+          <div class="masthead-content"></div>
+        </header>
+      </div> -->
+      <div data-hash="motiondesign" class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-pink">
+                  <h1 class="display-6">MOTION DESIGN</h1>
+                  <div class="btn-sect">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="masthead-content"></div>
+        </header>
+      </div>
+      <!-- pageable div-->
+      <div class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              <source src="assets/vid/contact.mp4" type="video/mp4">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-pink">
+                  <h1 class="display-4">
+                    <h1 class="display-4">Demo Reel 2021</h1>
+                    <p class="lead mb-0">Culmination of all recent projects.</p>
+                    <div class="btn-sect">
+                      <a href="https://player.vimeo.com/video/419007072?title=0&byline=0&portrait=0"
+                        javascript:void(0);" class="btn btn-outline-light myLink iframe-lightbox-link" ,
+                        data-src="https://player.vimeo.com/video/419007072?title=0&byline=0&portrait=0"
+                        role="button">Watch</a>
                     </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div id="starP"></div>
+          <div class="masthead-content"></div>
+        </header>
+      </div>
+      <!-- pageable div-->
+      <div class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              <source src="assets/vid/p001.mp4" type="video/mp4">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-pink">
+                  <h1 class="display-4">
+                    <h1 class="display-4">BP-06: 12 Principles of Animation</h1>
+                    <p class="lead mb-0">Award winning animation demonstrating the 12 principles of animation outlined
+                      by Disney animators in a narrative told vicariously through robots.</p>
+                    <div class="btn-sect">
+                      <a href="https://player.vimeo.com/video/461663006?title=0&byline=0&portrait=0"
+                        javascript:void(0);" class="btn btn-outline-light myLink iframe-lightbox-link" ,
+                        data-src="https://player.vimeo.com/video/461663006?title=0&byline=0&portrait=0"
+                        role="button">Watch</a>
+                      <a class="btn btn-outline-light myLink" href="p001.html" role="button">Case Study</a>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div id="starP"></div>
+          <div class="masthead-content"></div>
+        </header>
+      </div>
+      <!-- pageable div-->
+      <div class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              <source src="assets/vid/p003.mp4" type="video/mp4">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-pink">
+                  <h1 class="display-4">Voting for 2020 in a Nutshell</h1>
+                  <p class="lead mb-0">Nominated ad spot for outlining the voting process, targeted towards young and
+                    old individuals a like.</p>
+                  <div class="btn-sect">
+                    <a href="https://player.vimeo.com/video/463982720?title=0&byline=0&portrait=0" javascript:void(0);"
+                      class="btn btn-outline-light myLink iframe-lightbox-link" ,
+                      data-src="https://player.vimeo.com/video/463982720?title=0&byline=0&portrait=0"
+                      role="button">Watch</a>
+                    <a class="btn btn-outline-light myLink" href="p003.html" role="button">Case Study</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="starP"></div>
+          <div class="masthead-content"></div>
+        </header>
+      </div>
+
+      <!-- pageable div-->
+      <div class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              <source src="assets/vid/p004.mp4" type="video/mp4">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-pink">
+                  <h1 class="display-4">Class Pass Promo</h1>
+                  <p class="lead mb-0">Promotional video outlining a partnership with Foothill Transit and CPP to
+                    provide cost free transit passes for students.</p>
+                  <div class="btn-sect">
+                    <a href="https://player.vimeo.com/video/544141512?title=0&byline=0&portrait=0" javascript:void(0);"
+                      class="btn btn-outline-light myLink iframe-lightbox-link" ,
+                      data-src="https://player.vimeo.com/video/544141512?title=0&byline=0&portrait=0"
+                      role="button">Watch</a>
+                    <a class="btn btn-outline-light myLink" href="p004.html" role="button">Case Study</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="starP"></div>
+          <div class="masthead-content"></div>
+        </header>
+      </div>
+      <!-- pageable div-->
+
+      <!-- pageable div-->
+      <div class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              <source src="assets/vid/p008.mp4" type="video/mp4">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-pink">
+                  <h1 class="display-4">AR HUD Concept</h1>
+                  <p class="lead mb-0">Nominated conceptual augmented reality heads up display visualization for the UI
+                    of tomorrow.
+                  </p>
+                  <div class="btn-sect">
+                    <a href="https://player.vimeo.com/video/534603779?title=0&byline=0&portrait=0" javascript:void(0);"
+                      class="btn btn-outline-light myLink iframe-lightbox-link" ,
+                      data-src="https://player.vimeo.com/video/534603779?title=0&byline=0&portrait=0"
+                      role="button">Watch</a>
+                    <a class="btn btn-outline-light myLink" href="p008.html" role="button">Case Study</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="starP"></div>
+          <div class="masthead-content"></div>
+        </header>
+      </div>
+      <!-- pageable div-->
+      <div data-hash="productdesign" class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-pink">
+                  <h1 class="display-6">PRODUCT DESIGN</h1>
+                  <div class="btn-sect">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="masthead-content"></div>
+        </header>
+      </div>
+
+      <!-- pageable div-->
+      <div class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              <source src="assets/vid/p010.mp4" type="video/mp4">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-pink">
+                  <h1 class="display-4">Park 'N' Drive</h1>
+                  <p class="lead mb-0"> Parking at university sites can be a total nightmare. Our team came together
+                    with a solution to solve the infamous parking problem by leveraging existing resources. </p>
+
+                  </p>
+                  <div class="btn-sect">
+                    <a href="https://player.vimeo.com/video/544872733?title=0&byline=0&portrait=0" javascript:void(0);"
+                      class="btn btn-outline-light myLink iframe-lightbox-link" ,
+                      data-src="https://player.vimeo.com/video/544872733?title=0&byline=0&portrait=0"
+                      role="button">Watch</a>
+                    <a class="btn btn-outline-light myLink" href="p010.html" role="button">Case Study</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="starP"></div>
+          <div class="masthead-content"></div>
+        </header>
+      </div>
+      <!-- pageable div-->
+ <!-- pageable div-->
+ <div class="swiper-slide">
+  <header class="text-center text-white masthead"
+    style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+    <div class="video-background-holder">
+      <div class="video-background-overlay"></div>
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="assets/vid/p009.mp4" type="video/mp4">
+      </video>
+      <div class="video-background-content micansCONE-TANNER h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+          <div class="w-100 text-pink">
+            <h1 class="display-4">NR_Gallery Cinematic Cut</h1>
+            <p class="lead mb-0">Nominated cinematic demonstration video, NR Gallery is an interactive VR
+              exhibition running within Unreal Engine 4.
+            </p>
+            <div class="btn-sect">
+              <a href="https://player.vimeo.com/video/419007536?title=0&byline=0&portrait=0" javascript:void(0);"
+                class="btn btn-outline-light myLink iframe-lightbox-link" ,
+                data-src="https://player.vimeo.com/video/419007536?title=0&byline=0&portrait=0"
+                role="button">Watch</a>
+              <a class="btn btn-outline-light myLink" href="p009.html" role="button">Case Study</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <div id="starP"></div>
+    <div class="masthead-content"></div>
+  </header>
+</div>
+<!-- pageable div-->
+
+      <div data-hash="videoproduction" class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-pink">
+                  <h1 class="display-6">VIDEO PRODUCTION</h1>
+                  <div class="btn-sect">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="starP"></div>
+          <div class="masthead-content"></div>
+        </header>
+      </div>
+      <!-- pageable div-->
+      <div class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              <source src="assets/vid/p002.mp4" type="video/mp4">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-pink">
+                  <h1 class="display-4">Pushover - Maggery</h1>
+                  <p class="lead mb-0">Pushover isn't your average music video, it's a psychological mind-bending take
+                    on abusive relationships. Created for rising bedroom pop artist Maggery.</p>
+                  <div class="btn-sect">
+                    <a href="https://www.youtube.com/embed/zIpqO2wC1Pc?autoplay=false" javascript:void(0);"
+                      class="btn btn-outline-light myLink iframe-lightbox-link" ,
+                      data-src="https://www.youtube.com/embed/zIpqO2wC1Pc?autoplay=false" role="button">Watch</a>
+                    <a class="btn btn-outline-light myLink" href="p002.html" role="button">Case Study</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="starP"></div>
+          <div class="masthead-content"></div>
+        </header>
+      </div>
+      <!-- pageable div-->
+
+      <!-- pageable div-->
+      <div class="swiper-slide">
+        <header class="text-center text-white masthead"
+          style="background: var(--white);padding: 0px 0px 160px;padding-bottom: 0px;">
+          <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+              <source src="assets/vid/p005.mp4" type="video/mp4">
+            </video>
+            <div class="video-background-content micansCONE-TANNER h-100">
+              <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-pink">
+                  <h1 class="display-4">Thank You from CPP ENV</h1>
+                  <p class="lead mb-0">Thank you video produced for Cal Poly Pomona's College of Environmental Design
+                    recognizing the donations provided by Juliana Terrian.</p>
+                  <div class="btn-sect">
+                    <a href="https://player.vimeo.com/video/544142763?title=0&byline=0&portrait=0" javascript:void(0);"
+                      class="btn btn-outline-light myLink iframe-lightbox-link" ,
+                      data-src="https://player.vimeo.com/video/544142763?title=0&byline=0&portrait=0"
+                      role="button">Watch</a>
+                    <a class="btn btn-outline-light myLink" href="p005.html" role="button">Case Study</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="starP"></div>
+          <div class="masthead-content"></div>
+        </header>
+      </div>
+
+          <div id="starP"></div>
+          <div class="masthead-content"></div>
+        </header>
+
+      
+      <!-- pageable div-->
+      
+
+
+    </div>
+  <!-- wrapper -->
+
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  </div> <!-- container-->
+
+
+
   </div>
 
 
+  </div>
+  <!-- pageable -->
+
+  <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script type="text/javascript" src="assets/js/pageable.min.js"></script>
   <script>
-    // Initialize Vanta.js with 100vh coverage
-    VANTA.CLOUDS({
-      el: "body",
-      mouseControls: false,
-      gyroControls: false,
-      minHeight: window.innerHeight,
-      minWidth: window.innerWidth,
-      skyColor: 0x616161,
-      cloudColor: 0xffffff,
-      sunColor: 0x2e5a9b,
-      sunGlareColor: 0x1e177d,
-      sunlightColor: 0x16c2cd,
-      speed: 0.80
+    new Pageable(".container", {
+    childSelector: "[data-anchor]", // CSS3 selector string for the pages
+    anchors: [2], // define the page anchors
+    pips: true, // display the pips
+    animation: 500, // the duration in ms of the scroll animation
+    delay: 0, // the delay in ms before the scroll animation starts
+    throttle: 50, // the interval in ms that the resize callback is fired
+    orientation: "vertical", // or horizontal
+    swipeThreshold: 100, // swipe / mouse drag distance (px) before firing the page change event
+    freeScroll: false, // allow manual scrolling when dragging instead of automatically moving to next page
+    navPrevEl: false, // define an element to use to scroll to the previous page (CSS3 selector string or Element reference)
+    navNextEl: false, // define an element to use to scroll to the next page (CSS3 selector string or Element reference)
+    infinite: false, // enable infinite scrolling (from 0.4.0)
+
+    events: {
+    wheel: true, // enable / disable mousewheel scrolling
+    mouse: true, // enable / disable mouse drag scrolling
+    touch: true, // enable / disable touch / swipe scrolling
+    keydown: true, // enable / disable keyboard navigation
+    },
+    easing: function(currentTime, startPos, endPos, interval) {
+    // the easing function used for the scroll animation
+    return -endPos * (currentTime /= interval) * (currentTime - 2) + startPos;
+    },
+    onInit: function() {
+    // do something when the instance is ready
+    },
+    onUpdate: function() {
+    // do something when the instance updates
+    },
+    onBeforeStart: function() {
+    // do something before scrolling begins
+    },
+    onStart: function() {
+    // do something when scrolling begins
+    },
+    onScroll: function() {
+    // do something during scroll
+    },
+    onFinish: function() {
+    // do something when scrolling ends
+    },
     });
   </script>
-
-  <!-- Add Bootstrap JS and Popper.js for Navbar functionality -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <!-- Add Context Cursor JS -->
-  <script src="/cursor.js"></script>
-
+  <script type="text/javascript" src="assets/js/swiper-bundle.js"></script>
   <script>
-    const panel = document.querySelector('.content-container');
+    const swiper = new Swiper('.swiper-container', {
+      mousewheel: true,
+      direction: 'horizontal',
+      autoplay: {
+   delay: 3000,
+   pauseOnMouseEnter: true,
+   disableOnInteraction: true,
+ },
+    loop: false,
+    observer: true,
+            observeParents: true,
+            parallax:true,
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
 
-    panel.addEventListener('mousemove', (e) => {
-      const width = panel.offsetWidth;
-      const height = panel.offsetHeight;
+    // Navigation arrows
+    navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+    },
 
-      // Calculate the center of the panel
-      const centerX = width / 2;
-      const centerY = height / 2;
+    // And if we need scrollbar
+    scrollbar: {
+    el: '.swiper-scrollbar',
+    },
+      direction: 'horizontal',
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "3",
+      loop:true,
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 350,
+        modifier: 1,
+        slideShadows: true,
+      },
+      hashNavigation: {
+        watchState: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
 
-      // Calculate the tilt angles
-      const tiltX = 1.5 * (e.clientY - centerY) / centerY;
-      const tiltY = -1.5 * (e.clientX - centerX) / centerX;
+      },
+      keyboard: {
+        enabled: true,
+      },
+      breakpoints: {
+        "@0.00": {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        "@0.75": {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        "@1.00": {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+        "@1.50": {
+          slidesPerView: 2,
+          spaceBetween: 50,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        observer: true,
+        observeParents: true
 
-      // Apply the tilt as a CSS transform
-      panel.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+      },
     });
+  </script>
+  <script type="text/javascript" src="assets/js/iframe-lightbox.js"></script>
 
-    // Reset the tilt when the mouse leaves the panel
-    panel.addEventListener('mouseleave', () => {
-      panel.style.transform = 'rotateX(0) rotateY(0)';
+  <script>
+    [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function (el) {
+      el.lightbox = new IframeLightbox(el);
     });
-
+    document.getElementsByClassName("iframe-lightbox-link"),
+      function (el) {
+        el.lightbox = new IframeLightbox(el, {
+          onLoaded: function (iframe) {
+            // on loaded
+          },
+          onCreated: function (instance) {
+            // on created
+          },
+          onOpened: function (instance) {
+            // on opened
+          },
+          onClosed: function (instance) {
+            // on closed
+          }
+        });
+      }
   </script>
-
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-  const contentContainer = document.querySelector('.content-container');
-  contentContainer.classList.add('initial-state');
-  delay(2000);
-  // After a tiny delay, remove the class to allow other interactions
-  setTimeout(() => {
-    contentContainer.classList.remove('initial-state');
-  }, 1500);  // This delay should match the animation duration
-});
-  </script>
-  <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const letters = document.querySelectorAll('#loading-text span');
-  
-  anime.timeline({
-    loop: 1,
-    complete: function() {
-      anime({
-        targets: '#loading-text',
-        opacity: 0,
-        duration: 1000,
-        easing: 'easeInOutSine',
-        complete: function() {
-          document.getElementById('loading-text').style.display = 'none';
-          // Once the loading text has disappeared, we'll show the main-content
-          const mainContent = document.querySelector('.main-content');
-          mainContent.style.display = 'flex'; // or 'block', depending on your layout
-          anime({
-            targets: mainContent,
-            opacity: [0, 1],  // This will make it fade in
-            translateY: [-50, 0],
-            scale: [0, 1.0],
-            duration: 700,
-            easing: 'easeInOutSine'
-          });
-        }
+    Array.from(document.querySelectorAll('.myLink')).forEach((el) => {
+      el.addEventListener('touchend', () => {
+        window.location.href = el.href;
       });
-    }
-  })
-  .add({
-    targets: letters,
-    translateY: [-10,0],
-    duration: 500,
-    delay: anime.stagger(100, {start: 500})
-  })
-  .add({
-    targets: letters,
-    translateY: [0, -10],
-    duration: 500,
-    delay: anime.stagger(100, {start: 500})
-  });
-});
-
-
-
+    });
   </script>
-
 </body>
 
 </html>
