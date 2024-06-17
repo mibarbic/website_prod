@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>@micanbar</title>
+  <meta name="description" content="motion designer, video designer, curiosity driven individual.">
+  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.typekit.net/iye6tnl.css">
+  <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+  <link rel="stylesheet" href="assets/css/swiper-bundle.css" />
+  <link rel="stylesheet" href="assets/css/iframe-lightbox.css" />
+  <link rel="stylesheet" href="assets/css/micanOS.css" />
+  <style>
+    .tilt {
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
+      transform: translateZ(20px);
+    }
+    .title {
+      padding-top: 50vh;
+      text-align: center;
+      font-family: 'sui-generis';
+      color: aliceblue;
+    }
+    .flexbox-container {
+      padding-right: 10vw;
+      padding-left: 10vw;
+      display: flex;
+      padding-top: 20vh;
+      justify-content:center;
+      flex-wrap: wrap;
+      align-items:center;
+      align-content: center;
+    }
+    .flexbox-item {
+      width: 10vw;
+      margin: 1px;
+      border: 1px solid rgb(255, 255, 255);
+      background-color: #33333340;
+      height: 60vh;
+    }
+    .flexbox-item-1 {
+      min-width: 25vh;
+      transition: 0s;
+    }
+    .flexbox-item-1:hover {
+      background-color: #333333;
+      content: attr(text-rev);    
+z-index: 99999999;
+    }
+    .flexbox-item-2 {
+      width: 20vh;
+    }
+    .flexbox-item-3 {
+      min-height: 30vh;
+    }
+    #header-inf {
+      padding-top: 5vh;
+      font-family: 'purista-web';
+      text-align: center;
+    }
+    #canvas {
+      height: 100vh;
+      width: 100vw;
+      
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <!-- navbar -->
+  <div id="core" style="background-color: rgba(0, 0, 0, 0.715);">
+  <div id="canvas">
+  <div class="bar" style="height: 0px;"></div>
+  <nav class="navbar navbar-dark navbar-expand-lg fixed-top navbar-custom">
+    <div class="micansCONE-TANNER"><a class="navbar-brand" href="index.html" style="background: url(&quot;assets/img/micanbar_white_pink_heavy.png&quot;);background-size: cover;width: 116.3281px;height: 66px;"></a>
+      <button data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" id="demo" href="#motiondesign">all</a></li> 
+          <li class="nav-item"><a class="nav-link" id="demo" href="#motiondesign">motion</a></li>
+          <li class="nav-item"><a class="nav-link" href="#productdesign">ui/ux</a></li>
+          <li class="nav-item"><a class="nav-link" href="#videoproduction">video</a></li>
+
+         <!-- <li class="nav-item"><a class="nav-link" href="sandbox.html">sandbox</a></li> -->
+
+          <li class="nav-item"><a class="nav-link" href="contact.html">contact</a></li>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+  <!-- navbar end -->
+  <div class="flexbox-container" data-tilt data-tilt-max="1" data-tilt-speed="100" data-tilt-perspective="500">
+    <div class="flexbox-item flexbox-item-1 tilt" data-tilt data-tilt-glare data-tilt-max-glare="0.1"  data-tilt-max="3" data-tilt-speed="100" data-tilt-perspective="500" data-tilt-scale="1.1" onmouseover="changeText('Culmination of recent projects')" onmouseout="defaultText()">
+      <div class="title tilt">
+        Demo Reel
+      </div>
+    </div>
+    <div class="flexbox-item flexbox-item-1 tilt" data-tilt data-tilt-glare data-tilt-max-glare="0.1"  data-tilt-max="3" data-tilt-speed="100" data-tilt-perspective="500" data-tilt-scale="1.1" onmouseover="changeText('Award winning animation outlining the 12 principles of animation')" onmouseout="defaultText()">
+      <div class="title tilt">
+BP-06
+      </div>
+    </div>
+    <div class="flexbox-item flexbox-item-1 tilt" data-tilt data-tilt-glare data-tilt-max-glare="0.1"  data-tilt-max="3" data-tilt-speed="100" data-tilt-perspective="500" data-tilt-scale="1.1" onmouseover="changeText('Write me a new post')" onmouseout="defaultText()">
+      <div class="title tilt">
+Class Pass
+      </div>
+    </div>
+    <div class="flexbox-item flexbox-item-1 tilt" data-tilt data-tilt-glare data-tilt-max-glare="0.1"  data-tilt-max="3" data-tilt-speed="100" data-tilt-perspective="500" data-tilt-scale="1.1" onmouseover="changeText('Write me a new post')" onmouseout="defaultText()">
+      <div class="title tilt">
+Waze Desktop
+      </div>
+    </div>
+    <div class="flexbox-item flexbox-item-1 tilt" data-tilt data-tilt-glare data-tilt-max-glare="0.1"  data-tilt-max="3" data-tilt-speed="100" data-tilt-perspective="500" data-tilt-scale="1.1" onmouseover="changeText('Write me a new post')" onmouseout="defaultText()">
+      <div class="title tilt">
+Park 'N' Drive
+      </div>
+    </div>
+  </div>
+  <div id="header-inf">
+    Hover over a project for more information
+ </div>
+</div>
+  <!-- pageable -->
+
+  <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script src="/assets/js/three.min.js"></script>
+  <script src="/assets/js/vanta.fog.min.js"></script>
+  <script src="/node_modules/vanilla-tilt/dist/vanilla-tilt.js"></script>
+  <script>
+    
+  </script>
+  <script>
+  VANTA.FOG({
+    el: "#canvas",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    highlightColor: 0xffed,
+    midtoneColor: 0xfc00ff,
+    lowlightColor: 0xff00f2,
+    baseColor: 0x404040,
+    blurFactor: 0.90,
+    speed: 1.10,
+    zoom: 0.30
+  })
+  </script>
+      <script type="text/javascript">
+      
+      function changeText(text)
+      {
+          var display = document.getElementById('header-inf');
+          display.innerHTML = "";
+          display.innerHTML = text;
+      }
+            
+      function defaultText()
+      {
+          var display = document.getElementById('header-inf');
+          display.innerHTML = "";
+          display.innerHTML = "Select a project for more information";       
+
+      }
+  </script>
+</body>
+
+</html>
