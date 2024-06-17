@@ -61,7 +61,7 @@ $(function () {
         }, {
             y: "0px",
             opacity: 1,
-            stagger: 0.4
+            stagger: 0.1
         },
     );
 
@@ -77,14 +77,14 @@ $(function () {
         x: '-30',
     });
 
-    timeline.to(".mil-reveal-box", 0.45, {
+    timeline.to(".mil-reveal-box", 0.1, {
         width: "100%",
         x: 0,
     }, "+=.1");
     timeline.to(".mil-reveal-box", {
         right: "0"
     });
-    timeline.to(".mil-reveal-box", 0.3, {
+    timeline.to(".mil-reveal-box", 0.1, {
         width: "0%"
     });
     timeline.fromTo(".mil-animation-2 .mil-h3", {
@@ -92,15 +92,15 @@ $(function () {
     }, {
         opacity: 1,
     }, "-=.5");
-    timeline.to(".mil-animation-2 .mil-h3", 0.6, {
+    timeline.to(".mil-animation-2 .mil-h3", 0.1, {
         opacity: 0,
         y: '-30'
     }, "+=.5");
-    timeline.to(".mil-preloader", 0.8, {
+    timeline.to(".mil-preloader", 0.1, {
         opacity: 0,
         ease: 'sine',
     }, "+=.2");
-    timeline.fromTo(".mil-up", 0.8, {
+    timeline.fromTo(".mil-up", 0.1, {
         opacity: 0,
         y: 40,
         scale: .98,
