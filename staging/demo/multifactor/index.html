@@ -79,6 +79,15 @@
     .toggle-btn {
       font-weight: bold;
     }
+
+    .download-buttons {
+      display: none;
+      gap: 10px;
+    }
+
+    .download-buttons.show {
+      display: flex;
+    }
   </style>
   <script
     src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
@@ -109,6 +118,7 @@
       <button onclick="switchLottie(3)">Option 4</button>
       <button onclick="switchLottie(4)">Option 5</button>
       <button onclick="switchLottie(5)">Option 6</button>
+      <button onclick="exportLink()">Export Link</button>
     </div>
 
     <div class="size-toggle" id="sizeToggle">
@@ -117,10 +127,14 @@
       <label><input type="radio" name="size" value="100" checked> 100px</label>
       <label><input type="radio" name="size" value="200"> 200px</label>
     </div>
+
+    <div class="download-buttons" id="downloadButtons">
+      <button onclick="getGIF()">Get .gif</button>
+      <button onclick="getMP4()">Get .mp4</button>
+    </div>
   </div>
 
   <script>
-    // Reference local .lottie files in "lottie_anim" folder
     const lottieURLs = [
       "lottie_anim/option1.lottie",
       "lottie_anim/option2.lottie",
@@ -138,6 +152,7 @@
     const sizeToggle = document.getElementById("sizeToggle");
     const toggleBtn = document.querySelector(".toggle-btn");
     const currentText = document.getElementById("currentText");
+    const downloadButtons = document.getElementById("downloadButtons");
 
     function switchLottie(index) {
       currentIndex = index;
@@ -149,10 +164,21 @@
       window.open(lottieURLs[currentIndex], '_blank');
     }
 
+    function getGIF() {
+      const gifPath = `gif/option${currentIndex + 1}.gif`;
+      window.open(gifPath, '_blank');
+    }
+
+    function getMP4() {
+      const mp4Path = `mp4/option${currentIndex + 1}.mp4`;
+      window.open(mp4Path, '_blank');
+    }
+
     function toggleOptions() {
       const show = !buttonGroup.classList.contains("show");
       buttonGroup.classList.toggle("show", show);
       sizeToggle.classList.toggle("show", show);
+      downloadButtons.classList.toggle("show", show);
       toggleBtn.textContent = show ? "Hide Options" : "Show Options";
     }
 
@@ -167,7 +193,6 @@
       currentText.textContent = `Currently Viewing: Option ${currentIndex + 1} at ${currentSize}px`;
     }
 
-    // Size radio logic
     document.querySelectorAll('input[name="size"]').forEach(radio => {
       radio.addEventListener('change', (e) => {
         updateSize(e.target.value);
