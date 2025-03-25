@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lottie Switcher</title>
+  <style>
+    body {
+      margin: 0;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: sans-serif;
+      position: relative;
+    }
+
+    .player-container {
+      margin-bottom: 10px;
+    }
+
+    .current-text {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 10px;
+      padding-top: 20px;
+    }
+
+    .toggle-container {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      margin-bottom: 10%;
+    }
+
+    .buttons {
+      display: none;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .buttons.show {
+      display: flex;
+    }
+
+    .size-toggle {
+      display: none;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .size-toggle.show {
+      display: flex;
+    }
+
+    .size-toggle label {
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .toggle-btn {
+      font-weight: bold;
+    }
+  </style>
+  <script
+    src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+    type="module"
+  ></script>
+</head>
+<body>
+  <div class="player-container">
+    <dotlottie-player
+      id="lottiePlayer"
+      background="transparent"
+      speed="1"
+      style="width: 100px; height: 100px"
+      loop
+      autoplay
+    ></dotlottie-player>
+  </div>
+
+  <div class="current-text" id="currentText">Currently Viewing: Option 1 at 100px</div>
+
+  <div class="toggle-container">
+    <button class="toggle-btn" onclick="toggleOptions()">Show Options</button>
+
+    <div class="buttons" id="buttonGroup">
+      <button onclick="switchLottie(0)">Option 1</button>
+      <button onclick="switchLottie(1)">Option 2</button>
+      <button onclick="switchLottie(2)">Option 3</button>
+      <button onclick="switchLottie(3)">Option 4</button>
+      <button onclick="switchLottie(4)">Option 5</button>
+      <button onclick="switchLottie(5)">Option 6</button>
+      <button onclick="exportLink()">Export Link</button>
+    </div>
+
+    <div class="size-toggle" id="sizeToggle">
+      Size:
+      <label><input type="radio" name="size" value="50"> 50px</label>
+      <label><input type="radio" name="size" value="100" checked> 100px</label>
+      <label><input type="radio" name="size" value="200"> 200px</label>
+    </div>
+  </div>
+
+  <script>
+    // Reference local .lottie files in "lottie_anim" folder
+    const lottieURLs = [
+      "lottie_anim/option1.lottie",
+      "lottie_anim/option2.lottie",
+      "lottie_anim/option3.lottie",
+      "lottie_anim/option4.lottie",
+      "lottie_anim/option5.lottie",
+      "lottie_anim/option6.lottie"
+    ];
+
+    let currentIndex = 0;
+    let currentSize = 100;
+
+    const player = document.getElementById("lottiePlayer");
+    const buttonGroup = document.getElementById("buttonGroup");
+    const sizeToggle = document.getElementById("sizeToggle");
+    const toggleBtn = document.querySelector(".toggle-btn");
+    const currentText = document.getElementById("currentText");
+
+    function switchLottie(index) {
+      currentIndex = index;
+      player.load(lottieURLs[index]);
+      updateText();
+    }
+
+    function exportLink() {
+      window.open(lottieURLs[currentIndex], '_blank');
+    }
+
+    function toggleOptions() {
+      const show = !buttonGroup.classList.contains("show");
+      buttonGroup.classList.toggle("show", show);
+      sizeToggle.classList.toggle("show", show);
+      toggleBtn.textContent = show ? "Hide Options" : "Show Options";
+    }
+
+    function updateSize(size) {
+      currentSize = size;
+      player.style.width = `${size}px`;
+      player.style.height = `${size}px`;
+      updateText();
+    }
+
+    function updateText() {
+      currentText.textContent = `Currently Viewing: Option ${currentIndex + 1} at ${currentSize}px`;
+    }
+
+    // Size radio logic
+    document.querySelectorAll('input[name="size"]').forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        updateSize(e.target.value);
+      });
+    });
+
+    window.onload = () => {
+      switchLottie(0);
+      updateSize(100);
+    };
+  </script>
+</body>
+</html>
