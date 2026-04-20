@@ -1,8 +1,1734 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=home-1.html" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michelangelo Barbic — Graphic Designer / Brand, Digital & Motion</title>
+<meta name="description" content="Portfolio of Michelangelo Barbic — Graphic Designer based in Los Angeles. Brand, digital, print, and motion.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&family=Do+Hyeon&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F2F0EB;
+    --ink: #0F0F0F;
+    --muted: #2e2e2e;
+    --line: #D8D5CE;
+    --accent: #FF8A3D;
+    --accent-rgb: 255, 138, 61;
+    --card: #EAE7E0;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Shippori Antique B1', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+  }
+
+  /* Type utilities (´• ω •`) */
+  .mono {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-number {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* NAV ~(>_<~) */
+  .site-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1030;
+    background: rgba(242, 240, 235, 0.92);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .site-nav .brand {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    font-size: 16px;
+  }
+  .site-nav .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 32px;
+    font-weight: 500;
+    transition: color 0.25s ease;
+  }
+  .site-nav .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    padding: 200px 0 120px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero h1 {
+    font-weight: 500;
+    font-size: clamp(42px, 7.5vw, 112px);
+    line-height: 0.94;
+    letter-spacing: -0.035em;
+    margin: 24px 0 0;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--muted);
+    font-weight: 300;
+  }
+  .hero .tagline {
+    max-width: 580px;
+    margin-top: 40px;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .hero-meta {
+    display: flex;
+    gap: 56px;
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+  }
+  .hero-meta .item .label { margin-bottom: 8px; }
+  .hero-meta .item .value { font-size: 15px; font-weight: 500; }
+  .hero-cta-row { margin-top: 40px; }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--ink);
+    transition: color 0.25s ease, border-color 0.25s ease, gap 0.25s ease;
+  }
+  .hero-cta-arrow {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .hero-cta:hover { color: var(--accent); border-color: var(--accent); gap: 14px; }
+  .hero-cta:hover .hero-cta-arrow { transform: translateY(3px); }
+
+  /* TRUSTED BY  	ヽ(°〇°)ﾉ */
+  .trusted-by {
+    padding: 90px 0 100px;
+    border-bottom: 1px solid var(--line);
+  }
+  .trusted-by .trusted-label {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .logo-wall {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: var(--line);
+    gap: 1px;
+    border: 1px solid var(--line);
+  }
+  .logo-cell {
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 110px;
+    padding: 20px 24px;
+    color: var(--muted);
+    transition: color 0.4s ease, background 0.4s ease;
+  }
+  .logo-cell:hover {
+    color: var(--ink);
+    background: #ECE9E1;
+  }
+  .brand-logo {
+    max-width: 100%;
+    max-height: 28px;
+    width: auto;
+    height: auto;
+    display: block;
+    filter: brightness(0);
+  }
+  @media (max-width: 1199px) {
+    .logo-wall { grid-template-columns: repeat(4, 1fr); }
+  }
+  @media (max-width: 575px) {
+    .logo-wall { grid-template-columns: repeat(2, 1fr); }
+    .logo-cell { min-height: 90px; padding: 16px; }
+  }
+
+  /* SECTIONS  	(□_□) */
+  section {
+    padding: 140px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 72px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    gap: 24px;
+  }
+  .section-title {
+    font-weight: 500;
+    font-size: clamp(32px, 4.5vw, 56px);
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+    margin: 12px 0 0;
+  }
+
+  /* WORK GRID __φ(．．) */
+  .work-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  .work-placeholder {
+    aspect-ratio: 4 / 3;
+    background: var(--card);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .work-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(15,15,15,0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15,15,15,0.045) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .work-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    transition: border-color 0.4s ease;
+  }
+  .work-placeholder .placeholder-label {
+    position: relative;
+    z-index: 1;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 16px;
+  }
+  .work-card:hover .work-placeholder { transform: translateY(-4px); }
+  .work-card:hover .work-placeholder::after { border-color: var(--ink); }
+  .work-card:hover .placeholder-label { color: var(--accent); }
+  .work-placeholder.has-cover::before { display: none; }
+  .work-placeholder.has-cover .placeholder-label { display: none; }
+
+  .work-meta {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 4px;
+    padding-top: 18px;
+    align-items: start;
+  }
+  .work-title {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+  .work-category {
+    grid-column: 1;
+    grid-row: 2;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .work-number {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: stretch;
+    aspect-ratio: 1 / 1;
+    border: 1.5px solid var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Do Hyeon', sans-serif;
+    color: var(--ink);
+    transition: border-color 0.3s ease, color 0.3s ease;
+    flex-shrink: 0;
+    min-width: 44px;
+  }
+  .work-card:hover .work-number {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ABOUT  	(－_－) zzZ */
+  .about-body {
+    font-size: 20px;
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+    max-width: 720px;
+  }
+  .about-body p + p { margin-top: 24px; }
+  .about-body em {
+    font-style: normal;
+    color: var(--muted);
+  }
+  .about-portrait {
+    position: sticky;
+    top: 100px;
+  }
+  .about-portrait-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: grayscale(15%);
+  }
+
+  /* EXPERIENCE 。。。ミヽ(。＞＜)ノ */
+  .exp-list {
+    border-top: 1px solid var(--line);
+  }
+  .exp-row {
+    display: grid;
+    grid-template-columns: 130px 1.2fr 1fr 180px;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+    transition: color 0.3s ease;
+  }
+  .exp-row:hover { color: var(--accent); }
+  .exp-year {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .exp-role {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+  .exp-company {
+    font-size: 16px;
+    color: var(--muted);
+  }
+  .exp-location {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* SKILLS  	ヽ(*・ω・)ﾉ */
+  .skill-group h4 {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .skill-list li {
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--line);
+    transition: color 0.3s ease;
+  }
+  .skill-list li:hover { color: var(--accent); }
+
+  /* EDUCATION section  	(*꒦ິ꒳꒦ີ) */
+  .edu-list { border-top: 1px solid var(--line); }
+  .edu-row {
+    display: grid;
+    grid-template-columns: 130px 1.4fr 1.6fr 180px;
+    gap: 32px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+    transition: color 0.3s ease;
+  }
+  .edu-row:hover { color: var(--accent); }
+  .edu-year {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-top: 3px;
+    transition: color 0.3s ease;
+  }
+  .edu-degree { font-size: 20px; font-weight: 500; letter-spacing: -0.015em; transition: color 0.3s ease; }
+  .edu-school { font-size: 14px; color: var(--muted); margin-top: 6px; transition: color 0.3s ease; }
+  .edu-detail { font-size: 14px; line-height: 1.6; color: var(--muted); transition: color 0.3s ease; }
+  .edu-location {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-align: right;
+    padding-top: 3px;
+    transition: color 0.3s ease;
+  }
+  .edu-row:hover .edu-year,
+  .edu-row:hover .edu-degree,
+  .edu-row:hover .edu-school,
+  .edu-row:hover .edu-detail,
+  .edu-row:hover .edu-location { color: var(--accent); }
+  @media (max-width: 991px) {
+    .edu-row { grid-template-columns: 1fr; gap: 12px; }
+    .edu-location { text-align: left; }
+  }
+
+  /* CONTACT o(>< )o */
+  .contact {
+    padding: 160px 0 140px;
+    background: var(--ink);
+    color: var(--bg);
+    border: none;
+  }
+  .contact .section-header { border-color: rgba(242,240,235,0.18); }
+  .contact .section-number { color: rgba(242,240,235,0.5); }
+  .contact h2 {
+    font-size: clamp(40px, 7vw, 104px);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    margin: 24px 0 0;
+  }
+  .contact h2 em {
+    font-style: normal;
+    color: rgba(242,240,235,0.45);
+    font-weight: 300;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 72px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(242,240,235,0.18);
+  }
+  .contact-grid .label {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 11px;
+    color: rgba(242,240,235,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+  .contact-grid a {
+    color: var(--bg);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(242,240,235,0.25);
+    transition: color 0.25s ease, border-color 0.25s ease;
+    padding-bottom: 2px;
+  }
+  .contact-grid a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* FOOTER (ノ_<。) */
+  footer {
+    background: var(--ink);
+    color: rgba(242,240,235,0.5);
+    padding: 32px 0;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(242,240,235,0.12);
+  }
+  footer .row { align-items: center; }
+
+  /* ANIMATIONS ヽ(ー_ー )ノ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal.delay-1 { transition-delay: 0.08s; }
+  .reveal.delay-2 { transition-delay: 0.16s; }
+  .reveal.delay-3 { transition-delay: 0.24s; }
+  .reveal.delay-4 { transition-delay: 0.32s; }
+
+  .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .word.in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .word { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* RESPONSIVE ¯\_(ツ)_/¯ */
+  @media (max-width: 991px) {
+    .hero { padding: 150px 0 90px; }
+    section { padding: 100px 0; }
+    .exp-row {
+      grid-template-columns: 100px 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 8px 24px;
+      padding: 24px 0;
+    }
+    .exp-year { grid-column: 1; grid-row: 1; }
+    .exp-role { grid-column: 2; grid-row: 1; }
+    .exp-company { grid-column: 2; grid-row: 2; }
+    .exp-location { grid-column: 2; grid-row: 3; text-align: left; }
+    .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+    .hero-meta { gap: 32px; }
+    .section-header { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 767px) {
+    .site-nav .nav-links { display: none; }
+    .hero { padding: 120px 0 72px; }
+    section { padding: 72px 0; }
+    /* Reduce Do Hyeon label size on mobile */
+    .mono,
+    .section-number,
+    .trusted-by .trusted-label,
+    .work-placeholder .placeholder-label,
+    .work-category,
+    .work-number,
+    .exp-year,
+    .exp-location,
+    .skill-group h4,
+    .edu-year,
+    .edu-location,
+    .contact-grid .label,
+    footer,
+    .modal-slide-placeholder-label,
+    .modal-thumb span,
+    .modal-references-label { font-size: 12px; }
+    /* Placeholder label inside cards: allow wrapping */
+    .work-placeholder .placeholder-label { letter-spacing: 0.06em; }
+  }
+
+  /* TANGERINE AMBIENT GLOWS 🍊*/
+  html, body { overflow-x: clip; }
+  .hero, #about, .contact { position: relative; overflow: hidden; }
+  .hero > .container,
+  #about > .container,
+  .contact > .container { position: relative; z-index: 2; }
+
+  .bg-glow {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(40px);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1.6s ease, transform 1.6s ease;
+    will-change: opacity, transform;
+  }
+  .bg-glow.lit {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .glow-hero-a {
+    width: 720px; height: 720px;
+    top: -220px; right: -180px;
+    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.55) 0%, rgba(var(--accent-rgb), 0.2) 38%, transparent 72%);
+  }
+  .glow-hero-b {
+    width: 440px; height: 440px;
+    bottom: -140px; left: -120px;
+    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.32) 0%, rgba(var(--accent-rgb), 0.1) 45%, transparent 72%);
+  }
+  .glow-about-a {
+    width: 560px; height: 560px;
+    top: 8%; right: -220px;
+    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.28) 0%, rgba(var(--accent-rgb), 0.08) 45%, transparent 72%);
+  }
+  .glow-contact-a {
+    width: 820px; height: 820px;
+    top: -240px; right: -260px;
+    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.55) 0%, rgba(var(--accent-rgb), 0.18) 40%, transparent 72%);
+  }
+  .glow-contact-b {
+    width: 520px; height: 520px;
+    bottom: -160px; left: -140px;
+    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.4) 0%, rgba(var(--accent-rgb), 0.12) 45%, transparent 72%);
+  }
+
+  @media (max-width: 767px) {
+    .glow-hero-a { width: 460px; height: 460px; top: -140px; right: -140px; }
+    .glow-hero-b { width: 300px; height: 300px; }
+    .glow-about-a { width: 380px; height: 380px; right: -160px; }
+    .glow-contact-a { width: 520px; height: 520px; }
+    .glow-contact-b { width: 360px; height: 360px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg-glow { transition: none; opacity: 1; transform: none; }
+  }
+
+  /* PROJECT MODAL (*°ｰ°)ﾉ */
+  #projectModal .modal-content {
+    background: var(--ink);
+    color: var(--bg);
+    border: none;
+    border-radius: 0;
+  }
+  #projectModal .modal-header {
+    border-bottom: 1px solid rgba(242,240,235,0.15);
+    padding: 28px 36px;
+    align-items: flex-start;
+  }
+  #projectModal .modal-header .mono {
+    color: rgba(242,240,235,0.5);
+    margin-bottom: 6px;
+  }
+  #projectModal .modal-header h3 {
+    font-size: clamp(20px, 2.5vw, 32px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  #projectModal .modal-body {
+    padding: 0 36px 36px;
+  }
+  .modal-slide-placeholder {
+    aspect-ratio: 16 / 9;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .modal-slide-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(242,240,235,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(242,240,235,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .modal-slide-placeholder-label {
+    position: relative;
+    z-index: 1;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(242,240,235,0.35);
+    text-align: center;
+    padding: 0 20px;
+  }
+  #projectModal .carousel-control-prev,
+  #projectModal .carousel-control-next {
+    width: 48px;
+    background: rgba(15,15,15,0.6);
+    opacity: 1;
+    transition: background 0.2s ease;
+  }
+  #projectModal .carousel-control-prev:hover,
+  #projectModal .carousel-control-next:hover {
+    background: rgba(15,15,15,0.9);
+  }
+  .modal-slide-desc {
+    padding: 20px 0 24px;
+    border-bottom: 1px solid rgba(242,240,235,0.12);
+    min-height: 90px;
+  }
+  .modal-slide-desc .mono {
+    color: rgba(242,240,235,0.45);
+    margin-bottom: 8px;
+  }
+  .modal-slide-desc p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(242,240,235,0.8);
+    margin: 0;
+  }
+  .modal-thumbs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .modal-thumb {
+    aspect-ratio: 16 / 9;
+    background: #1c1c1c;
+    border: 2px solid transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s ease;
+  }
+  .modal-thumb::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(242,240,235,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(242,240,235,0.04) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+  .modal-thumb span {
+    position: relative;
+    z-index: 1;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(242,240,235,0.3);
+    text-align: center;
+    padding: 4px 6px;
+    transition: color 0.25s ease;
+  }
+  .modal-thumb.active {
+    border-color: var(--accent);
+  }
+  .modal-thumb.active span,
+  .modal-thumb:hover span {
+    color: rgba(242,240,235,0.7);
+  }
+  .modal-thumb:hover {
+    border-color: rgba(242,240,235,0.3);
+  }
+  .modal-thumb.active:hover {
+    border-color: var(--accent);
+  }
+  .modal-references {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(242,240,235,0.12);
+  }
+  .modal-references-label {
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(242,240,235,0.45);
+    margin-bottom: 12px;
+  }
+  .modal-references-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+  }
+  .modal-references-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(242,240,235,0.8);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.4;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(242,240,235,0.25);
+    transition: color 0.25s ease, border-color 0.25s ease, gap 0.25s ease;
+  }
+  .modal-references-list a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    gap: 12px;
+  }
+  .modal-references-list a::after {
+    content: '↗';
+    font-size: 13px;
+    line-height: 1;
+    transition: transform 0.25s ease;
+  }
+  .modal-references-list a:hover::after {
+    transform: translate(2px, -2px);
+  }
+  @media (max-width: 767px) {
+    #projectModal .modal-header { padding: 20px; }
+    #projectModal .modal-body { padding: 0 20px 24px; }
+    .modal-thumbs { grid-template-columns: repeat(2, 1fr); }
+    .modal-references-list { flex-direction: column; gap: 10px; }
+  }
+
+  /* Do Hyeon global size override */
+  .mono,
+  .section-number,
+  .trusted-by .trusted-label,
+  .work-placeholder .placeholder-label,
+  .work-category,
+  .work-number,
+  .exp-year,
+  .exp-location,
+  .skill-group h4,
+  .edu-year,
+  .edu-location,
+  .contact-grid .label,
+  footer,
+  .modal-slide-placeholder-label,
+  .modal-thumb span,
+  .modal-references-label { font-size: 14px; }
+</style>
 </head>
 <body>
+
+<!-- NAVIGATION -->
+<nav class="site-nav">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a href="#top" class="brand"><img src="img/icons/micanbar_logo.svg" alt="micanbar" style="height:28px;width:auto;display:block;"></a>
+    <div class="nav-links d-none d-md-flex">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="bg-glow glow-hero-a" data-glow></div>
+  <div class="bg-glow glow-hero-b" data-glow></div>
+  <div class="container">
+    <div class="mono reveal">Hi, I'm Michelangelo. (^０^)ノ</div>
+    <h1 class="reveal delay-1">
+      A creative, <br>that you can trust. <br>
+    </h1>
+    <p class="tagline reveal delay-2">
+      9 years of hands-on visual design across experiential, brand, digital, and motion. Shipping consumer-facing work at scale for the NBA, WNBA, FIFA, Times Square, and Kia. I work well in teams and fly swiftly when solo. Always learning, always growing, and always eager to design experiences that matter.
+    </p>
+    <div class="hero-meta reveal delay-3">
+      <div class="item">
+        <div class="mono label">Located in...</div>
+        <div class="value">Los Angeles, CA</div>
+      </div>
+      <div class="item">
+        <div class="mono label">Currently at...</div>
+        <div class="value">INNOCEAN USA / Kia</div>
+      </div>
+      <div class="item">
+        <div class="mono label">Working with...</div>
+        <div class="value">Photoshop · Illustrator · Figma · After Effects · Blender</div>
+      </div>
+    </div>
+    <div class="hero-cta-row reveal delay-4">
+      <a href="#work" class="hero-cta">Check out samples
+        <span class="hero-cta-arrow" aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- TRUSTED BY -->
+
+<section class="trusted-by">
+  <div class="container">
+    <div class="trusted-label reveal">Brands I've worked with</div>
+    <div class="logo-wall reveal delay-1">
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/kia.png" alt="Kia">
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/fifa.png" alt="FIFA">
+      </div>
+
+      <div class="logo-cell">
+        <svg class="brand-logo" viewBox="0 0 82 32" xmlns="http://www.w3.org/2000/svg" aria-label="NBA">
+          <text x="41" y="23" text-anchor="middle" font-family="'Shippori Antique B1', serif" font-weight="700" font-size="22" letter-spacing="2" fill="currentColor">NBA</text>
+        </svg>
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/tsa_logo.png" alt="Times Square Association">
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/monster.png" alt="Monster Energy">
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/odoo.png" alt="Odoo">
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/cpp.png" alt="Cal Poly Pomona">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-number reveal">01 — Highlighted Projects</div>
+        <h2 class="section-title reveal delay-1">Projects out in the wild.</h2>
+      </div>
+      <div class="mono reveal delay-2">Additional work available upon request.</div>
+    </div>
+
+    <div class="row g-4">
+      <!-- PROJECT 01 — Times Square / NYE Countdown -->
+      <div class="col-md-6 reveal">
+        <a href="#" class="work-card" data-project="0">
+          <div class="work-placeholder">
+            <div class="placeholder-label">Times Square · NYE Countdown<br><span style="opacity:0.6">Official Kia Sponsor · 2024 - 2026</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
+          </div>
+          <div class="work-meta">
+            <div class="work-title">Times Square Numeral Program</div>
+            <div class="work-category">Experiential / Brand Program · 2024–26</div>
+            <div class="work-number">01</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- PROJECT 02 — NBA All-Star Weekend (2023–2025) -->
+      <div class="col-md-6 reveal delay-1">
+        <a href="#" class="work-card" data-project="1">
+          <div class="work-placeholder">
+            <div class="placeholder-label">NBA All-Star Weekend<br><span style="opacity:0.6">Three Consecutive Years · 2023 – 2025</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
+          </div>
+          <div class="work-meta">
+            <div class="work-title">NBA All-Star Weekend</div>
+            <div class="work-category">Experiential · 2023–25</div>
+            <div class="work-number">02</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- PROJECT 03 — NBA Season-Long (30 arenas) -->
+      <div class="col-md-6 reveal">
+        <a href="#" class="work-card" data-project="2">
+          <div class="work-placeholder has-cover" style="background-image: url('img/works/NBA_SL_2025_Mobile.png'); background-size: cover; background-position: center;">
+            <div class="placeholder-label">NBA Season-Long<br><span style="opacity:0.6">Digital Experience · All NBA Arenas</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
+          </div>
+          <div class="work-meta">
+            <div class="work-title">NBA Season-Long Partnership</div>
+            <div class="work-category">Experiential / UI · UX / Brand Systems · 2024–25</div>
+            <div class="work-number">03</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- PROJECT 04 — WNBA All-Star Weekend 2025 -->
+      <div class="col-md-6 reveal delay-1">
+        <a href="#" class="work-card" data-project="3">
+          <div class="work-placeholder has-cover" style="background-image: url('img/works/wasw_25_all_snip.png'); background-size: cover; background-position: center;">
+            <div class="placeholder-label">WNBA All-Star Weekend<br><span style="opacity:0.6">Vehicle Wrap + Activation · 2025</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
+          </div>
+          <div class="work-meta">
+            <div class="work-title">WNBA All-Star Weekend</div>
+            <div class="work-category">Experiential · 2023-25</div>
+            <div class="work-number">04</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- PROJECT 05 — Kia Forum Permanent Install -->
+      <div class="col-md-6 reveal">
+        <a href="#" class="work-card" data-project="4">
+          <div class="work-placeholder">
+            <div class="placeholder-label">Kia Forum · Permanent Install<br><span style="opacity:0.6">Kia Connected Home · Photocard Keepsakes</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
+          </div>
+          <div class="work-meta">
+            <div class="work-title">Kia Forum — Permanent Install</div>
+            <div class="work-category">Experiential / Creative Direction · 2024–25</div>
+            <div class="work-number">05</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- PROJECT 06 — Kia Forum 2023 EV6 Digital Experience -->
+      <div class="col-md-6 reveal delay-1">
+        <a href="#" class="work-card" data-project="5">
+          <div class="work-placeholder has-cover" style="background-image: url('img/works/kf_ev6game_mock.png'); background-size: cover; background-position: center;">
+            <div class="placeholder-label">Kia Forum · EV6 Digital Experience<br><span style="opacity:0.6">Interactive In-Venue Game · 2023</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
+          </div>
+          <div class="work-meta">
+            <div class="work-title">Kia Forum — EV6 Digital Experience</div>
+            <div class="work-category">Digital / Game · 2023</div>
+            <div class="work-number">06</div>
+          </div>
+        </a>
+      </div>
+<!--
+      -- PROJECT 07 — Odoo Brand & Production System --
+      <div class="col-md-6 reveal">
+        <a href="#" class="work-card" data-project="6">
+          <div class="work-placeholder">
+            <div class="placeholder-label">Odoo<br><span style="opacity:0.6">Brand &amp; Production System</span></div>
+          </div>
+          <div class="work-meta">
+            <div class="work-title">Odoo — Brand &amp; Production System</div>
+            <div class="work-category">Motion / Brand Systems · 2022–23</div>
+            <div class="work-number">07</div>
+          </div>
+        </a>
+      </div>
+
+      -- PROJECT 08 — Arminda Cloud Monitoring --
+      <div class="col-md-6 reveal delay-1">
+        <a href="#" class="work-card" data-project="7">
+          <div class="work-placeholder">
+            <div class="placeholder-label">Arminda Cloud Monitoring<br><span style="opacity:0.6">App / UX / Rebrand</span></div>
+          </div>
+          <div class="work-meta">
+            <div class="work-title">Arminda Cloud Monitoring</div>
+            <div class="work-category">App / UX / Brand · 2022</div>
+            <div class="work-number">08</div>
+          </div>
+        </a>
+      </div>
+    
+  </div>
+-->
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="bg-glow glow-about-a" data-glow></div>
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-number reveal">02 — About</div>
+        <h2 class="section-title reveal delay-1">Hey, I'm Michelangelo!</h2>
+      </div>
+    </div>
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-4 col-md-5 reveal">
+        <div class="about-portrait">
+          <img src="img/photo/self.jpg" alt="Michelangelo Barbic" class="about-portrait-img">
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-7 reveal delay-1">
+        <div class="about-body">
+          <p>I'm a graphic designer working across <em>brand identity, experiential design, digital content, and motion graphics.</em> I've shipped consumer-facing work at scale for major partnerships like NBA, WNBA, FIFA, Kia, and Times Square.</p>
+          <p>My bread and butter is Photoshop, Illustrator, and After Effects. I work end-to-end from initial concept to print-ready production files, collaborating with cross-functional teams to maintain brand consistency across just about every touchpoint! Whether it be digital, print, or environmental creative, I can adapt and contribute effectively when working in a team environment.</p>
+          <p>I have experience leading teams and managing projects as well. <br> The displayed projects DO NOT use generative AI.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-number reveal">03 — Experience</div>
+        <h2 class="section-title reveal delay-1">Places I've worked.</h2>
+      </div>
+    </div>
+
+    <div class="exp-list reveal">
+      <div class="exp-row">
+        <div class="exp-year">2023 — Now</div>
+        <div class="exp-role">Graphic &amp; Experiential Designer</div>
+        <div class="exp-company">INNOCEAN USA — Kia Account</div>
+        <div class="exp-location">Huntington Beach, CA</div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-year">2021 — Now</div>
+        <div class="exp-role">Freelance Graphic Designer</div>
+        <div class="exp-company">@micanbar</div>
+        <div class="exp-location">Various</div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-year">2022 - 2023</div>
+        <div class="exp-role">Video &amp; Graphic Production Lead</div>
+        <div class="exp-company">Odoo</div>
+        <div class="exp-location">San Francisco, CA</div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-year">2017 — 2021</div>
+        <div class="exp-role">Graphic Designer &amp; Video Producer</div>
+        <div class="exp-company">MediaVision — Cal Poly Pomona</div>
+        <div class="exp-location">Pomona, CA</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-number reveal">04 — Education</div>
+        <h2 class="section-title reveal delay-1">Where I studied.</h2>
+      </div>
+    </div>
+
+    <div class="edu-list">
+      <div class="edu-row reveal">
+        <div class="edu-year">2017 — 2021</div>
+        <div class="edu-body">
+          <div class="edu-degree">B.F.A. in Visual Communication Design</div>
+          <div class="edu-school">California State Polytechnic University, Pomona</div>
+        </div>
+        <div class="edu-detail">
+          <p>Concentration in visual storytelling and motion design. Active in MediaVision, the university's video production studio, producing brand, print, and video work for campus clients.</p>
+        </div>
+        <div class="edu-location">Pomona, CA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-number reveal">05 — Capabilities</div>
+        <h2 class="section-title reveal delay-1">What I can do.</h2>
+      </div>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-4 reveal skill-group">
+        <h4>Visual Design</h4>
+        <ul class="skill-list">
+          <li>Graphic Design</li>
+          <li>Brand Identity &amp; Systems</li>
+          <li>Digital Content &amp; Paid Social</li>
+          <li>Print &amp; Collateral</li>
+          <li>Packaging</li>
+          <li>UX / UI Design</li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 reveal delay-1 skill-group">
+        <h4>Motion &amp; 3D</h4>
+        <ul class="skill-list">
+          <li>Motion Graphics</li>
+          <li>3D Visualization &amp; Production</li>
+          <li>Technical Illustration &amp; CAD</li>
+          <li>AI-Assisted Workflows</li>
+          <li>VR LookDev</li>
+          <li>Environmental / Experiential</li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 reveal delay-2 skill-group">
+        <h4>Tools</h4>
+        <ul class="skill-list">
+          <li>Adobe Photoshop</li>
+          <li>Adobe Illustrator</li>
+          <li>Figma</li>
+          <li>Adobe After Effects · Adobe Premiere Pro</li>
+          <li>Blender · Cinema 4D</li>
+          <li>Rhino · Unreal Engine</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="bg-glow glow-contact-a" data-glow></div>
+  <div class="bg-glow glow-contact-b" data-glow></div>
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-number reveal">06 — Contact</div>
+        <h2 class="reveal delay-1">Let's build,<br> <em>together.</em></h2>
+      </div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="label">Email</div>
+        <a href="mailto:hello@micanbar.com">hello@micanbar.com</a>
+      </div>
+      <div class="reveal delay-1">
+        <div class="label">Phone</div>
+        <a href="tel:+16507613378">650.761.3378</a>
+      </div>
+      <div class="reveal delay-2">
+        <div class="label">Web</div>
+        <a href="https://micanbar.com" target="_blank" rel="noopener">micanbar.com</a>
+        <br>
+        <a href="https://linkedin.com/in/micanbar" target="_blank" rel="noopener">LinkedIn</a>
+        <br>
+        <a href="https://instagram.com/micanbar" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <div class="mono" id="modal-category-label"></div>
+          <h3 id="modal-project-title"></h3>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="projectCarousel" class="carousel slide" data-bs-ride="false">
+          <div class="carousel-inner" id="modal-carousel-inner"></div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="modal-slide-desc" id="modal-slide-desc"></div>
+        <div class="modal-thumbs" id="modal-thumbs"></div>
+        <div class="modal-references" id="modal-references" hidden>
+          <div class="modal-references-label">Public Reference Links</div>
+          <ul class="modal-references-list" id="modal-references-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">© 2026 Michelangelo Barbic </div>
+      <div class="col-md-6 text-md-end mt-2 mt-md-0">@micanbar 🍊</div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function () {
+  var h1 = document.querySelector('.hero h1');
+  if (!h1) return;
+
+  var scrambleFonts = [
+    'Georgia, serif',
+    'Impact, fantasy',
+    "'Courier New', monospace",
+    'Arial, sans-serif',
+    'Palatino, serif',
+    "'Times New Roman', serif",
+    'Verdana, sans-serif',
+    'Trebuchet MS, sans-serif',
+    "'Comic Sans MS', cursive",
+    'system-ui, sans-serif'
+  ];
+
+  var STAGGER   = 100;  // ms between each character appearing
+  var INTERVAL  = 300; // ms per font cycle
+  var CYCLES    = 1;    // font changes before settling
+
+  // Immediately hide everything in the hero below the h1
+  var holdEls = Array.prototype.slice.call(
+    document.querySelectorAll('.hero .tagline, .hero .hero-meta')
+  );
+  holdEls.forEach(function (el) {
+    el.style.setProperty('opacity', '0', 'important');
+    el.style.setProperty('transform', 'translateY(28px)', 'important');
+    el.style.setProperty('transition', 'none', 'important');
+  });
+
+  var triggered = false;
+
+  // Wrap "that you can trust." words in individual hidden spans for staggered reveal
+  function wrapSecondLine() {
+    var children = Array.prototype.slice.call(h1.childNodes);
+    var brIdx = -1;
+    for (var i = 0; i < children.length; i++) {
+      if (children[i].nodeName === 'BR') { brIdx = i; break; }
+    }
+    if (brIdx === -1) return [];
+    var words = [];
+    var secondNodes = [];
+    for (var j = brIdx + 1; j < children.length; j++) secondNodes.push(children[j]);
+    secondNodes.forEach(function (node) {
+      if (node.nodeType === 3) {
+        var parts = node.textContent.split(/(\s+)/);
+        var frag = document.createDocumentFragment();
+        parts.forEach(function (part) {
+          if (/^\s+$/.test(part)) {
+            frag.appendChild(document.createTextNode(part));
+          } else if (part) {
+            var span = document.createElement('span');
+            span.style.cssText = 'opacity:0;transform:translateX(-12px);transition:opacity 0.6s cubic-bezier(0.2,0.8,0.2,1),transform 0.6s cubic-bezier(0.2,0.8,0.2,1);display:inline-block;line-height:inherit;font-size:inherit;';
+            span.textContent = part;
+            words.push(span);
+            frag.appendChild(span);
+          }
+        });
+        node.parentNode.replaceChild(frag, node);
+      }
+    });
+    return words;
+  }
+
+  // Wrap each character of "Creative," in its own span, hidden initially
+  function wrapFirstLine() {
+    var chars = [];
+    var children = Array.prototype.slice.call(h1.childNodes);
+    for (var n = 0; n < children.length; n++) {
+      var node = children[n];
+      if (node.nodeName === 'BR') break;
+      if (node.nodeType === 3) {
+        var text = node.textContent;
+        var frag = document.createDocumentFragment();
+        for (var i = 0; i < text.length; i++) {
+          var span = document.createElement('span');
+          span.textContent = text[i];
+          span.style.cssText = 'opacity:0;line-height:inherit;font-size:inherit;';
+          frag.appendChild(span);
+          chars.push(span);
+        }
+        node.parentNode.replaceChild(frag, node);
+      }
+    }
+    return chars;
+  }
+
+  function runScramble() {
+    if (triggered) return;
+    triggered = true;
+
+    var secondWords = wrapSecondLine();
+    var chars   = wrapFirstLine();
+    var visible = chars.filter(function (s) { return s.textContent.trim().length > 0; });
+
+    visible.forEach(function (span, i) {
+      setTimeout(function () {
+        // Reveal character and immediately start on a random font
+        span.style.opacity = '1';
+        span.style.fontFamily = scrambleFonts[Math.floor(Math.random() * scrambleFonts.length)];
+        var count = 1;
+        var iv = setInterval(function () {
+          count++;
+          if (count > CYCLES) {
+            clearInterval(iv);
+            span.style.fontFamily = "'Shippori Antique B1', serif";
+          } else {
+            span.style.fontFamily = scrambleFonts[Math.floor(Math.random() * scrambleFonts.length)];
+          }
+        }, INTERVAL);
+      }, i * STAGGER);
+    });
+
+    // After last character has fully settled, reveal everything below
+    var totalMs = (visible.length - 1) * STAGGER + CYCLES * INTERVAL + 200;
+    setTimeout(function () {
+      var LINE2_STAGGER = 120;
+      secondWords.forEach(function (w, i) {
+        setTimeout(function () {
+          w.style.opacity = '1';
+          w.style.transform = 'translateX(0)';
+        }, i * LINE2_STAGGER);
+      });
+
+      holdEls.forEach(function (el) {
+        el.style.setProperty('transition', 'opacity 0.9s ease, transform 0.9s ease', 'important');
+        el.style.setProperty('transform', 'translateY(0)', 'important');
+        requestAnimationFrame(function () {
+          el.style.setProperty('opacity', '1', 'important');
+          setTimeout(function () {
+            el.style.removeProperty('opacity');
+            el.style.removeProperty('transform');
+            el.style.removeProperty('transition');
+          }, 1000);
+        });
+      });
+    }, totalMs);
+  }
+
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { runScramble(); obs.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  obs.observe(h1);
+})();
+</script>
+<script>
+  // Global top-to-bottom animation sequencer
+  (function () {
+    var GAP = 150;
+    var _queue = [];
+    var _flushing = false;
+
+    function _flush() {
+      if (!_queue.length) { _flushing = false; return; }
+      _flushing = true;
+      _queue.shift().fn();
+      setTimeout(_flush, GAP);
+    }
+
+    window._revealQueue = {
+      push: function (top, fn) {
+        var i = 0;
+        while (i < _queue.length && _queue[i].top <= top) i++;
+        _queue.splice(i, 0, { top: top, fn: fn });
+        if (!_flushing) _flush();
+      }
+    };
+  })();
+
+  // Word-by-word left-to-right reveal
+  (function () {
+    var STAGGER = 45;
+    var targets = document.querySelectorAll('h2.section-title, .tagline, .about-body p');
+
+    function wrapWordsInNode(node, words) {
+      if (node.nodeType === 3) {
+        var parts = node.textContent.split(/(\s+)/);
+        var frag = document.createDocumentFragment();
+        parts.forEach(function (part) {
+          if (/^\s+$/.test(part)) {
+            frag.appendChild(document.createTextNode(part));
+          } else if (part) {
+            var span = document.createElement('span');
+            span.className = 'word';
+            span.textContent = part;
+            words.push(span);
+            frag.appendChild(span);
+          }
+        });
+        node.parentNode.replaceChild(frag, node);
+      } else if (node.nodeType === 1) {
+        Array.prototype.slice.call(node.childNodes).forEach(function (child) {
+          wrapWordsInNode(child, words);
+        });
+      }
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(function (el) {
+        var words = [];
+        Array.prototype.slice.call(el.childNodes).forEach(function (c) { wrapWordsInNode(c, words); });
+        words.forEach(function (w) { w.classList.add('in'); });
+      });
+      return;
+    }
+
+    var wordIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var top = el.getBoundingClientRect().top;
+        window._revealQueue.push(top, function () {
+          el._words.forEach(function (w, i) {
+            setTimeout(function () { w.classList.add('in'); }, i * STAGGER);
+          });
+        });
+        wordIO.unobserve(el);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+    targets.forEach(function (el) {
+      el.classList.remove('reveal', 'delay-1', 'delay-2', 'delay-3', 'delay-4');
+      var words = [];
+      Array.prototype.slice.call(el.childNodes).forEach(function (c) { wrapWordsInNode(c, words); });
+      el._words = words;
+      wordIO.observe(el);
+    });
+  })();
+</script>
+<script>
+  // Scroll reveal — minimal, smooth
+  (function () {
+    var reveals = document.querySelectorAll('.reveal');
+    var glows = document.querySelectorAll('[data-glow]');
+
+    if (!('IntersectionObserver' in window)) {
+      reveals.forEach(function (el) { el.classList.add('in'); });
+      glows.forEach(function (el) { el.classList.add('lit'); });
+      return;
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var top = el.getBoundingClientRect().top;
+        window._revealQueue.push(top, function () { el.classList.add('in'); });
+        io.unobserve(el);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+
+    var glowIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('lit');
+          glowIO.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '200px 0px 200px 0px' });
+    glows.forEach(function (el) { glowIO.observe(el); });
+  })();
+</script>
+<script>
+(function () {
+  var projects = [
+    {
+      title: 'Times Square Numeral Program',
+      category: 'Experiential / Brand Program · 2024–26',
+      slides: [
+        { label: 'Official Sponsor — NYE Countdown',     desc: 'Among the most visible sponsorship activations in the United States. Kia\'s role as Official Sponsor of the Times Square NYE Countdown reaches a live and broadcast audience of millions, with creative quality at this level directly shaping national brand perception. Creative direction, 3D visualization, and Kia brand-compliant production materials delivered for client pitch decks and vendor handoff.' },
+        { label: '2024 — Coast-to-Coast EV9 Tour',       desc: 'For the 2024 activation, the numerals were towed coast-to-coast by a Kia EV9 across five stops — each requiring its own creative production and generating record impressions for the vehicle launch. Vehicle branding, custom activation buildouts, and environmental graphics across every tour stop.' },
+        { label: '2026 — FIFA Numeral System',           desc: 'Numeral identity built for the 2026 Kia x FIFA World Cup tie-in. Designed to read at scale across Times Square LED, broadcast lower-thirds, and matchday graphics — one system spanning environmental, digital, and broadcast surfaces.' },
+        { label: 'Vendor-Ready Production',              desc: 'Production materials prepared for vendor execution: vehicle wraps, custom buildouts, and environmental graphic specs. Designs reviewed and approved internally before hand-off so what gets fabricated matches what was sold.' }
+      ],
+      references: [
+        { label: '2025 — Times Square Activation', url: 'https://abc7ny.com/post/massive-2025-numerals-arrive-times-square-ahead-annual-new-years-eve-celebration/15672185/' },
+        { label: '2024 — Times Square Activation', url: 'https://www.linkedin.com/posts/kia-america_kianye-kiaev9-balldrop-activity-7144112696920092672-dFAs' },
+        { label: '2024 — LA Autoshow Activation',  url: 'https://www.kiamedia.com/us/en/media/pressreleases/21464/kia-america-ready-to-ring-in-2024-with-nationwide-tour-of-iconic-times-square-new-years-eve-numerals' }
+      ]
+    },
+    {
+      title: 'NBA All-Star Weekend',
+      category: 'Experiential · 2023–25',
+      slides: [
+        { label: 'Premier Brand Visibility — Three Years Running', desc: 'NBA All-Star Weekend is one of Kia\'s premier brand visibility moments. Owned the activation creative across 2023, 2024, and 2025 — guest-oriented designs leveraging both the Kia brand and the NBA style guide. Deliverables span physical fabrication, digital content, and motion graphics: disciplines that would typically require multiple specialists.' },
+        { label: 'Creative Direction & 3D Pitch Concepts', desc: 'Creative direction and 3D visualization of activation concepts for client pitch decks. Render-to-build fidelity so what gets approved is what shows up on site.' },
+        { label: 'Activation Graphics Suite',              desc: 'Wall graphics, signage, bespoke vehicle wraps, and flagship-specific motion graphics across activation spaces. Each year layers in updated NBA-compliant treatment without losing the Kia brand throughline.' },
+        { label: 'Vendor Production Documentation',        desc: 'Full vendor production documentation and on-site guidance — from print specs to install instructions — tying the creative vision to a fabricated reality.' }
+      ],
+      references: [
+        { label: '2025 — NBA ASW Activation', url: 'https://www.linkedin.com/posts/kia-america_nbaallstar-kiaskills-activity-7298023633988239363-YBLc' },
+        { label: '2024 — NBA ASW Activation', url: 'https://www.linkedin.com/posts/kia-america_kiaev9-kiaskillschallenge-nbaallstar-activity-7165800677380665345-IPqW' },
+        { label: '2023 — NBA ASW Activation', url: 'https://www.linkedin.com/posts/kia-america_nbaallstar-kiatelluridexpro-kiadriveway-activity-7033480544365547520-LZ0F' }
+      ]
+    },
+    {
+      title: 'NBA Season-Long Partnership',
+      category: 'Experiential / UI · UX / Brand Systems · 2024–25',
+      slides: [
+        { label: 'Highest-Volume Workstream → All NBA Arenas',  desc: 'Highest-volume recurring workstream of the year, spanning the full NBA season with continuous deliverable cycles across NBA arenas. Vehicle installations and guest experiences shape brand perception and drive registrations → site by site, week by week.' },
+        { label: 'In-Arena Digital Game! UI/UX',              desc: 'UI/UX design and creative direction for the in-arena digital game experience. Full asset preparation and direction handed to development vendors who build directly from my deliverables. A responsibility that extends well beyond traditional graphic design into art direction and product design.' },
+        { label: '3D Vehicle Installation Visualization',      desc: 'Photoreal 3D visualization of vehicle installations and guest experience flows for arena activations. Used for stakeholder alignment and to anchor vendor production specs before install.' },
+        { label: 'Vendor Specs + Regional Dealer Lists',       desc: 'Vendor guidance on compliant material specifications and installation requirements for arena-specific sites. Production of regional dealer lists for vehicle display events tied to each market\'s activation.' }
+      ]
+    },
+    {
+      title: 'WNBA All-Star Weekend',
+      category: 'Experiential · 2025',
+      slides: [
+        { label: 'Premier Brand Moment — 2025',         desc: 'Another of Kia\'s premier brand visibility moments. WNBA All-Star Weekend deliverables span physical fabrication, digital content, and motion graphics — disciplines that would typically require multiple specialists, owned end-to-end here.' },
+        { label: 'Bespoke Vehicle Wrap',                desc: 'Custom vehicle wrap built for the All-Star activation — graphic system anchored in WNBA-compliant style while staying on-brand for Kia.' },
+        { label: 'Creative Direction & 3D Pitch',       desc: 'Creative direction and 3D visualization of activation concepts for the client pitch. WNBA-compliant graphics developed in parallel with vehicle and environmental treatments.' },
+        { label: 'Activation Graphics & Production',    desc: 'Wall graphics, signage, and flagship-specific motion graphics for the activation site, paired with vendor production documentation for install.' }
+      ],
+      references: [
+        { label: '2025 — WNBA ASW Vehicle Wrap', url: 'https://www.linkedin.com/posts/the-true-all-stars-this-weekend-were-our-ugcPost-7353091394632118272-5D6x' },
+        { label: '2025 — WNBA ASW Activation',   url: 'https://www.linkedin.com/posts/kia-america_kiaskillschallenge-activity-7221197401665986560-LxeD' }
+      ]
+    },
+    {
+      title: 'Kia Forum — Permanent Install',
+      category: 'Experiential / Creative Direction · 2024–25',
+      slides: [
+        { label: 'Strategic Creative Leadership',       desc: 'Delivered a fully realized creative vision from initial pitch through final rendering — a responsibility that extends beyond production execution into strategic creative leadership. Current design still receives incremental updates as the venue evolves.' },
+        { label: '3D Concept & Stakeholder Renders',    desc: 'Creative direction for display arrangement at the Kia Forum, including 3D concept development and renderings prepared for stakeholder review and approval.' },
+        { label: 'Kia Connected Home Signage',          desc: 'Design and production of Kia Connected Home signage — venue-appropriate, brand-compliant, and built to live in a permanent installation context.' },
+        { label: 'Photocard Keepsakes for Guests',      desc: 'Printed photocard keepsakes for guests — designed to function as both a takeaway and a brand carrier, extending the activation past the venue itself.' }
+      ]
+    },
+    {
+      title: 'Kia Forum — EV6 Digital Experience',
+      category: 'Digital / Game · 2023',
+      slides: [
+        { label: 'Interactive In-Venue Game',  desc: 'E-learning videogame deployed at the Kia Forum to promote the flagship EV6 vehicle. Art-directed and produced end-to-end — balancing brand education with playable engagement for guests passing through the venue.' },
+        { label: 'Art Direction',              desc: 'Visual system for the in-game world: vehicle hero treatment, environment styling, and UI surfaces tied to Kia brand standards while reading as a playable space.' },
+        { label: 'In-Venue Deployment',        desc: 'Hardware-integrated install at the Kia Forum. Built for repeated guest play with reset behavior, attract-loop visuals, and venue-appropriate session length.' },
+        { label: 'Production & Handoff',       desc: 'Production pipeline coordinating art, motion, and engineering handoffs. Final asset prep and on-site QA for venue rollout.' }
+      ]
+    },
+    {
+      title: 'Odoo — Brand & Production System',
+      category: 'Motion / Brand Systems · 2022–23',
+      slides: [
+        { label: 'Unified Motion Language',     desc: 'Video bumpers unified across Odoo e-learning content and promotional material — one motion language carried across two distinct content streams.' },
+        { label: 'E-Learning Motion Package',   desc: 'Motion graphics built specifically for the e-learning surface — designed to template across many course episodes without losing brand integrity at scale.' },
+        { label: 'Livestream Production Kit',   desc: 'Livestream graphic kits supporting Odoo conferences and product demos. Lower-thirds, broadcast bugs, and transition packages built for live-control operation.' },
+        { label: 'Conference & Demo Surfaces',  desc: 'Supporting graphic surfaces for live conference and demo settings — coordinated with the bumper and livestream systems for end-to-end visual consistency.' }
+      ]
+    },
+    {
+      title: 'Arminda Cloud Monitoring',
+      category: 'App / UX / Brand · 2022',
+      slides: [
+        { label: 'Brand System (NDA-recreated)', desc: 'Shipped product. Name and product imagery recreated under freelance NDA — visual divergence from the live product is intentional. Full brand system: identity, type, color, voice.' },
+        { label: 'App UX Flows',                 desc: 'Core UX flows for the cloud monitoring app — onboarding, dashboard, alerting, and account surfaces. Designed for operator clarity over decoration.' },
+        { label: 'Visual System & Components',   desc: 'Design system underpinning the app: components, layouts, dark/light modes, and data-density treatments tuned for monitoring contexts.' },
+        { label: 'Marketing Surface',            desc: 'Marketing surface tying brand identity to product UI — landing pages, feature cards, and acquisition surfaces aligned to the in-app experience.' }
+      ]
+    }
+  ];
+
+  var modalEl    = document.getElementById('projectModal');
+  var carouselEl = document.getElementById('projectCarousel');
+  var innerEl    = document.getElementById('modal-carousel-inner');
+  var thumbsEl   = document.getElementById('modal-thumbs');
+  var descEl     = document.getElementById('modal-slide-desc');
+  var titleEl    = document.getElementById('modal-project-title');
+  var catEl      = document.getElementById('modal-category-label');
+  var refsEl     = document.getElementById('modal-references');
+  var refsListEl = document.getElementById('modal-references-list');
+
+  function setDesc(project, idx) {
+    var s = project.slides[idx];
+    descEl.innerHTML = '<div class="mono">' + s.label + '</div><p>' + s.desc + '</p>';
+  }
+
+  function openProject(idx) {
+    var p = projects[idx];
+    titleEl.textContent = p.title;
+    catEl.textContent   = p.category;
+
+    // Build carousel slides
+    innerEl.innerHTML = '';
+    p.slides.forEach(function (s, i) {
+      var item = document.createElement('div');
+      item.className = 'carousel-item' + (i === 0 ? ' active' : '');
+      item.innerHTML = '<div class="modal-slide-placeholder"><div class="modal-slide-placeholder-label">' + s.label + '</div></div>';
+      innerEl.appendChild(item);
+    });
+
+    // Build thumbnails
+    thumbsEl.innerHTML = '';
+    p.slides.forEach(function (s, i) {
+      var t = document.createElement('div');
+      t.className = 'modal-thumb' + (i === 0 ? ' active' : '');
+      t.setAttribute('data-bs-target', '#projectCarousel');
+      t.setAttribute('data-bs-slide-to', String(i));
+      t.innerHTML = '<span>' + s.label + '</span>';
+      t.addEventListener('click', function () {
+        bootstrap.Carousel.getOrCreateInstance(carouselEl).to(i);
+      });
+      thumbsEl.appendChild(t);
+    });
+
+    setDesc(p, 0);
+
+    // Build references footer (hidden when project has none)
+    refsListEl.innerHTML = '';
+    if (p.references && p.references.length) {
+      p.references.forEach(function (r) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = r.url;
+        a.textContent = r.label;
+        if (r.url && r.url !== '#') {
+          a.target = '_blank';
+          a.rel = 'noopener';
+        }
+        li.appendChild(a);
+        refsListEl.appendChild(li);
+      });
+      refsEl.hidden = false;
+    } else {
+      refsEl.hidden = true;
+    }
+
+    // Sync description + thumbnails on slide change
+    carouselEl.addEventListener('slid.bs.carousel', function handler(e) {
+      setDesc(p, e.to);
+      thumbsEl.querySelectorAll('.modal-thumb').forEach(function (t, i) {
+        t.classList.toggle('active', i === e.to);
+      });
+    });
+    modalEl.addEventListener('hidden.bs.modal', function cleanup() {
+      carouselEl.removeEventListener('slid.bs.carousel', handler);
+      modalEl.removeEventListener('hidden.bs.modal', cleanup);
+    }, { once: true });
+
+    // Reset carousel to slide 0 then show
+    var bsCarousel = bootstrap.Carousel.getOrCreateInstance(carouselEl, { ride: false, wrap: true });
+    bsCarousel.to(0);
+    bootstrap.Modal.getOrCreateInstance(modalEl).show();
+  }
+
+  document.querySelectorAll('.work-card[data-project]').forEach(function (card) {
+    card.addEventListener('click', function (e) {
+      e.preventDefault();
+      openProject(parseInt(card.getAttribute('data-project'), 10));
+    });
+  });
+})();
+</script>
 </body>
 </html>

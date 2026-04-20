@@ -1,3 +1,2 @@
-# micanSite
- portfolio dump, bashed together with bootstrap studio.
- will eventually be complete.
+# mOS_Portfolio
+Hello!11! Welcome to my public portfolio. Here you will find the backbones to my site.
