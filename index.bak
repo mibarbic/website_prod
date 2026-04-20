@@ -1074,7 +1074,7 @@
         <div class="about-body">
           <p>I'm a graphic designer working across <em>brand identity, experiential design, digital content, and motion graphics.</em> I've shipped consumer-facing work at scale for major partnerships like NBA, WNBA, FIFA, Kia, and Times Square.</p>
           <p>My bread and butter is Photoshop, Illustrator, and After Effects. I work end-to-end from initial concept to print-ready production files, collaborating with cross-functional teams to maintain brand consistency across just about every touchpoint! Whether it be digital, print, or environmental creative, I can adapt and contribute effectively when working in a team environment.</p>
-          <p>I have experience leading teams and managing projects as well. I am familiar with generative AI and where it is beneficial for commericial creative processes, however <br> the displayed projects DO NOT incorporate image generation tools that leverage AI.</p> All content showcased here has been selected to show my core skills and creative judgment as a designer, without the assistance of AI tools.
+          <p>I have experience leading teams and managing projects as well. <br> The displayed projects DO NOT use generative AI.</p>
         </div>
       </div>
     </div>
@@ -1662,19 +1662,19 @@
     titleEl.textContent = p.title;
     catEl.textContent   = p.category;
 
-    // Build carousel slides (img-only — skip placeholders)
+    // Build carousel slides
     innerEl.innerHTML = '';
-    var visibleSlides = p.slides.filter(function (s) { return !!s.img; });
-    visibleSlides.forEach(function (s, i) {
+    p.slides.forEach(function (s, i) {
       var item = document.createElement('div');
       item.className = 'carousel-item' + (i === 0 ? ' active' : '');
-      item.innerHTML = '<div class="modal-slide-placeholder has-cover" style="background-image:url(\'' + s.img + '\')"><div class="modal-slide-placeholder-label">' + s.label + '</div></div>';
+      var coverStyle = s.img ? ' has-cover" style="background-image:url(\'' + s.img + '\')' : '';
+      item.innerHTML = '<div class="modal-slide-placeholder' + coverStyle + '"><div class="modal-slide-placeholder-label">' + s.label + '</div></div>';
       innerEl.appendChild(item);
     });
 
     // Build thumbnails
     thumbsEl.innerHTML = '';
-    visibleSlides.forEach(function (s, i) {
+    p.slides.forEach(function (s, i) {
       var t = document.createElement('div');
       t.className = 'modal-thumb' + (i === 0 ? ' active' : '');
       t.setAttribute('data-bs-target', '#projectCarousel');
@@ -1686,9 +1686,7 @@
       thumbsEl.appendChild(t);
     });
 
-    if (visibleSlides.length) {
-      descEl.innerHTML = '<div class="mono">' + visibleSlides[0].label + '</div><p>' + visibleSlides[0].desc + '</p>';
-    }
+    setDesc(p, 0);
 
     // Build references footer (hidden when project has none)
     refsListEl.innerHTML = '';
@@ -1712,8 +1710,7 @@
 
     // Sync description + thumbnails on slide change
     carouselEl.addEventListener('slid.bs.carousel', function handler(e) {
-      var s = visibleSlides[e.to];
-      if (s) descEl.innerHTML = '<div class="mono">' + s.label + '</div><p>' + s.desc + '</p>';
+      setDesc(p, e.to);
       thumbsEl.querySelectorAll('.modal-thumb').forEach(function (t, i) {
         t.classList.toggle('active', i === e.to);
       });
