@@ -76,8 +76,13 @@
 
   /* HERO */
   .hero {
-    padding: 200px 0 120px;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 120px 0;
     border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .hero h1 {
     font-weight: 500;
@@ -524,7 +529,7 @@
 
   /* RESPONSIVE ¯\_(ツ)_/¯ */
   @media (max-width: 991px) {
-    .hero { padding: 150px 0 90px; }
+    .hero { padding: 100px 0; }
     section { padding: 100px 0; }
     .exp-row {
       grid-template-columns: 100px 1fr;
@@ -542,7 +547,7 @@
   }
   @media (max-width: 767px) {
     .site-nav .nav-links { display: none; }
-    .hero { padding: 120px 0 72px; }
+    .hero { padding: 90px 0; }
     section { padding: 72px 0; }
     /* Reduce Do Hyeon label size on mobile */
     .mono,
@@ -884,47 +889,6 @@
   </div>
 </header>
 
-<!-- TRUSTED BY -->
-
-<section class="trusted-by">
-  <div class="container">
-    <div class="trusted-label reveal">Brands I've worked with</div>
-    <div class="logo-wall reveal delay-1">
-
-      <div class="logo-cell">
-        <img class="brand-logo" src="img/partners/kia.png" alt="Kia">
-      </div>
-
-      <div class="logo-cell">
-        <img class="brand-logo" src="img/partners/fifa.png" alt="FIFA">
-      </div>
-
-      <div class="logo-cell">
-        <svg class="brand-logo" viewBox="0 0 82 32" xmlns="http://www.w3.org/2000/svg" aria-label="NBA">
-          <text x="41" y="23" text-anchor="middle" font-family="'Shippori Antique B1', serif" font-weight="700" font-size="22" letter-spacing="2" fill="currentColor">NBA</text>
-        </svg>
-      </div>
-
-      <div class="logo-cell">
-        <img class="brand-logo" src="img/partners/tsa_logo.png" alt="Times Square Association">
-      </div>
-
-      <div class="logo-cell">
-        <img class="brand-logo" src="img/partners/monster.png" alt="Monster Energy">
-      </div>
-
-      <div class="logo-cell">
-        <img class="brand-logo" src="img/partners/odoo.png" alt="Odoo">
-      </div>
-
-      <div class="logo-cell">
-        <img class="brand-logo" src="img/partners/cpp.png" alt="Cal Poly Pomona">
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- WORK -->
 <section id="work">
   <div class="container">
@@ -1051,6 +1015,46 @@
     
   </div>
 -->
+  </div>
+</section>
+
+<!-- TRUSTED BY -->
+<section class="trusted-by">
+  <div class="container">
+    <div class="trusted-label reveal">Brands I've worked with</div>
+    <div class="logo-wall reveal delay-1">
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/kia.png" alt="Kia">
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/fifa.png" alt="FIFA">
+      </div>
+
+      <div class="logo-cell">
+        <svg class="brand-logo" viewBox="0 0 82 32" xmlns="http://www.w3.org/2000/svg" aria-label="NBA">
+          <text x="41" y="23" text-anchor="middle" font-family="'Shippori Antique B1', serif" font-weight="700" font-size="22" letter-spacing="2" fill="currentColor">NBA</text>
+        </svg>
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/tsa_logo.png" alt="Times Square Association">
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/monster.png" alt="Monster Energy">
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/odoo.png" alt="Odoo">
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/cpp.png" alt="Cal Poly Pomona">
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -1296,7 +1300,7 @@
   ];
 
   var STAGGER   = 100;  // ms between each character appearing
-  var INTERVAL  = 300; // ms per font cycle
+  var INTERVAL  = 500; // ms per font cycle
   var CYCLES    = 1;    // font changes before settling
 
   // Immediately hide everything in the hero below the h1
