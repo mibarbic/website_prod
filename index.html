@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="img/icons/favicon.png" type="image/png">
 <title>Michelangelo Barbic — Graphic Designer / Brand, Digital & Motion</title>
 <meta name="description" content="Portfolio of Michelangelo Barbic — Graphic Designer based in Los Angeles. Brand, digital, print, and motion.">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -108,7 +109,21 @@
   }
   .hero-meta .item .label { margin-bottom: 8px; }
   .hero-meta .item .value { font-size: 15px; font-weight: 500; }
-  .hero-cta-row { margin-top: 40px; }
+  .hero-cta-row { margin-top: 40px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .hero-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--line);
+    transition: color 0.25s ease, border-color 0.25s ease, gap 0.25s ease;
+  }
+  .hero-cta-secondary:hover { color: var(--accent); border-color: var(--accent); gap: 14px; }
   .hero-cta {
     display: inline-flex;
     align-items: center;
@@ -680,7 +695,7 @@
     text-align: center;
     padding: 0 20px;
   }
-  .modal-slide-placeholder.has-cover { background-size: cover; background-position: center; }
+  .modal-slide-placeholder.has-cover { background-size: contain; background-position: center; background-repeat: no-repeat; }
   .modal-slide-placeholder.has-cover::before { display: none; }
   .modal-slide-placeholder.has-cover .modal-slide-placeholder-label { display: none; }
   #projectModal .carousel-control-prev,
@@ -839,7 +854,7 @@
 <!-- NAVIGATION -->
 <nav class="site-nav">
   <div class="container d-flex justify-content-between align-items-center">
-    <a href="#top" class="brand"><img src="img/icons/micanbar_logo.svg" alt="micanbar" style="height:28px;width:auto;display:block;"></a>
+    <a href="#top" class="brand"><img src="img/icons/micanbar_white_pink_heavy.png" alt="micanbar" style="height:45px;width:auto;display:block;filter:brightness(0);"></a>
     <div class="nav-links d-none d-md-flex">
       <a href="#work">Work</a>
       <a href="#about">About</a>
@@ -860,7 +875,11 @@
       A creative, <br>that you can trust. <br>
     </h1>
     <p class="tagline reveal delay-2">
+<<<<<<< Updated upstream
       9 years of hands-on visual design across experiential, brand, digital, and motion. Shipping consumer-facing work at scale for the NBA, WNBA, FIFA, Times Square, and Kia. I work well in teams and fly swiftly when solo. Always learning, always growing, and always eager to design experiences that matter.
+=======
+      9 years of hands-on visual design across experiential, brand, digital, motion, and video production. Shipping consumer-facing work at scale for the NBA, WNBA, FIFA, Times Square, and Kia.
+>>>>>>> Stashed changes
     </p>
     <div class="hero-meta reveal delay-3">
       <div class="item">
@@ -873,12 +892,15 @@
       </div>
       <div class="item">
         <div class="mono label">Working with...</div>
-        <div class="value">Photoshop · Illustrator · Figma · After Effects · Blender</div>
+        <div class="value">Photoshop · Illustrator · Figma · After Effects · SketchUp · Blender</div>
       </div>
     </div>
     <div class="hero-cta-row reveal delay-4">
       <a href="#work" class="hero-cta">Check out samples
         <span class="hero-cta-arrow" aria-hidden="true">↓</span>
+      </a>
+      <a href="https://vimeo.com/1144950087?share=copy&fl=sv&fe=ci" class="hero-cta-secondary" target="_blank" rel="noopener noreferrer">View demo reel
+        <span class="hero-cta-arrow" aria-hidden="true">↗</span>
       </a>
     </div>
   </div>
@@ -979,7 +1001,7 @@
         </a>
       </div>
 
-      <!-- PROJECT 04 — WNBA All-Star Weekend 2025 -->
+      <!-- PROJECT 04 — WNBA All-Star Weekend 2025 (hidden — assets retained)
       <div class="col-md-6 reveal delay-1">
         <a href="#" class="work-card" data-project="3">
           <div class="work-placeholder has-cover" style="background-image: url('img/works/wasw_25_all_snip.png'); background-size: cover; background-position: center;">
@@ -992,9 +1014,11 @@
           </div>
         </a>
       </div>
+      -->
 
-      <!-- PROJECT 05 — Kia Forum Permanent Install -->
-      <div class="col-md-6 reveal">
+
+      <!-- PROJECT 04 — Kia Forum Permanent Install -->
+      <div class="col-md-6 reveal delay-1">
         <a href="#" class="work-card" data-project="4">
           <div class="work-placeholder has-cover" style="background-image: url('img/works/kf_ev9_site.png'); background-size: cover; background-position: center;">
             <div class="placeholder-label">Kia Forum · Permanent Install<br><span style="opacity:0.6">Kia Connected Home · Photocard Keepsakes</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
@@ -1002,13 +1026,13 @@
           <div class="work-meta">
             <div class="work-title">Kia Forum — Permanent Install</div>
             <div class="work-category">Experiential / Creative Direction · 2024–25</div>
-            <div class="work-number">05</div>
+            <div class="work-number">04</div>
           </div>
         </a>
       </div>
 
-      <!-- PROJECT 06 — Kia Forum 2023 EV6 Digital Experience -->
-      <div class="col-md-6 reveal delay-1">
+      <!-- PROJECT 05 — Kia Forum 2023 EV6 Digital Experience -->
+      <div class="col-md-6 reveal">
         <a href="#" class="work-card" data-project="5">
           <div class="work-placeholder has-cover" style="background-image: url('img/works/kf_ev6game_mock.png'); background-size: cover; background-position: center;">
             <div class="placeholder-label">Kia Forum · EV6 Digital Experience<br><span style="opacity:0.6">Interactive In-Venue Game · 2023</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
@@ -1016,6 +1040,20 @@
           <div class="work-meta">
             <div class="work-title">Kia Forum — EV6 Digital Experience</div>
             <div class="work-category">Digital / Game · 2023</div>
+            <div class="work-number">05</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- PROJECT 06 — Arminda Cloud Monitoring -->
+      <div class="col-md-6 reveal delay-1">
+        <a href="#" class="work-card" data-project="7">
+          <div class="work-placeholder">
+            <div class="placeholder-label">Arminda Cloud Monitoring<br><span style="opacity:0.6">App / UX / Brand · 2022</span><br><span style="opacity:0.4">Shipped under NDA — visuals recreated.</span></div>
+          </div>
+          <div class="work-meta">
+            <div class="work-title">Arminda Cloud Monitoring</div>
+            <div class="work-category">App / UX / Brand · 2022</div>
             <div class="work-number">06</div>
           </div>
         </a>
@@ -1550,10 +1588,10 @@
       title: 'Times Square Numeral Program',
       category: 'Experiential / Brand Program · 2024–26',
       slides: [
-        { label: 'Official Sponsor — NYE Countdown',     img: 'img/works/trailer_ts_side.png',                  desc: 'Among the most visible sponsorship activations in the United States. Kia\'s role as Official Sponsor of the Times Square NYE Countdown reaches a live and broadcast audience of millions, with creative quality at this level directly shaping national brand perception. Creative direction, 3D visualization, and Kia brand-compliant production materials delivered for client pitch decks and vendor handoff.' },
-        { label: '2024 — Coast-to-Coast EV9 Tour',       img: 'img/works/laas_render.png',                      desc: 'For the 2024 activation, the numerals were towed coast-to-coast by a Kia EV9 across five stops — each requiring its own creative production and generating record impressions for the vehicle launch. Vehicle branding, custom activation buildouts, and environmental graphics across every tour stop.' },
+        { label: 'Official Sponsor — NYE Countdown',     img: 'img/works/trailer_ts_side.png',                  desc: 'Among the most visible sponsorship activations in the United States. Kia\'s role as Official Sponsor of the Times Square NYE Countdown reaches a live and broadcast audience of millions, with creative quality at this level directly shaping national brand perception. Creative direction, 3D visualization, and Kia brand-compliant production materials delivered for client pitch decks and vendor handoff.<br><br>At this scale, a sponsor logo either reads as decoration or as a feature of the night. Every design decision needed to earn its place in the cultural moment, not sit beside it.' },
+        { label: '2024 — Coast-to-Coast EV9 Tour',       img: 'img/works/laas_render.png',                      desc: 'For the 2024 activation, the numerals were towed coast-to-coast by a Kia EV9 across five stops, each requiring its own creative production and generating record impressions for the vehicle launch. Vehicle branding, custom activation buildouts, and environmental graphics across every tour stop.<br><br>Treating the delivery itself as the activation puts the EV9 in the lead role. Instead of being the sidekick that drops the numerals off in New York, it becomes the vehicle that carries the year in. A single Times Square reveal turns into a five-city pre-event campaign.' },
         { label: '2026 — FIFA Numeral System',           img: 'img/works/NYE26_FIFA_PlatformDisplay_v02mb.png', desc: 'Numeral identity built for the 2026 Kia x FIFA World Cup tie-in. Designed to read at scale across Times Square LED, broadcast lower-thirds, and matchday graphics — one system spanning environmental, digital, and broadcast surfaces.' },
-        { label: 'Vendor-Ready Production',              desc: 'Production materials prepared for vendor execution: vehicle wraps, custom buildouts, and environmental graphic specs. Designs reviewed and approved internally before hand-off so what gets fabricated matches what was sold.' }
+        { label: 'Vendor-Ready Production',              img: 'img/works/21604.jpeg',                           desc: 'Production materials prepared for vendor execution: vehicle wraps, custom buildouts, and environmental graphic specs. Designs reviewed and approved internally before hand-off so what gets fabricated matches what was sold — pictured: real deployment of the trailer in New York City.' }
       ],
       references: [
         { label: '2025 — Times Square Activation', url: 'https://abc7ny.com/post/massive-2025-numerals-arrive-times-square-ahead-annual-new-years-eve-celebration/15672185/' },
@@ -1565,10 +1603,10 @@
       title: 'NBA All-Star Weekend',
       category: 'Experiential · 2023–25',
       slides: [
-        { label: 'Premier Brand Visibility — Three Years Running', img: 'img/works/asw26_telluride_viz.png', desc: 'NBA All-Star Weekend is one of Kia\'s premier brand visibility moments. Owned the activation creative across 2023, 2024, and 2025 — guest-oriented designs leveraging both the Kia brand and the NBA style guide. Deliverables span physical fabrication, digital content, and motion graphics: disciplines that would typically require multiple specialists.' },
-        { label: 'Creative Direction & 3D Pitch Concepts', desc: 'Creative direction and 3D visualization of activation concepts for client pitch decks. Render-to-build fidelity so what gets approved is what shows up on site.' },
-        { label: 'Activation Graphics Suite',              desc: 'Wall graphics, signage, bespoke vehicle wraps, and flagship-specific motion graphics across activation spaces. Each year layers in updated NBA-compliant treatment without losing the Kia brand throughline.' },
-        { label: 'Vendor Production Documentation',        desc: 'Full vendor production documentation and on-site guidance — from print specs to install instructions — tying the creative vision to a fabricated reality.' }
+        { label: 'Premier Brand Visibility — Three Years Running', img: 'img/works/asw26_telluride_viz.png', desc: 'NBA All-Star Weekend is one of Kia\'s premier brand visibility moments. Owned the activation creative across 2023, 2024, and 2025, with guest-oriented designs leveraging both the Kia brand and the NBA style guide. Deliverables span physical fabrication, digital content, and motion graphics, disciplines that would typically require multiple specialists.<br><br>At All-Star Weekend, dwell time is currency. Passive vehicle displays underperform against everything else competing for fan attention, so the work consistently centered on participation rather than display.' },
+        { label: 'Creative Direction & 3D Pitch Concepts', img: 'img/works/nbaas_layout.png',                                  desc: 'Creative direction and 3D visualization of activation concepts for client pitch decks. Render-to-build fidelity so what gets approved is what shows up on site — early 3D block-out shown.' },
+        { label: 'Activation Graphics Suite',              img: 'img/works/nbaas_02.jpeg',                                     desc: 'Wall graphics, signage, bespoke vehicle wraps, and flagship-specific motion graphics across activation spaces. Each year layers in updated NBA-compliant treatment without losing the Kia brand throughline.' },
+        { label: 'Vendor Production Documentation',        img: 'img/works/4ff4dcef-1fdf-4f38-b9ec-25e2205719de.jpeg',          desc: 'Full vendor production documentation and on-site guidance — from print specs to install instructions — tying the creative vision to a fabricated reality.' }
       ],
       references: [
         { label: '2025 — NBA ASW Activation', url: 'https://www.linkedin.com/posts/kia-america_nbaallstar-kiaskills-activity-7298023633988239363-YBLc' },
@@ -1604,8 +1642,8 @@
       title: 'Kia Forum — Permanent Install',
       category: 'Experiential / Creative Direction · 2024–25',
       slides: [
-        { label: 'Strategic Creative Leadership',       desc: 'Delivered a fully realized creative vision from initial pitch through final rendering — a responsibility that extends beyond production execution into strategic creative leadership. Current design still receives incremental updates as the venue evolves.' },
-        { label: '3D Concept & Stakeholder Renders',    desc: 'Creative direction for display arrangement at the Kia Forum, including 3D concept development and renderings prepared for stakeholder review and approval.' },
+        { label: 'Strategic Creative Leadership',       img: 'img/works/kf_trap_opt.png', desc: 'Delivered a fully realized creative vision from initial pitch through final rendering, a responsibility that extends beyond production execution into strategic creative leadership. Current design still receives incremental updates as the venue evolves.<br><br>A photo op at a concert venue has to compete with the show itself for guest attention. Building the marquee display customizable per artist anchors each guest\'s photo to the act they came to see, not a generic backdrop. That specificity is what drove record interactions compared to previous activations.' },
+        { label: '3D Concept & Stakeholder Renders',    img: 'img/works/kf_ev9_site.png', desc: 'Creative direction for display arrangement at the Kia Forum, including 3D concept development and renderings prepared for stakeholder review and approval — installed configuration shown.' },
         { label: 'Kia Connected Home Signage',          desc: 'Design and production of Kia Connected Home signage — venue-appropriate, brand-compliant, and built to live in a permanent installation context.' },
         { label: 'Photocard Keepsakes for Guests',      desc: 'Printed photocard keepsakes for guests — designed to function as both a takeaway and a brand carrier, extending the activation past the venue itself.' }
       ]
@@ -1614,10 +1652,10 @@
       title: 'Kia Forum — EV6 Digital Experience',
       category: 'Digital / Game · 2023',
       slides: [
-        { label: 'Interactive In-Venue Game',  desc: 'E-learning videogame deployed at the Kia Forum to promote the flagship EV6 vehicle. Art-directed and produced end-to-end — balancing brand education with playable engagement for guests passing through the venue.' },
-        { label: 'Art Direction',              desc: 'Visual system for the in-game world: vehicle hero treatment, environment styling, and UI surfaces tied to Kia brand standards while reading as a playable space.' },
-        { label: 'In-Venue Deployment',        desc: 'Hardware-integrated install at the Kia Forum. Built for repeated guest play with reset behavior, attract-loop visuals, and venue-appropriate session length.' },
-        { label: 'Production & Handoff',       desc: 'Production pipeline coordinating art, motion, and engineering handoffs. Final asset prep and on-site QA for venue rollout.' }
+        { label: 'Refreshed In-Venue Experience',  img: 'img/works/kf_ev6game_mock.png',                              desc: 'A refreshed digital experience built for the existing EV6 display at the Kia Forum, designed to surface the vehicle\'s highlights through engaging, educational interaction rather than a spec-sheet readout. Led the creative direction end-to-end. UI composite shown.<br><br>The entire UI was modeled on the EV6\'s own Heads-Up Display, so guests playing the experience are effectively previewing the car\'s interface. Brand education registers as product familiarity instead of as marketing.' },
+        { label: 'Art Direction, HUD-Inspired',    desc: 'Visual system drawn directly from the EV6\'s Heads-Up Display vocabulary: vehicle hero treatment, environment styling, and UI surfaces all tuned to read as an extension of the car itself rather than a standalone interface.' },
+        { label: 'In-Venue Deployment',            img: 'img/works/50bac314-3cae-4ba8-aa46-551b9ab5ba3a.jpeg',         desc: 'Deployed at the existing EV6 display surface at the Kia Forum, with MoZeus handling the display integration. Built for guests passing through the venue: short, repeatable, and venue-appropriate for foot-traffic flow. Installed EV6 display shown.' },
+        { label: 'Production & Handoff',           desc: 'Responsible for creative direction, user-experience, and production deliverables of the educational experience. Asset prep and vendor coordination tied the visual system to a venue-ready install.' }
       ]
     },
     {
