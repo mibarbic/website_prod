@@ -3,28 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="img/icons/favicon.png" type="image/png">
 <title>Michelangelo Barbic — Graphic Designer / Brand, Digital & Motion</title>
 <meta name="description" content="Portfolio of Michelangelo Barbic — Graphic Designer based in Los Angeles. Brand, digital, print, and motion.">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&family=Do+Hyeon&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/det8odp.css">
 <style>
   :root {
-    --bg: #F2F0EB;
+    --bg: #F8F9FC;
     --ink: #0F0F0F;
-    --muted: #2e2e2e;
-    --line: #D8D5CE;
-    --accent: #FF8A3D;
-    --accent-rgb: 255, 138, 61;
-    --card: #EAE7E0;
+    --muted: #3a3d4a;
+    --line: #DCDFE8;
+    --accent: #F472B6;
+    --accent-rgb: 244, 114, 182;
+    --card: #EDEEF4;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Shippori Antique B1', serif;
+    font-family: 'industry', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
@@ -32,14 +33,14 @@
 
   /* Type utilities (´• ω •`) */
   .mono {
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 11px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
   }
   .section-number {
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 11px;
     color: var(--muted);
     letter-spacing: 0.12em;
@@ -51,7 +52,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1030;
-    background: rgba(242, 240, 235, 0.92);
+    background: rgba(248, 249, 252, 0.92);
     backdrop-filter: saturate(140%) blur(10px);
     -webkit-backdrop-filter: saturate(140%) blur(10px);
     border-bottom: 1px solid var(--line);
@@ -60,7 +61,8 @@
   .site-nav .brand {
     color: var(--ink);
     text-decoration: none;
-    font-weight: 600;
+    font-family: 'sui-generis', sans-serif;
+    font-weight: 700;
     letter-spacing: -0.01em;
     font-size: 16px;
   }
@@ -76,16 +78,26 @@
 
   /* HERO */
   .hero {
-    min-height: 100vh;
-    min-height: 100svh;
-    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    padding: 200px 0 120px;
     border-bottom: 1px solid var(--line);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
+  #hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    image-rendering: pixelated;
+    -webkit-mask-image: linear-gradient(to right, transparent 55%, black 78%);
+    mask-image: linear-gradient(to right, transparent 55%, black 78%);
+  }
+  .hero .container { position: relative; z-index: 1; }
   .hero h1 {
-    font-weight: 500;
+    font-family: 'industry', sans-serif;
+    font-weight: 700;
     font-size: clamp(42px, 7.5vw, 112px);
     line-height: 0.94;
     letter-spacing: -0.035em;
@@ -113,26 +125,56 @@
   }
   .hero-meta .item .label { margin-bottom: 8px; }
   .hero-meta .item .value { font-size: 15px; font-weight: 500; }
-  .hero-cta-row { margin-top: 40px; }
+  .hero-cta-row { margin-top: 44px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
   .hero-cta {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: var(--ink);
+    color: #fff;
+    background: var(--accent);
     text-decoration: none;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: -0.005em;
-    padding-bottom: 4px;
-    border-bottom: 1px solid var(--ink);
-    transition: color 0.25s ease, border-color 0.25s ease, gap 0.25s ease;
+    padding: 14px 24px;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    box-shadow: 0 6px 18px rgba(var(--accent-rgb), 0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, gap 0.25s ease;
   }
+  .hero-cta:hover {
+    gap: 14px;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(var(--accent-rgb), 0.38);
+    background: #e55fa8;
+  }
+  .hero-cta:hover .hero-cta-arrow { transform: translateY(3px); }
+  .hero-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    background: transparent;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    padding: 14px 24px;
+    border-radius: 999px;
+    border: 1px solid var(--ink);
+    transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, gap 0.25s ease;
+  }
+  .hero-cta-secondary:hover {
+    color: #fff;
+    background: var(--ink);
+    border-color: var(--ink);
+    gap: 14px;
+  }
+  .hero-cta-secondary:hover .hero-cta-arrow { transform: translate(2px, -2px); }
   .hero-cta-arrow {
     display: inline-block;
     transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
-  .hero-cta:hover { color: var(--accent); border-color: var(--accent); gap: 14px; }
-  .hero-cta:hover .hero-cta-arrow { transform: translateY(3px); }
 
   /* TRUSTED BY  	ヽ(°〇°)ﾉ */
   .trusted-by {
@@ -140,7 +182,7 @@
     border-bottom: 1px solid var(--line);
   }
   .trusted-by .trusted-label {
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 11px;
     color: var(--muted);
     text-transform: uppercase;
@@ -154,6 +196,8 @@
     background: var(--line);
     gap: 1px;
     border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
   }
   .logo-cell {
     background: var(--bg);
@@ -167,7 +211,7 @@
   }
   .logo-cell:hover {
     color: var(--ink);
-    background: #ECE9E1;
+    background: #ECEEF4;
   }
   .brand-logo {
     max-width: 100%;
@@ -200,7 +244,8 @@
     gap: 24px;
   }
   .section-title {
-    font-weight: 500;
+    font-family: 'sui-generis', sans-serif;
+    font-weight: 700;
     font-size: clamp(32px, 4.5vw, 56px);
     letter-spacing: -0.025em;
     line-height: 1.02;
@@ -209,15 +254,24 @@
 
   /* WORK GRID __φ(．．) */
   .work-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     text-decoration: none;
     color: inherit;
-    cursor: pointer;
+    cursor: default;
+    pointer-events: none;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
   }
   .work-placeholder {
     aspect-ratio: 4 / 3;
-    background: var(--card);
-    border: 1px solid var(--line);
+    background: #98adac;
+    border: none;
+    border-radius: 0;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -244,7 +298,7 @@
   .work-placeholder .placeholder-label {
     position: relative;
     z-index: 1;
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 11px;
     letter-spacing: 0.12em;
     color: var(--muted);
@@ -255,51 +309,53 @@
   .work-card:hover .work-placeholder { transform: translateY(-4px); }
   .work-card:hover .work-placeholder::after { border-color: var(--ink); }
   .work-card:hover .placeholder-label { color: var(--accent); }
+  .work-placeholder.has-cover {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   .work-placeholder.has-cover::before { display: none; }
   .work-placeholder.has-cover .placeholder-label { display: none; }
 
   .work-meta {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    column-gap: 16px;
-    row-gap: 4px;
-    padding-top: 18px;
-    align-items: start;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    padding: 22px clamp(110px, 16vw, 200px) 22px 22px;
+    border-top: 1px solid var(--line);
+    background: var(--card);
+    flex: 1 1 auto;
+    min-height: 160px;
   }
   .work-title {
-    grid-column: 1;
-    grid-row: 1;
     font-size: 18px;
     font-weight: 500;
     letter-spacing: -0.015em;
   }
   .work-category {
-    grid-column: 1;
-    grid-row: 2;
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 11px;
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
   .work-number {
-    grid-column: 2;
-    grid-row: 1 / 3;
-    align-self: stretch;
-    aspect-ratio: 1 / 1;
-    border: 1.5px solid var(--ink);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Do Hyeon', sans-serif;
-    color: var(--ink);
-    transition: border-color 0.3s ease, color 0.3s ease;
-    flex-shrink: 0;
-    min-width: 44px;
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'sui-generis', sans-serif;
+    font-weight: 700;
+    font-size: clamp(42px, 1vw, 1px);
+    line-height: 4;
+    letter-spacing: -0.02em;
+    color: #201C15;
+    transition: color 0.3s ease;
   }
+  .work-cta-row { margin-top: 52px; display: flex; justify-content: center; }
   .work-card:hover .work-number {
-    border-color: var(--accent);
     color: var(--accent);
   }
 
@@ -326,6 +382,7 @@
     object-position: center top;
     display: block;
     filter: grayscale(15%);
+    border-radius: 10px;
   }
 
   /* EXPERIENCE 。。。ミヽ(。＞＜)ノ */
@@ -343,7 +400,7 @@
   }
   .exp-row:hover { color: var(--accent); }
   .exp-year {
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 12px;
     color: var(--muted);
     letter-spacing: 0.04em;
@@ -358,7 +415,7 @@
     color: var(--muted);
   }
   .exp-location {
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 11px;
     color: var(--muted);
     text-align: right;
@@ -368,7 +425,7 @@
 
   /* SKILLS  	ヽ(*・ω・)ﾉ */
   .skill-group h4 {
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.14em;
@@ -404,7 +461,7 @@
   }
   .edu-row:hover { color: var(--accent); }
   .edu-year {
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 12px;
     color: var(--muted);
     letter-spacing: 0.08em;
@@ -416,7 +473,7 @@
   .edu-school { font-size: 14px; color: var(--muted); margin-top: 6px; transition: color 0.3s ease; }
   .edu-detail { font-size: 14px; line-height: 1.6; color: var(--muted); transition: color 0.3s ease; }
   .edu-location {
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 12px;
     color: var(--muted);
     letter-spacing: 0.06em;
@@ -464,7 +521,7 @@
     border-top: 1px solid rgba(242,240,235,0.18);
   }
   .contact-grid .label {
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 11px;
     color: rgba(242,240,235,0.5);
     text-transform: uppercase;
@@ -487,7 +544,7 @@
     background: var(--ink);
     color: rgba(242,240,235,0.5);
     padding: 32px 0;
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 11px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -498,12 +555,17 @@
   /* ANIMATIONS ヽ(ー_ー )ノ */
   .reveal {
     opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform: translateX(-22px);
+    filter: blur(8px) brightness(2);
+    transition:
+      opacity 0.9s cubic-bezier(0.34, 1.4, 0.64, 1),
+      transform 0.9s cubic-bezier(0.34, 1.4, 0.64, 1),
+      filter 0.75s cubic-bezier(0.34, 1.4, 0.64, 1);
   }
   .reveal.in {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
+    filter: blur(0px) brightness(1);
   }
   .reveal.delay-1 { transition-delay: 0.08s; }
   .reveal.delay-2 { transition-delay: 0.16s; }
@@ -513,23 +575,28 @@
   .word {
     display: inline-block;
     opacity: 0;
-    transform: translateX(-10px);
-    transition: opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    filter: blur(14px) brightness(3.5) drop-shadow(0 0 18px rgba(255, 255, 255, 1));
+    transform: translateY(10px);
+    transition:
+      opacity 0.6s cubic-bezier(0.34, 1.4, 0.64, 1),
+      filter 0.65s cubic-bezier(0.34, 1.4, 0.64, 1),
+      transform 0.6s cubic-bezier(0.34, 1.4, 0.64, 1);
   }
   .word.in {
     opacity: 1;
-    transform: translateX(0);
+    filter: blur(0px) brightness(1) drop-shadow(0 0 0px transparent);
+    transform: translateY(0);
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .reveal { opacity: 1; transform: none; transition: none; }
-    .word { opacity: 1; transform: none; transition: none; }
+    .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+    .word { opacity: 1; transform: none; filter: none; transition: none; }
     html { scroll-behavior: auto; }
   }
 
   /* RESPONSIVE ¯\_(ツ)_/¯ */
   @media (max-width: 991px) {
-    .hero { padding: 100px 0; }
+    .hero { padding: 150px 0 90px; }
     section { padding: 100px 0; }
     .exp-row {
       grid-template-columns: 100px 1fr;
@@ -547,7 +614,7 @@
   }
   @media (max-width: 767px) {
     .site-nav .nav-links { display: none; }
-    .hero { padding: 90px 0; }
+    .hero { padding: 120px 0 72px; }
     section { padding: 72px 0; }
     /* Reduce Do Hyeon label size on mobile */
     .mono,
@@ -555,7 +622,6 @@
     .trusted-by .trusted-label,
     .work-placeholder .placeholder-label,
     .work-category,
-    .work-number,
     .exp-year,
     .exp-location,
     .skill-group h4,
@@ -568,6 +634,68 @@
     .modal-references-label { font-size: 12px; }
     /* Placeholder label inside cards: allow wrapping */
     .work-placeholder .placeholder-label { letter-spacing: 0.06em; }
+    /* About portrait — small and centered on mobile */
+    .about-portrait { position: static; display: flex; justify-content: center; }
+    .about-portrait-img { width: 25%; aspect-ratio: 1 / 1; }
+
+    /* WORK CARD STACK — mobile swipeable deck */
+    .work-stack {
+      --bs-gutter-x: 0;
+      --bs-gutter-y: 0;
+      margin: 0 auto;
+      position: relative;
+      perspective: 1200px;
+      padding-top: 36px;
+    }
+    .work-stack > [class*="col-"] {
+      position: absolute;
+      top: 36px;
+      left: 0;
+      right: 0;
+      width: 100% !important;
+      max-width: 100% !important;
+      flex: none !important;
+      padding: 0;
+      transform-origin: center center;
+      will-change: transform, opacity;
+      touch-action: pan-y;
+      -webkit-user-select: none;
+      user-select: none;
+      transition:
+        transform 0.55s cubic-bezier(0.34, 1.4, 0.64, 1),
+        opacity 0.4s ease;
+    }
+    .work-stack > [class*="col-"].is-dragging {
+      transition: none !important;
+    }
+    .work-stack > [class*="col-"].is-flinging {
+      transition: transform 0.45s cubic-bezier(0.3, 0.7, 0.4, 1),
+                  opacity 0.4s ease-out;
+    }
+    .work-stack .work-card { pointer-events: none; }
+    .work-stack-hint {
+      position: relative;
+      text-align: center;
+      margin-top: 28px;
+      font-family: 'industry', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .work-stack-hint .swipe-icon {
+      display: inline-flex;
+      gap: 6px;
+      color: var(--accent);
+    }
+    .work-stack-count {
+      margin-left: 6px;
+      color: var(--ink);
+    }
   }
 
   /* TANGERINE AMBIENT GLOWS 🍊*/
@@ -636,7 +764,7 @@
     background: var(--ink);
     color: var(--bg);
     border: none;
-    border-radius: 0;
+    border-radius: 10px;
   }
   #projectModal .modal-header {
     border-bottom: 1px solid rgba(242,240,235,0.15);
@@ -659,6 +787,7 @@
   .modal-slide-placeholder {
     aspect-ratio: 16 / 9;
     background: #111;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -677,7 +806,7 @@
   .modal-slide-placeholder-label {
     position: relative;
     z-index: 1;
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -685,7 +814,7 @@
     text-align: center;
     padding: 0 20px;
   }
-  .modal-slide-placeholder.has-cover { background-size: cover; background-position: center; }
+  .modal-slide-placeholder.has-cover { background-size: contain; background-position: center; background-repeat: no-repeat; }
   .modal-slide-placeholder.has-cover::before { display: none; }
   .modal-slide-placeholder.has-cover .modal-slide-placeholder-label { display: none; }
   #projectModal .carousel-control-prev,
@@ -744,7 +873,7 @@
   .modal-thumb span {
     position: relative;
     z-index: 1;
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 9px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -772,7 +901,7 @@
     border-top: 1px solid rgba(242,240,235,0.12);
   }
   .modal-references-label {
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'industry', sans-serif;
     font-size: 11px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -826,7 +955,6 @@
   .trusted-by .trusted-label,
   .work-placeholder .placeholder-label,
   .work-category,
-  .work-number,
   .exp-year,
   .exp-location,
   .skill-group h4,
@@ -844,7 +972,7 @@
 <!-- NAVIGATION -->
 <nav class="site-nav">
   <div class="container d-flex justify-content-between align-items-center">
-    <a href="#top" class="brand"><img src="img/icons/micanbar_logo.svg" alt="micanbar" style="height:28px;width:auto;display:block;"></a>
+    <a href="#top" class="brand"><img src="img/icons/micanbar_white_pink_heavy.png" alt="micanbar" style="height:45px;width:auto;display:block;filter:brightness(0);"></a>
     <div class="nav-links d-none d-md-flex">
       <a href="#work">Work</a>
       <a href="#about">About</a>
@@ -857,6 +985,7 @@
 
 <!-- HERO -->
 <header class="hero" id="top">
+  <canvas id="hero-canvas"></canvas>
   <div class="bg-glow glow-hero-a" data-glow></div>
   <div class="bg-glow glow-hero-b" data-glow></div>
   <div class="container">
@@ -865,8 +994,7 @@
       A creative, <br>that you can trust. <br>
     </h1>
     <p class="tagline reveal delay-2">
-      9 years of hands-on visual design across experiential, brand, digital, motion, and video production. Shipping consumer-facing work at scale for the NBA, WNBA, FIFA, Times Square, and Kia. ☻
-    </p>
+      9 years of hands-on visual design across experiential, brand, digital, motion design, and video production across automotive, education, and entertainment sectors. </p>
     <div class="hero-meta reveal delay-3">
       <div class="item">
         <div class="mono label">Located in...</div>
@@ -878,33 +1006,76 @@
       </div>
       <div class="item">
         <div class="mono label">Working with...</div>
-        <div class="value">Photoshop · Illustrator · Figma · After Effects · Blender</div>
+        <div class="value">Photoshop · Illustrator · Figma · After Effects · SketchUp · Blender</div>
       </div>
     </div>
     <div class="hero-cta-row reveal delay-4">
       <a href="#work" class="hero-cta">Check out samples
         <span class="hero-cta-arrow" aria-hidden="true">↓</span>
       </a>
+      <a href="https://vimeo.com/1144950087?share=copy&fl=sv&fe=ci" class="hero-cta-secondary" target="_blank" rel="noopener noreferrer">View demo reel
+        <span class="hero-cta-arrow" aria-hidden="true">↗</span>
+      </a>
     </div>
   </div>
 </header>
+
+<!-- TRUSTED BY -->
+
+<section class="trusted-by">
+  <div class="container">
+    <div class="trusted-label reveal">Brands I've worked with</div>
+    <div class="logo-wall reveal delay-1">
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/kia.png" alt="Kia">
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/fifa.png" alt="FIFA">
+      </div>
+
+      <div class="logo-cell">
+        <svg class="brand-logo" viewBox="0 0 82 32" xmlns="http://www.w3.org/2000/svg" aria-label="NBA">
+          <text x="41" y="23" text-anchor="middle" font-family="'industry', sans-serif" font-weight="700" font-size="22" letter-spacing="2" fill="currentColor">NBA</text>
+        </svg>
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/tsa_logo.png" alt="Times Square Association">
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/monster.png" alt="Monster Energy">
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/odoo.png" alt="Odoo">
+      </div>
+
+      <div class="logo-cell">
+        <img class="brand-logo" src="img/partners/cpp.png" alt="Cal Poly Pomona">
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- WORK -->
 <section id="work">
   <div class="container">
     <div class="section-header">
       <div>
-        <div class="section-number reveal">Highlighted Projects</div>
+        <div class="section-number reveal">01 — Highlighted Projects</div>
         <h2 class="section-title reveal delay-1">Projects out in the wild.</h2>
       </div>
-      <div class="mono reveal delay-2">Additional work + details available upon request.</div>
     </div>
 
-    <div class="row g-4">
+    <div class="row g-4 work-stack">
       <!-- PROJECT 01 — Times Square / NYE Countdown -->
       <div class="col-md-6 reveal">
         <a href="#" class="work-card" data-project="0">
-          <div class="work-placeholder has-cover" style="background-image: url('img/works/ev9_nyc_tow.png'); background-size: cover; background-position: center;">
+          <div class="work-placeholder has-cover" style="background-image: url('img/works/ev9_nyc_tow.png'); background-size: contain; background-position: center; background-repeat: no-repeat;">
             <div class="placeholder-label">Times Square · NYE Countdown<br><span style="opacity:0.6">Official Kia Sponsor · 2024 - 2026</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
           </div>
           <div class="work-meta">
@@ -918,7 +1089,7 @@
       <!-- PROJECT 02 — NBA All-Star Weekend (2023–2025) -->
       <div class="col-md-6 reveal delay-1">
         <a href="#" class="work-card" data-project="1">
-          <div class="work-placeholder has-cover" style="background-image: url('img/works/asw23_col.png'); background-size: cover; background-position: center;">
+          <div class="work-placeholder has-cover" style="background-image: url('img/works/asw23_col.png'); background-size: contain; background-position: center; background-repeat: no-repeat;">
             <div class="placeholder-label">NBA All-Star Weekend<br><span style="opacity:0.6">Three Consecutive Years · 2023 – 2025</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
           </div>
           <div class="work-meta">
@@ -932,7 +1103,7 @@
       <!-- PROJECT 03 — NBA Season-Long (30 arenas) -->
       <div class="col-md-6 reveal">
         <a href="#" class="work-card" data-project="2">
-          <div class="work-placeholder has-cover" style="background-image: url('img/works/NBA_SL_2025_Mobile.png'); background-size: cover; background-position: center;">
+          <div class="work-placeholder has-cover" style="background-image: url('img/works/NBA_SL_2025_Mobile.png'); background-size: contain; background-position: center; background-repeat: no-repeat;">
             <div class="placeholder-label">NBA Season-Long<br><span style="opacity:0.6">Digital Experience · All NBA Arenas</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
           </div>
           <div class="work-meta">
@@ -943,10 +1114,10 @@
         </a>
       </div>
 
-      <!-- PROJECT 04 — WNBA All-Star Weekend 2025 -->
+      <!-- PROJECT 04 — WNBA All-Star Weekend 2025 (hidden — assets retained)
       <div class="col-md-6 reveal delay-1">
         <a href="#" class="work-card" data-project="3">
-          <div class="work-placeholder has-cover" style="background-image: url('img/works/wasw_25_all_snip.png'); background-size: cover; background-position: center;">
+          <div class="work-placeholder has-cover" style="background-image: url('img/works/wasw_25_all_snip.png'); background-size: contain; background-position: center; background-repeat: no-repeat;">
             <div class="placeholder-label">WNBA All-Star Weekend<br><span style="opacity:0.6">Vehicle Wrap + Activation · 2025</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
           </div>
           <div class="work-meta">
@@ -956,35 +1127,62 @@
           </div>
         </a>
       </div>
+      -->
 
-      <!-- PROJECT 05 — Kia Forum Permanent Install -->
-      <div class="col-md-6 reveal">
+
+      <!-- PROJECT 04 — Kia Forum Permanent Install -->
+      <div class="col-md-6 reveal delay-1">
         <a href="#" class="work-card" data-project="4">
-          <div class="work-placeholder has-cover" style="background-image: url('img/works/kf_ev9_site.png'); background-size: cover; background-position: center;">
+          <div class="work-placeholder has-cover" style="background-image: url('img/works/kf_ev9_site.png'); background-size: contain; background-position: center; background-repeat: no-repeat;">
             <div class="placeholder-label">Kia Forum · Permanent Install<br><span style="opacity:0.6">Kia Connected Home · Photocard Keepsakes</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
           </div>
           <div class="work-meta">
             <div class="work-title">Kia Forum — Permanent Install</div>
             <div class="work-category">Experiential / Creative Direction · 2024–25</div>
-            <div class="work-number">05</div>
+            <div class="work-number">04</div>
           </div>
         </a>
       </div>
 
-      <!-- PROJECT 06 — Kia Forum 2023 EV6 Digital Experience -->
-      <div class="col-md-6 reveal delay-1">
+      <!-- PROJECT 05 — Kia Forum 2023 EV6 Digital Experience -->
+      <div class="col-md-6 reveal">
         <a href="#" class="work-card" data-project="5">
-          <div class="work-placeholder has-cover" style="background-image: url('img/works/kf_ev6game_mock.png'); background-size: cover; background-position: center;">
+          <div class="work-placeholder has-cover" style="background-image: url('img/works/kf_ev6game_mock.png'); background-size: contain; background-position: center; background-repeat: no-repeat;">
             <div class="placeholder-label">Kia Forum · EV6 Digital Experience<br><span style="opacity:0.6">Interactive In-Venue Game · 2023</span><br><span style="opacity:0.4">Site under maintenance, Media Offline!</span></div>
           </div>
           <div class="work-meta">
             <div class="work-title">Kia Forum — EV6 Digital Experience</div>
             <div class="work-category">Digital / Game · 2023</div>
+            <div class="work-number">05</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- PROJECT 06 — Arminda Cloud Monitoring -->
+      <div class="col-md-6 reveal delay-1">
+        <a href="#" class="work-card" data-project="7">
+          <div class="work-placeholder has-cover" style="background-image: url('img/works/arminda_mobile.png'); background-size: contain; background-position: center; background-repeat: no-repeat;">
+            <div class="placeholder-label">Arminda Cloud Monitoring<br><span style="opacity:0.6">App / UX / Brand · 2022</span><br><span style="opacity:0.4">Shipped under NDA — visuals recreated.</span></div>
+          </div>
+          <div class="work-meta">
+            <div class="work-title">Arminda Cloud Monitoring</div>
+            <div class="work-category">App / UX / Brand · 2022</div>
             <div class="work-number">06</div>
           </div>
         </a>
       </div>
-<!-- Pending release of projects 7 and 8, placeholder cards below! 
+    </div>
+    <div class="work-stack-hint d-md-none" id="work-stack-hint">
+      <span class="swipe-icon" aria-hidden="true">← swipe →</span>
+      <span class="work-stack-count"><span id="work-stack-current">1</span> / <span id="work-stack-total">6</span></span>
+    </div>
+    <div class="work-cta-row reveal">
+      <a href="mailto:hello@micanbar.com" class="hero-cta-secondary">Request Details and Additional Work
+        <span class="hero-cta-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+<!--
       -- PROJECT 07 — Odoo Brand & Production System --
       <div class="col-md-6 reveal">
         <a href="#" class="work-card" data-project="6">
@@ -1018,53 +1216,13 @@
   </div>
 </section>
 
-<!-- TRUSTED BY -->
-<section class="trusted-by">
-  <div class="container">
-    <div class="trusted-label reveal">Brands I've worked with</div>
-    <div class="logo-wall reveal delay-1">
-
-      <div class="logo-cell">
-        <img class="brand-logo" src="img/partners/kia.png" alt="Kia">
-      </div>
-
-      <div class="logo-cell">
-        <img class="brand-logo" src="img/partners/fifa.png" alt="FIFA">
-      </div>
-
-      <div class="logo-cell">
-        <svg class="brand-logo" viewBox="0 0 82 32" xmlns="http://www.w3.org/2000/svg" aria-label="NBA">
-          <text x="41" y="23" text-anchor="middle" font-family="'Shippori Antique B1', serif" font-weight="700" font-size="22" letter-spacing="2" fill="currentColor">NBA</text>
-        </svg>
-      </div>
-
-      <div class="logo-cell">
-        <img class="brand-logo" src="img/partners/tsa_logo.png" alt="Times Square Association">
-      </div>
-
-      <div class="logo-cell">
-        <img class="brand-logo" src="img/partners/monster.png" alt="Monster Energy">
-      </div>
-
-      <div class="logo-cell">
-        <img class="brand-logo" src="img/partners/odoo.png" alt="Odoo">
-      </div>
-
-      <div class="logo-cell">
-        <img class="brand-logo" src="img/partners/cpp.png" alt="Cal Poly Pomona">
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- ABOUT -->
 <section id="about">
   <div class="bg-glow glow-about-a" data-glow></div>
   <div class="container">
     <div class="section-header">
       <div>
-        <div class="section-number reveal">About</div>
+        <div class="section-number reveal">02 — About</div>
         <h2 class="section-title reveal delay-1">Hey, I'm Michelangelo!</h2>
       </div>
     </div>
@@ -1076,9 +1234,11 @@
       </div>
       <div class="col-lg-8 col-md-7 reveal delay-1">
         <div class="about-body">
-          <p>I'm a graphic designer working across <em>brand identity, experiential design, digital content, motion graphics, and video production.</em> I've shipped consumer-facing work at scale for major partnerships like NBA, WNBA, FIFA, Kia, and Times Square.</p>
-          <p>My bread and butter is Photoshop, Illustrator, and After Effects. I work end-to-end from initial concept to print-ready production files, collaborating with cross-functional teams to maintain brand consistency across just about every touchpoint! Whether it be digital, print, or environmental creative, I can adapt and contribute effectively when working in a team environment.</p>
-          <p>I have experience leading teams and managing projects as well. I am familiar with generative AI and where it is beneficial for commericial creative processes, however <br> the displayed projects DO NOT incorporate image generation tools that leverage AI.</p> All content showcased here has been selected to show my core skills and creative judgment as a designer, without the assistance of AI tools.
+          <p>Creative generalist with 9 years of experience in visual design, motion graphics, and video production. I specialize in crafting visual narratives across digital, print, and experiential platforms.
+          <br><br>
+          My work has been utilized in high-profile campaigns for clients like Kia, the NBA, and Monster Energy, spanning projects from immersive brand experiences to digital content and motion design. I do my best in collaborative environments to bring creative visions to life.
+          <br><br>
+          In my downtime, I like to play Apex Legends and design my own characters + 3D print products!</p>
         </div>
       </div>
     </div>
@@ -1090,7 +1250,7 @@
   <div class="container">
     <div class="section-header">
       <div>
-        <div class="section-number reveal">Experience</div>
+        <div class="section-number reveal">03 — Experience</div>
         <h2 class="section-title reveal delay-1">Places I've worked.</h2>
       </div>
     </div>
@@ -1133,7 +1293,7 @@
   <div class="container">
     <div class="section-header">
       <div>
-        <div class="section-number reveal">Education</div>
+        <div class="section-number reveal">04 — Education</div>
         <h2 class="section-title reveal delay-1">Where I studied.</h2>
       </div>
     </div>
@@ -1150,7 +1310,6 @@
         </div>
         <div class="edu-location">Pomona, CA</div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1160,7 +1319,7 @@
   <div class="container">
     <div class="section-header">
       <div>
-        <div class="section-number reveal">Capabilities</div>
+        <div class="section-number reveal">05 — Capabilities</div>
         <h2 class="section-title reveal delay-1">What I can do.</h2>
       </div>
     </div>
@@ -1197,7 +1356,7 @@
           <li>Adobe Illustrator</li>
           <li>Figma</li>
           <li>Adobe After Effects · Adobe Premiere Pro</li>
-          <li>Blender</li>
+          <li>Blender · Cinema 4D</li>
           <li>Rhino · Unreal Engine</li>
         </ul>
       </div>
@@ -1212,7 +1371,7 @@
   <div class="container">
     <div class="section-header">
       <div>
-        <div class="section-number reveal">Thanks for reading!</div>
+        <div class="section-number reveal">06 — Contact</div>
         <h2 class="reveal delay-1">Let's build,<br> <em>together.</em></h2>
       </div>
     </div>
@@ -1227,7 +1386,7 @@
         <a href="tel:+16507613378">650.761.3378</a>
       </div>
       <div class="reveal delay-2">
-        <div class="label">On the Web...</div>
+        <div class="label">Web</div>
         <a href="https://micanbar.com" target="_blank" rel="noopener">micanbar.com</a>
         <br>
         <a href="https://linkedin.com/in/micanbar" target="_blank" rel="noopener">LinkedIn</a>
@@ -1300,7 +1459,7 @@
   ];
 
   var STAGGER   = 100;  // ms between each character appearing
-  var INTERVAL  = 500; // ms per font cycle
+  var INTERVAL  = 300; // ms per font cycle
   var CYCLES    = 1;    // font changes before settling
 
   // Immediately hide everything in the hero below the h1
@@ -1388,7 +1547,7 @@
           count++;
           if (count > CYCLES) {
             clearInterval(iv);
-            span.style.fontFamily = "'Shippori Antique B1', serif";
+            span.style.fontFamily = "'industry', sans-serif";
           } else {
             span.style.fontFamily = scrambleFonts[Math.floor(Math.random() * scrambleFonts.length)];
           }
@@ -1456,7 +1615,7 @@
 
   // Word-by-word left-to-right reveal
   (function () {
-    var STAGGER = 45;
+    var STAGGER = 55;
     var targets = document.querySelectorAll('h2.section-title, .tagline, .about-body p');
 
     function wrapWordsInNode(node, words) {
@@ -1498,15 +1657,18 @@
         var top = el.getBoundingClientRect().top;
         window._revealQueue.push(top, function () {
           el._words.forEach(function (w, i) {
-            setTimeout(function () { w.classList.add('in'); }, i * STAGGER);
+            setTimeout(function () { w.classList.add('in'); }, i * el._stagger);
           });
         });
         wordIO.unobserve(el);
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
+    var aboutTitle = document.querySelector('#about .section-title');
+
     targets.forEach(function (el) {
       el.classList.remove('reveal', 'delay-1', 'delay-2', 'delay-3', 'delay-4');
+      el._stagger = (el === aboutTitle) ? Math.round(STAGGER /100) : STAGGER;
       var words = [];
       Array.prototype.slice.call(el.childNodes).forEach(function (c) { wrapWordsInNode(c, words); });
       el._words = words;
@@ -1555,10 +1717,10 @@
       title: 'Times Square Numeral Program',
       category: 'Experiential / Brand Program · 2024–26',
       slides: [
-        { label: 'Official Sponsor — NYE Countdown',     img: 'img/works/trailer_ts_side.png',                  desc: 'Among the most visible sponsorship activations in the United States. Kia\'s role as Official Sponsor of the Times Square NYE Countdown reaches a live and broadcast audience of millions, with creative quality at this level directly shaping national brand perception. Creative direction, 3D visualization, and Kia brand-compliant production materials delivered for client pitch decks and vendor handoff.' },
-        { label: '2024 — Coast-to-Coast EV9 Tour',       img: 'img/works/laas_render.png',                      desc: 'For the 2024 activation, the numerals were towed coast-to-coast by a Kia EV9 across five stops — each requiring its own creative production and generating record impressions for the vehicle launch. Vehicle branding, custom activation buildouts, and environmental graphics across every tour stop.' },
+        { label: 'Official Sponsor — NYE Countdown',     img: 'img/works/trailer_ts_side.png',                  desc: 'Among the most visible sponsorship activations in the United States. Kia\'s role as Official Sponsor of the Times Square NYE Countdown reaches a live and broadcast audience of millions, with creative quality at this level directly shaping national brand perception. Creative direction, 3D visualization, and Kia brand-compliant production materials delivered for client pitch decks and vendor handoff.<br><br>At this scale, a sponsor logo either reads as decoration or as a feature of the night. Every design decision needed to earn its place in the cultural moment, not sit beside it.' },
+        { label: '2024 — Coast-to-Coast EV9 Tour',       img: 'img/works/laas_render.png',                      desc: 'For the 2024 activation, the numerals were towed coast-to-coast by a Kia EV9 across five stops, each requiring its own creative production and generating record impressions for the vehicle launch. Vehicle branding, custom activation buildouts, and environmental graphics across every tour stop.<br><br>Treating the delivery itself as the activation puts the EV9 in the lead role. Instead of being the sidekick that drops the numerals off in New York, it becomes the vehicle that carries the year in. A single Times Square reveal turns into a five-city pre-event campaign.' },
         { label: '2026 — FIFA Numeral System',           img: 'img/works/NYE26_FIFA_PlatformDisplay_v02mb.png', desc: 'Numeral identity built for the 2026 Kia x FIFA World Cup tie-in. Designed to read at scale across Times Square LED, broadcast lower-thirds, and matchday graphics — one system spanning environmental, digital, and broadcast surfaces.' },
-        { label: 'Vendor-Ready Production',              desc: 'Production materials prepared for vendor execution: vehicle wraps, custom buildouts, and environmental graphic specs. Designs reviewed and approved internally before hand-off so what gets fabricated matches what was sold.' }
+        { label: 'Vendor-Ready Production',              img: 'img/works/21604.jpeg',                           desc: 'Production materials prepared for vendor execution: vehicle wraps, custom buildouts, and environmental graphic specs. Designs reviewed and approved internally before hand-off so what gets fabricated matches what was sold — pictured: real deployment of the trailer in New York City.' }
       ],
       references: [
         { label: '2025 — Times Square Activation', url: 'https://abc7ny.com/post/massive-2025-numerals-arrive-times-square-ahead-annual-new-years-eve-celebration/15672185/' },
@@ -1570,10 +1732,10 @@
       title: 'NBA All-Star Weekend',
       category: 'Experiential · 2023–25',
       slides: [
-        { label: 'Premier Brand Visibility — Three Years Running', img: 'img/works/asw26_telluride_viz.png', desc: 'NBA All-Star Weekend is one of Kia\'s premier brand visibility moments. Owned the activation creative across 2023, 2024, and 2025 — guest-oriented designs leveraging both the Kia brand and the NBA style guide. Deliverables span physical fabrication, digital content, and motion graphics: disciplines that would typically require multiple specialists.' },
-        { label: 'Creative Direction & 3D Pitch Concepts', desc: 'Creative direction and 3D visualization of activation concepts for client pitch decks. Render-to-build fidelity so what gets approved is what shows up on site.' },
-        { label: 'Activation Graphics Suite',              desc: 'Wall graphics, signage, bespoke vehicle wraps, and flagship-specific motion graphics across activation spaces. Each year layers in updated NBA-compliant treatment without losing the Kia brand throughline.' },
-        { label: 'Vendor Production Documentation',        desc: 'Full vendor production documentation and on-site guidance — from print specs to install instructions — tying the creative vision to a fabricated reality.' }
+        { label: 'Premier Brand Visibility — Three Years Running', img: 'img/works/asw26_telluride_viz.png', desc: 'NBA All-Star Weekend is one of Kia\'s premier brand visibility moments. Owned the activation creative across 2023, 2024, and 2025, with guest-oriented designs leveraging both the Kia brand and the NBA style guide. Deliverables span physical fabrication, digital content, and motion graphics, disciplines that would typically require multiple specialists.<br><br>At All-Star Weekend, dwell time is currency. Passive vehicle displays underperform against everything else competing for fan attention, so the work consistently centered on participation rather than display.' },
+        { label: 'Creative Direction & 3D Pitch Concepts', img: 'img/works/nbaas_layout.png',                                  desc: 'Creative direction and 3D visualization of activation concepts for client pitch decks. Render-to-build fidelity so what gets approved is what shows up on site — early 3D block-out shown.' },
+        { label: 'Activation Graphics Suite',              img: 'img/works/nbaas_02.jpeg',                                     desc: 'Wall graphics, signage, bespoke vehicle wraps, and flagship-specific motion graphics across activation spaces. Each year layers in updated NBA-compliant treatment without losing the Kia brand throughline.' },
+        { label: 'Vendor Production Documentation',        img: 'img/works/4ff4dcef-1fdf-4f38-b9ec-25e2205719de.jpeg',          desc: 'Full vendor production documentation and on-site guidance — from print specs to install instructions — tying the creative vision to a fabricated reality.' }
       ],
       references: [
         { label: '2025 — NBA ASW Activation', url: 'https://www.linkedin.com/posts/kia-america_nbaallstar-kiaskills-activity-7298023633988239363-YBLc' },
@@ -1609,8 +1771,8 @@
       title: 'Kia Forum — Permanent Install',
       category: 'Experiential / Creative Direction · 2024–25',
       slides: [
-        { label: 'Strategic Creative Leadership',       desc: 'Delivered a fully realized creative vision from initial pitch through final rendering — a responsibility that extends beyond production execution into strategic creative leadership. Current design still receives incremental updates as the venue evolves.' },
-        { label: '3D Concept & Stakeholder Renders',    desc: 'Creative direction for display arrangement at the Kia Forum, including 3D concept development and renderings prepared for stakeholder review and approval.' },
+        { label: 'Strategic Creative Leadership',       img: 'img/works/kf_trap_opt.png', desc: 'Delivered a fully realized creative vision from initial pitch through final rendering, a responsibility that extends beyond production execution into strategic creative leadership. Current design still receives incremental updates as the venue evolves.<br><br>A photo op at a concert venue has to compete with the show itself for guest attention. Building the marquee display customizable per artist anchors each guest\'s photo to the act they came to see, not a generic backdrop. That specificity is what drove record interactions compared to previous activations.' },
+        { label: '3D Concept & Stakeholder Renders',    img: 'img/works/kf_ev9_site.png', desc: 'Creative direction for display arrangement at the Kia Forum, including 3D concept development and renderings prepared for stakeholder review and approval — installed configuration shown.' },
         { label: 'Kia Connected Home Signage',          desc: 'Design and production of Kia Connected Home signage — venue-appropriate, brand-compliant, and built to live in a permanent installation context.' },
         { label: 'Photocard Keepsakes for Guests',      desc: 'Printed photocard keepsakes for guests — designed to function as both a takeaway and a brand carrier, extending the activation past the venue itself.' }
       ]
@@ -1619,10 +1781,10 @@
       title: 'Kia Forum — EV6 Digital Experience',
       category: 'Digital / Game · 2023',
       slides: [
-        { label: 'Interactive In-Venue Game',  desc: 'E-learning videogame deployed at the Kia Forum to promote the flagship EV6 vehicle. Art-directed and produced end-to-end — balancing brand education with playable engagement for guests passing through the venue.' },
-        { label: 'Art Direction',              desc: 'Visual system for the in-game world: vehicle hero treatment, environment styling, and UI surfaces tied to Kia brand standards while reading as a playable space.' },
-        { label: 'In-Venue Deployment',        desc: 'Hardware-integrated install at the Kia Forum. Built for repeated guest play with reset behavior, attract-loop visuals, and venue-appropriate session length.' },
-        { label: 'Production & Handoff',       desc: 'Production pipeline coordinating art, motion, and engineering handoffs. Final asset prep and on-site QA for venue rollout.' }
+        { label: 'Refreshed In-Venue Experience',  img: 'img/works/kf_ev6game_mock.png',                              desc: 'A refreshed digital experience built for the existing EV6 display at the Kia Forum, designed to surface the vehicle\'s highlights through engaging, educational interaction rather than a spec-sheet readout. Led the creative direction end-to-end. UI composite shown.<br><br>The entire UI was modeled on the EV6\'s own Heads-Up Display, so guests playing the experience are effectively previewing the car\'s interface. Brand education registers as product familiarity instead of as marketing.' },
+        { label: 'Art Direction, HUD-Inspired',    desc: 'Visual system drawn directly from the EV6\'s Heads-Up Display vocabulary: vehicle hero treatment, environment styling, and UI surfaces all tuned to read as an extension of the car itself rather than a standalone interface.' },
+        { label: 'In-Venue Deployment',            img: 'img/works/50bac314-3cae-4ba8-aa46-551b9ab5ba3a.jpeg',         desc: 'Deployed at the existing EV6 display surface at the Kia Forum, with MoZeus handling the display integration. Built for guests passing through the venue: short, repeatable, and venue-appropriate for foot-traffic flow. Installed EV6 display shown.' },
+        { label: 'Production & Handoff',           desc: 'Responsible for creative direction, user-experience, and production deliverables of the educational experience. Asset prep and vendor coordination tied the visual system to a venue-ready install.' }
       ]
     },
     {
@@ -1741,6 +1903,314 @@
     });
   });
 })();
+</script>
+<script>
+  // Hero pixel particles — turbulent L→R flow with TAA ghost trails
+  (function () {
+    var canvas = document.getElementById('hero-canvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+
+    var COUNT = 420;
+    var particles = [];
+
+    var PINK  = [244, 114, 182];
+    var WHITE = [255, 255, 255];
+    // bg color for trail fade — matches --bg: #F8F9FC
+    var BG_R = 248, BG_G = 249, BG_B = 252;
+
+    function rand(min, max) { return min + Math.random() * (max - min); }
+
+    function resize() {
+      canvas.width  = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    }
+
+    function spawn(fromLeft) {
+      var isPink = Math.random() > 0.8;
+      var col = isPink ? PINK : WHITE;
+      var sz  = Math.random() < 0.72 ? 1 : Math.random() < 0.32 ? 2 : 3;
+      return {
+        x:     fromLeft ? rand(-40, -2) : rand(0, canvas.width),
+        y:     rand(0, canvas.height),
+        sz:    sz,
+        // base left-to-right velocity — larger pixels move faster (parallax feel)
+        vx:    rand(0.7, 2.2) * (0.6 + sz * 0.28),
+        // gentle vertical drift — turbulence dominates
+        vy:    rand(-0.25, 0.35),
+        // two-layer turbulence: broad sway + fast jitter
+        axA:   rand(0.6, 2.2),   fxA: rand(0.009, 0.020),
+        ayA:   rand(1.0, 2.8),   fyA: rand(0.011, 0.024),
+        axB:   rand(0.2, 0.8),   fxB: rand(0.030, 0.060),
+        ayB:   rand(0.3, 1.1),   fyB: rand(0.035, 0.070),
+        ph:    rand(0, Math.PI * 2),
+        alpha: rand(0.30, 0.72) + (sz - 1) * 0.10,
+        r: col[0], g: col[1], b: col[2]
+      };
+    }
+
+    for (var i = 0; i < COUNT; i++) particles.push(spawn(false));
+
+    var t = 0, raf;
+    var FPS = 60, INTERVAL = 1000 / FPS, lastTime = 0;
+
+    function draw(now) {
+      raf = requestAnimationFrame(draw);
+      if (now - lastTime < INTERVAL) return;
+      lastTime = now - ((now - lastTime) % INTERVAL);
+      t += 0.65;
+
+      // TAA ghost trail — semi-transparent bg wash decays previous frames.
+      // Alpha 0.13 ≈ ~7-frame smear at 60fps, giving that temporal ghosting look.
+      ctx.fillStyle = 'rgba(' + BG_R + ',' + BG_G + ',' + BG_B + ',.5)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+
+        // turbulent displacement on both axes, two stacked frequencies
+        var dx = Math.sin(t * p.fxA + p.ph)            * p.axA
+               + Math.sin(t * p.fxB + p.ph * 2.1)      * p.axB;
+        var dy = Math.sin(t * p.fyA + p.ph + 1.2)      * p.ayA
+               + Math.sin(t * p.fyB + p.ph * 1.7 + 0.7)* p.ayB;
+
+        p.x += p.vx + dx;
+        p.y += p.vy + dy;
+
+        // wrap right → respawn left
+        if (p.x > canvas.width + 8) {
+          particles[i] = spawn(true);
+          continue;
+        }
+        // vertical soft-wrap so density stays even
+        if (p.y < -8)               p.y = canvas.height + 4;
+        if (p.y > canvas.height + 8) p.y = -4;
+
+        ctx.fillStyle = 'rgba(' + p.r + ',' + p.g + ',' + p.b + ',' + p.alpha + ')';
+        ctx.fillRect(Math.round(p.x), Math.round(p.y), p.sz, p.sz);
+      }
+    }
+
+    resize();
+    requestAnimationFrame(draw);
+
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 150);
+    });
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) cancelAnimationFrame(raf);
+      else draw();
+    });
+  })();
+</script>
+<script>
+  // Mobile swipeable card stack for projects
+  (function () {
+    var stack = document.querySelector('.work-stack');
+    if (!stack) return;
+
+    var mq = window.matchMedia('(max-width: 767px)');
+    var cards = [];
+    var initialized = false;
+    var counterEl = document.getElementById('work-stack-current');
+
+    // Pre-tuned stack appearance — alternating tilts L/R
+    var TILTS    = [0, -2.5, 3.2, -2.0, 3.5, -3.2];
+    var OFFSETS_X= [0, 4,   -3,   5,   -4,    3];
+    var OFFSETS_Y= [0, -10, -20, -28, -34, -38];
+    var SCALES   = [1, 0.96, 0.93, 0.90, 0.88, 0.87];
+    var OPACITY  = [1, 0.95, 0.85, 0.65, 0,   0];
+    var ZINDEX   = [10, 9, 8, 7, 6, 5];
+
+    function transformFor(i) {
+      var k = Math.min(i, TILTS.length - 1);
+      return 'translate(' + OFFSETS_X[k] + 'px,' + OFFSETS_Y[k] + 'px) '
+           + 'rotate(' + TILTS[k] + 'deg) '
+           + 'scale(' + SCALES[k] + ')';
+    }
+
+    function apply() {
+      cards.forEach(function (card, i) {
+        var k = Math.min(i, TILTS.length - 1);
+        card.style.transform = transformFor(i);
+        card.style.opacity = OPACITY[k];
+        card.style.zIndex = ZINDEX[k];
+      });
+      if (counterEl && cards[0]) {
+        var anchor = cards[0].querySelector('.work-card');
+        counterEl.textContent = anchor ? anchor.getAttribute('data-stack-order') : '1';
+      }
+    }
+
+    function initStack() {
+      if (initialized) return;
+      cards = Array.prototype.slice.call(stack.querySelectorAll(':scope > [class*="col-"]'));
+      if (cards.length === 0) return;
+      initialized = true;
+      cards._origLen = cards.length;
+
+      // Tag each card with its display order, and strip reveal classes
+      // so the stack opacity/transform isn't fighting the scroll reveal anim.
+      cards.forEach(function (card, i) {
+        var anchor = card.querySelector('.work-card');
+        if (anchor) anchor.setAttribute('data-stack-order', String(i + 1));
+        card.classList.remove('reveal', 'delay-1', 'delay-2', 'delay-3', 'delay-4');
+        // Ensure no leftover reveal filter or transform
+        card.style.filter = 'none';
+      });
+
+      // Container height — 4:3 image + ~100px meta
+      var w = stack.offsetWidth;
+      stack.style.height = Math.round(w * 0.75 + 175) + 'px';
+
+      apply();
+      bindDrag();
+      window.addEventListener('resize', onResize);
+    }
+
+    function teardown() {
+      if (!initialized) return;
+      initialized = false;
+      cards.forEach(function (card) {
+        card.style.transform = '';
+        card.style.opacity = '';
+        card.style.zIndex = '';
+        card.classList.remove('is-dragging', 'is-flinging');
+      });
+      stack.style.height = '';
+      stack.removeEventListener('pointerdown', onDown);
+      window.removeEventListener('resize', onResize);
+    }
+
+    function onResize() {
+      if (!initialized) return;
+      var w = stack.offsetWidth;
+      stack.style.height = Math.round(w * 0.75 + 175) + 'px';
+    }
+
+    // Drag state
+    var dragging = false;
+    var flinging = false;
+    var axisLocked = false;
+    var startX = 0, startY = 0;
+    var dx = 0, dy = 0;
+    var activePointerId = null;
+
+    function bindDrag() {
+      stack.addEventListener('pointerdown', onDown);
+    }
+
+    function onDown(e) {
+      if (flinging || dragging) return;
+      var card = e.target.closest('[class*="col-"]');
+      if (card !== cards[0]) return;
+      dragging = true;
+      axisLocked = false;
+      activePointerId = e.pointerId;
+      startX = e.clientX;
+      startY = e.clientY;
+      dx = 0; dy = 0;
+      document.addEventListener('pointermove', onMove, { passive: false });
+      document.addEventListener('pointerup', onUp);
+      document.addEventListener('pointercancel', onUp);
+    }
+
+    function onMove(e) {
+      if (!dragging || e.pointerId !== activePointerId) return;
+      dx = e.clientX - startX;
+      dy = e.clientY - startY;
+
+      // Decide axis on first meaningful movement
+      if (!axisLocked) {
+        if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+        if (Math.abs(dy) > Math.abs(dx)) {
+          // Vertical scroll — release control entirely
+          dragging = false;
+          return;
+        }
+        axisLocked = true;
+        cards[0].classList.add('is-dragging');
+      }
+
+      e.preventDefault();
+      var rot = dx * 0.06;
+      cards[0].style.transform = 'translate(' + dx + 'px,' + (dy * 0.35) + 'px) rotate(' + rot + 'deg) scale(1)';
+    }
+
+    function onUp(e) {
+      document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerup', onUp);
+      document.removeEventListener('pointercancel', onUp);
+
+      // Vertical-scroll abort path — nothing to clean up
+      if (!axisLocked) {
+        dragging = false;
+        return;
+      }
+      if (!dragging) return;
+      dragging = false;
+
+      var threshold = stack.offsetWidth * 0.25; // 25% of container width
+      var top = cards[0];
+
+      if (Math.abs(dx) > threshold) {
+        // Fling off-screen, then cycle to back
+        flinging = true;
+        top.classList.remove('is-dragging');
+        top.classList.add('is-flinging');
+        var dir = dx > 0 ? 1 : -1;
+        var flingX = dir * (window.innerWidth + 100);
+        top.style.transform = 'translate(' + flingX + 'px,' + (dy * 0.35) + 'px) rotate(' + (dir * 28) + 'deg) scale(0.95)';
+        top.style.opacity = '0';
+
+        var done = false;
+        var finalize = function () {
+          if (done) return;
+          done = true;
+          top.removeEventListener('transitionend', finalize);
+          // Move flung card to end of array
+          cards.push(cards.shift());
+          // Disable its transition so it teleports to back position
+          top.classList.remove('is-flinging');
+          top.classList.add('is-dragging');
+          apply();
+          // Reflow then re-enable transition
+          /* eslint-disable no-unused-expressions */
+          top.offsetHeight;
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              top.classList.remove('is-dragging');
+              flinging = false;
+            });
+          });
+        };
+        top.addEventListener('transitionend', finalize);
+        // Safety fallback in case transitionend doesn't fire
+        setTimeout(finalize, 600);
+      } else {
+        // Snap back
+        top.classList.remove('is-dragging');
+        apply();
+      }
+    }
+
+    function check() {
+      if (mq.matches) initStack();
+      else teardown();
+    }
+
+    // Defer init until DOM has settled (reveal animations etc.)
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', check);
+    } else {
+      check();
+    }
+    if (mq.addEventListener) mq.addEventListener('change', check);
+    else mq.addListener(check);
+  })();
 </script>
 </body>
 </html>
